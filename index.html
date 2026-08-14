@@ -1,0 +1,2826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eduplier | Empowering Education Choices</title>
+
+    <meta name="description"
+        content="Eduplier Education Services helps students choose the right online degree program and university with expert counselling and admission assistance.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+<style>
+
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: #172b4d;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+
+/* =========================
+   BRAND COLORS
+========================= */
+
+:root {
+
+    --navy: #061b36;
+
+    --navy2: #09284d;
+
+    --blue: #0867c9;
+
+    --orange: #ff7a00;
+
+    --light-blue: #eef7ff;
+
+    --text: #172b4d;
+
+    --muted: #718198;
+
+    --white: #ffffff;
+
+    --border: #e4ebf3;
+
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+
+    background: #041326;
+
+    color: #dbe8f7;
+
+    font-size: 13px;
+
+    padding: 9px 0;
+}
+
+.topbar-inner {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.topbar span {
+
+    margin-right: 22px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,.97);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #edf1f6;
+}
+
+.nav-inner {
+
+    min-height: 76px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+/* LOGO */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+}
+
+.logo img {
+
+    width: 170px;
+
+    height: auto;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.nav-links a {
+
+    transition: .25s;
+}
+
+.nav-links a:hover {
+
+    color: var(--orange);
+}
+
+.nav-button {
+
+    background: var(--orange);
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 7px;
+
+    font-weight: 700;
+
+    box-shadow: 0 7px 20px rgba(255,122,0,.25);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255,122,0,.17),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(0,104,210,.20),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #04172d,
+            #082a50 60%,
+            #061b36
+        );
+
+    color: white;
+
+    padding: 72px 0 95px;
+}
+
+
+.hero-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 420px;
+
+    gap: 65px;
+
+    align-items: center;
+}
+
+
+/* HERO CONTENT */
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255,255,255,.18);
+
+    background: rgba(255,255,255,.07);
+
+    color: #ffb15c;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 22px;
+}
+
+
+.hero h1 {
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(40px, 5vw, 64px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    max-width: 700px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+
+    color: var(--orange);
+}
+
+
+.hero-subtitle {
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    color: #e6f0fb;
+
+    margin-bottom: 12px;
+}
+
+
+.hero-description {
+
+    color: #aebfd4;
+
+    max-width: 650px;
+
+    font-size: 16px;
+
+    margin-bottom: 28px;
+}
+
+
+/* HERO CHECK LIST */
+
+.hero-list {
+
+    list-style: none;
+
+    display: grid;
+
+    gap: 9px;
+
+    margin-bottom: 28px;
+}
+
+.hero-list li {
+
+    color: #d9e6f5;
+
+    font-size: 14px;
+}
+
+.hero-list li::before {
+
+    content: "✓";
+
+    display: inline-grid;
+
+    place-items: center;
+
+    width: 21px;
+
+    height: 21px;
+
+    border-radius: 50%;
+
+    background: #0c68c9;
+
+    color: white;
+
+    font-size: 11px;
+
+    margin-right: 9px;
+}
+
+
+/* BUTTONS */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 24px;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    transition: .25s;
+}
+
+.btn-orange {
+
+    background: var(--orange);
+
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(255,122,0,.25);
+}
+
+.btn-orange:hover {
+
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+
+    border: 1px solid rgba(255,255,255,.4);
+
+    color: white;
+
+    background: rgba(255,255,255,.04);
+}
+
+.btn-outline:hover {
+
+    background: white;
+
+    color: var(--navy);
+}
+
+
+/* =========================
+   COUNSELLING FORM
+========================= */
+
+.form-card {
+
+    background: white;
+
+    color: var(--text);
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 25px 70px rgba(0,0,0,.28);
+
+    border: 1px solid rgba(255,255,255,.15);
+}
+
+.form-card h2 {
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 25px;
+
+    color: var(--navy);
+
+    margin-bottom: 3px;
+}
+
+.form-card h2 span {
+
+    color: var(--orange);
+}
+
+.form-card > p {
+
+    font-size: 13px;
+
+    color: var(--muted);
+
+    margin-bottom: 20px;
+}
+
+
+.form-group {
+
+    margin-bottom: 13px;
+}
+
+.form-group label {
+
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+
+    color: #3b506b;
+}
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #dce5ef;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #fbfdff;
+
+    font-size: 13px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: var(--blue);
+}
+
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+
+.submit {
+
+    width: 100%;
+
+    border: none;
+
+    cursor: pointer;
+
+    margin-top: 4px;
+}
+
+
+.form-note {
+
+    text-align: center;
+
+    font-size: 10px;
+
+    color: #8b9aab;
+
+    margin-top: 9px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+
+    margin-top: -42px;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.stats-box {
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow: 0 15px 45px rgba(5,45,90,.13);
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    padding: 22px;
+}
+
+.stat {
+
+    text-align: center;
+
+    border-right: 1px solid #e7edf4;
+}
+
+.stat:last-child {
+
+    border: none;
+}
+
+.stat strong {
+
+    display: block;
+
+    font-family: "Poppins", sans-serif;
+
+    color: var(--blue);
+
+    font-size: 26px;
+}
+
+.stat span {
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+
+    padding: 85px 0;
+}
+
+.section-heading {
+
+    max-width: 720px;
+
+    text-align: center;
+
+    margin: auto auto 45px;
+}
+
+.section-heading small {
+
+    color: var(--orange);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.2px;
+}
+
+.section-heading h2 {
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 35px;
+
+    color: var(--navy);
+
+    margin: 7px 0 10px;
+}
+
+.section-heading p {
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   PROGRAMS
+========================= */
+
+.programs {
+
+    background: #f8fbff;
+}
+
+.program-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 18px;
+}
+
+.program-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 25px 18px;
+
+    transition: .3s;
+}
+
+.program-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(0,55,110,.11);
+
+    border-color: #a9c9e9;
+}
+
+.program-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 11px;
+
+    background: #edf6ff;
+
+    color: var(--blue);
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 24px;
+
+    margin-bottom: 16px;
+}
+
+.program-card:nth-child(even) .program-icon {
+
+    background: #fff1e7;
+
+    color: var(--orange);
+}
+
+.program-card h3 {
+
+    color: var(--navy);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+}
+
+.program-card p {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin: 3px 0 15px;
+}
+
+.program-card a {
+
+    color: var(--orange);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   UNIVERSITY SECTION
+========================= */
+
+.university-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 15px;
+}
+
+.university {
+
+    min-height: 100px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 18px;
+
+    font-weight: 700;
+
+    color: #194d83;
+
+    background: white;
+
+    transition: .25s;
+}
+
+.university:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 30px rgba(0,60,120,.1);
+}
+
+
+/* =========================
+   WHY EDUPLIER
+========================= */
+
+.why {
+
+    background: #f7faff;
+}
+
+.why-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.why-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    padding: 28px;
+
+    border-radius: 13px;
+}
+
+.why-number {
+
+    color: var(--orange);
+
+    font-weight: 800;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+.why-card h3 {
+
+    color: var(--navy);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+.why-card p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.process-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(5,1fr);
+
+    gap: 15px;
+}
+
+.process {
+
+    text-align: center;
+
+    padding: 20px 10px;
+}
+
+.process-number {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--navy);
+
+    color: white;
+
+    font-weight: 800;
+
+    margin: auto auto 13px;
+}
+
+.process:nth-child(even) .process-number {
+
+    background: var(--orange);
+}
+
+.process h3 {
+
+    font-size: 15px;
+
+    color: var(--navy);
+
+    margin-bottom: 5px;
+}
+
+.process p {
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials {
+
+    background: #f8fbff;
+}
+
+.testimonial-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.testimonial {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    padding: 25px;
+
+    border-radius: 12px;
+}
+
+.stars {
+
+    color: #ff9b22;
+
+    margin-bottom: 12px;
+}
+
+.testimonial p {
+
+    color: #65778c;
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
+}
+
+.student {
+
+    font-weight: 800;
+
+    color: var(--navy);
+}
+
+.student small {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-weight: 400;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq {
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.faq-item {
+
+    border-bottom: 1px solid #e4ebf3;
+}
+
+.faq-question {
+
+    padding: 20px 5px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-weight: 700;
+
+    color: var(--navy);
+}
+
+.faq-answer {
+
+    display: none;
+
+    padding: 0 5px 18px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.faq-item.active .faq-answer {
+
+    display: block;
+}
+
+.faq-item.active .faq-question {
+
+    color: var(--orange);
+}
+
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.final-cta {
+
+    background:
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(255,122,0,.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            110deg,
+            #061b36,
+            #0a3768
+        );
+
+    color: white;
+
+    padding: 65px 0;
+}
+
+.cta-inner {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.cta-inner h2 {
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 31px;
+}
+
+.cta-inner p {
+
+    color: #b9cbe0;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background: #031326;
+
+    color: white;
+
+    padding: 55px 0 20px;
+}
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+.footer-logo {
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 27px;
+
+    font-weight: 800;
+}
+
+.footer-logo span {
+
+    color: var(--orange);
+}
+
+.footer-description {
+
+    color: #91a7c0;
+
+    font-size: 13px;
+
+    max-width: 320px;
+
+    margin-top: 10px;
+}
+
+footer h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 14px;
+}
+
+footer ul {
+
+    list-style: none;
+}
+
+footer li {
+
+    color: #9db1c8;
+
+    font-size: 12px;
+
+    margin-bottom: 9px;
+}
+
+footer li a:hover {
+
+    color: var(--orange);
+}
+
+.copyright {
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255,255,255,.1);
+
+    margin-top: 40px;
+
+    padding-top: 18px;
+
+    color: #7389a2;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+
+    position: fixed;
+
+    right: 22px;
+
+    bottom: 22px;
+
+    width: 56px;
+
+    height: 56px;
+
+    background: #25d366;
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 25px;
+
+    z-index: 999;
+
+    box-shadow: 0 7px 25px rgba(0,0,0,.22);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px) {
+
+    .nav-links {
+
+        display: none;
+    }
+
+    .hero-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .program-grid {
+
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .university-grid {
+
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .why-grid {
+
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .process-grid {
+
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .testimonial-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:650px) {
+
+    .topbar {
+
+        display: none;
+    }
+
+    .logo img {
+
+        width: 140px;
+    }
+
+    .hero {
+
+        padding: 50px 0 80px;
+    }
+
+    .hero h1 {
+
+        font-size: 40px;
+    }
+
+    .hero-subtitle {
+
+        font-size: 18px;
+    }
+
+    .form-card {
+
+        padding: 22px;
+    }
+
+    .stats-box {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 20px;
+    }
+
+    .stat {
+
+        border: none;
+    }
+
+    .program-grid,
+    .university-grid,
+    .why-grid,
+    .process-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+    }
+
+    .cta-inner {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    section {
+
+        padding: 65px 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<div class="topbar">
+
+    <div class="container topbar-inner">
+
+        <div>
+
+            <span>✉ info@eduplier.com</span>
+
+            <span>📍 Delhi, India</span>
+
+        </div>
+
+        <div>
+
+            Empowering Education Choices
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+    <div class="container nav-inner">
+
+
+        <a href="#home" class="logo">
+
+            <!-- YOUR LOGO WILL GO HERE -->
+
+            <img
+                src="assets/images/logo.png"
+                alt="Eduplier Education Services"
+            >
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#programs">Programs</a>
+
+            <a href="#universities">Universities</a>
+
+            <a href="#why">Why Eduplier?</a>
+
+            <a href="#process">Admission Process</a>
+
+            <a href="#contact">Contact</a>
+
+            <a href="#counselling" class="nav-button">
+                Free Counselling
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+
+        <div>
+
+
+            <div class="hero-badge">
+
+                🎓 30+ University Partners Across India
+
+            </div>
+
+
+            <h1>
+
+                Your Future Starts With The Right
+
+                <span>Education</span>
+
+            </h1>
+
+
+            <div class="hero-subtitle">
+
+                Expert Guidance. Better Decisions. Brighter Careers.
+
+            </div>
+
+
+            <p class="hero-description">
+
+                Choose the right online degree program and university
+                with personalized guidance from Eduplier's education
+                counsellors.
+
+            </p>
+
+
+            <ul class="hero-list">
+
+                <li>
+                    Personalized career & education counselling
+                </li>
+
+                <li>
+                    Compare online universities and programs
+                </li>
+
+                <li>
+                    Complete admission assistance
+                </li>
+
+                <li>
+                    Support from enquiry to admission
+                </li>
+
+            </ul>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#counselling"
+                    class="btn btn-orange"
+                >
+                    Get Free Counselling →
+                </a>
+
+
+                <a
+                    href="#programs"
+                    class="btn btn-outline"
+                >
+                    Explore Programs
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             COUNSELLING FORM
+        ========================= -->
+
+        <div
+            class="form-card"
+            id="counselling"
+        >
+
+            <h2>
+
+                Get Your
+
+                <span>FREE Counselling</span>
+
+            </h2>
+
+
+            <p>
+
+                Tell us what you're looking for.
+                Our counsellor will contact you.
+
+            </p>
+
+
+            <form
+                onsubmit="submitForm(event)"
+            >
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Full Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Mobile Number *
+                        </label>
+
+                        <input
+                            type="tel"
+                            placeholder="Enter mobile number"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Highest Qualification
+                    </label>
+
+                    <select>
+
+                        <option>
+                            Select qualification
+                        </option>
+
+                        <option>
+                            12th Pass
+                        </option>
+
+                        <option>
+                            Graduate
+                        </option>
+
+                        <option>
+                            Post Graduate
+                        </option>
+
+                        <option>
+                            Working Professional
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Program Interested In
+                    </label>
+
+                    <select>
+
+                        <option>
+                            Select program
+                        </option>
+
+                        <option>
+                            Online MBA
+                        </option>
+
+                        <option>
+                            Online MCA
+                        </option>
+
+                        <option>
+                            Online BBA
+                        </option>
+
+                        <option>
+                            Online BCA
+                        </option>
+
+                        <option>
+                            Online M.Com
+                        </option>
+
+                        <option>
+                            Online B.Com
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="btn btn-orange submit"
+                >
+
+                    Submit & Get Free Counselling
+
+                </button>
+
+
+                <div class="form-note">
+
+                    🔒 Your information is safe with us.
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<div class="stats">
+
+    <div class="container">
+
+        <div class="stats-box">
+
+
+            <div class="stat">
+
+                <strong>30+</strong>
+
+                <span>
+                    University Partners
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>1000+</strong>
+
+                <span>
+                    Students Guided
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>20+</strong>
+
+                <span>
+                    Programs
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>Pan India</strong>
+
+                <span>
+                    Student Support
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     PROGRAMS
+========================= -->
+
+<section
+    class="programs"
+    id="programs"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <small>
+                Explore Your Options
+            </small>
+
+            <h2>
+                Popular Online Programs
+            </h2>
+
+            <p>
+                Find career-focused online degree programs
+                from leading universities.
+            </p>
+
+        </div>
+
+
+
+        <div class="program-grid">
+
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Online MBA
+                </h3>
+
+                <p>
+                    Management & Leadership
+                </p>
+
+                <a href="#counselling">
+                    Get Details →
+                </a>
+
+            </div>
+
+
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Online MCA
+                </h3>
+
+                <p>
+                    Technology & IT
+                </p>
+
+                <a href="#counselling">
+                    Get Details →
+                </a>
+
+            </div>
+
+
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Online BBA
+                </h3>
+
+                <p>
+                    Business Administration
+                </p>
+
+                <a href="#counselling">
+                    Get Details →
+                </a>
+
+            </div>
+
+
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Online BCA
+                </h3>
+
+                <p>
+                    Computer Applications
+                </p>
+
+                <a href="#counselling">
+                    Get Details →
+                </a>
+
+            </div>
+
+
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Online M.Com
+                </h3>
+
+                <p>
+                    Commerce & Finance
+                </p>
+
+                <a href="#counselling">
+                    Get Details →
+                </a>
+
+            </div>
+
+
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Online BA
+                </h3>
+
+                <p>
+                    Arts & Humanities
+                </p>
+
+                <a href="#counselling">
+                    Get Details →
+                </a>
+
+            </div>
+
+
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    📈
+                </div>
+
+                <h3>
+                    Online B.Com
+                </h3>
+
+                <p>
+                    Commerce & Accounting
+                </p>
+
+                <a href="#counselling">
+                    Get Details →
+                </a>
+
+            </div>
+
+
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Other Programs
+                </h3>
+
+                <p>
+                    Explore More Options
+                </p>
+
+                <a href="#counselling">
+                    Talk to Counsellor →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     UNIVERSITIES
+========================= -->
+
+<section
+    id="universities"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <small>
+                University Network
+            </small>
+
+            <h2>
+                Explore Leading Universities
+            </h2>
+
+            <p>
+                Get guidance on online education options
+                offered by universities across India.
+            </p>
+
+        </div>
+
+
+
+        <div class="university-grid">
+
+
+            <div class="university">
+                Amity University Online
+            </div>
+
+
+            <div class="university">
+                Manipal University Online
+            </div>
+
+
+            <div class="university">
+                Chandigarh University Online
+            </div>
+
+
+            <div class="university">
+                Lovely Professional University Online
+            </div>
+
+
+            <div class="university">
+                Jain Online
+            </div>
+
+
+            <div class="university">
+                DY Patil University Online
+            </div>
+
+
+            <div class="university">
+                Sharda University
+            </div>
+
+
+            <div class="university">
+                30+ University Options
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     WHY EDUPLIER
+========================= -->
+
+<section
+    class="why"
+    id="why"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <small>
+                Why Eduplier?
+            </small>
+
+            <h2>
+                More Than Just Admission Assistance
+            </h2>
+
+            <p>
+                We help students make informed education
+                decisions according to their goals.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    01 — GUIDANCE
+                </div>
+
+                <h3>
+                    Personalized Counselling
+                </h3>
+
+                <p>
+                    Understand your career goals,
+                    qualification and preferences before
+                    recommending suitable options.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    02 — COMPARE
+                </div>
+
+                <h3>
+                    Compare Universities
+                </h3>
+
+                <p>
+                    Understand differences between programs,
+                    universities, fees and other important factors.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    03 — SUPPORT
+                </div>
+
+                <h3>
+                    Admission Assistance
+                </h3>
+
+                <p>
+                    Get assistance with applications,
+                    documentation and admission formalities.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    04 — TRANSPARENCY
+                </div>
+
+                <h3>
+                    Clear Information
+                </h3>
+
+                <p>
+                    We aim to provide students with clear
+                    information so they can make confident decisions.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    05 — CONVENIENCE
+                </div>
+
+                <h3>
+                    Online Process
+                </h3>
+
+                <p>
+                    Explore programs and complete many
+                    admission steps conveniently from anywhere.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-number">
+                    06 — SUPPORT
+                </div>
+
+                <h3>
+                    Student Support
+                </h3>
+
+                <p>
+                    Our team stays connected to support
+                    students through their admission journey.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ADMISSION PROCESS
+========================= -->
+
+<section
+    id="process"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <small>
+                Simple Process
+            </small>
+
+            <h2>
+                Your Journey Starts Here
+            </h2>
+
+            <p>
+                Five simple steps from counselling
+                to admission.
+            </p>
+
+        </div>
+
+
+
+        <div class="process-grid">
+
+
+            <div class="process">
+
+                <div class="process-number">
+                    1
+                </div>
+
+                <h3>
+                    Free Counselling
+                </h3>
+
+                <p>
+                    Tell us about your goals.
+                </p>
+
+            </div>
+
+
+
+            <div class="process">
+
+                <div class="process-number">
+                    2
+                </div>
+
+                <h3>
+                    Profile Analysis
+                </h3>
+
+                <p>
+                    We understand your profile.
+                </p>
+
+            </div>
+
+
+
+            <div class="process">
+
+                <div class="process-number">
+                    3
+                </div>
+
+                <h3>
+                    Select University
+                </h3>
+
+                <p>
+                    Compare suitable options.
+                </p>
+
+            </div>
+
+
+
+            <div class="process">
+
+                <div class="process-number">
+                    4
+                </div>
+
+                <h3>
+                    Apply
+                </h3>
+
+                <p>
+                    Complete your application.
+                </p>
+
+            </div>
+
+
+
+            <div class="process">
+
+                <div class="process-number">
+                    5
+                </div>
+
+                <h3>
+                    Start Learning
+                </h3>
+
+                <p>
+                    Begin your academic journey.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TESTIMONIALS
+========================= -->
+
+<section
+    class="testimonials"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <small>
+                Student Experiences
+            </small>
+
+            <h2>
+                What Students Say
+            </h2>
+
+            <p>
+                Guidance that helps students make better
+                education choices.
+            </p>
+
+        </div>
+
+
+
+        <div class="testimonial-grid">
+
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "Eduplier helped me understand different
+                    online MBA options and guided me throughout
+                    the admission process."
+                </p>
+
+                <div class="student">
+                    Student
+                    <small>
+                        Online MBA
+                    </small>
+                </div>
+
+            </div>
+
+
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "The counselling team explained the options
+                    clearly and helped me choose a program
+                    according to my career plans."
+                </p>
+
+                <div class="student">
+                    Student
+                    <small>
+                        Online Degree
+                    </small>
+                </div>
+
+            </div>
+
+
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "The admission guidance was simple and the
+                    team was available whenever I needed help."
+                </p>
+
+                <div class="student">
+                    Student
+                    <small>
+                        Online Education
+                    </small>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <small>
+                Frequently Asked Questions
+            </small>
+
+            <h2>
+                Have Questions?
+            </h2>
+
+            <p>
+                Here are answers to some common questions
+                about online education.
+            </p>
+
+        </div>
+
+
+
+        <div class="faq">
+
+
+            <div class="faq-item active">
+
+                <div class="faq-question">
+
+                    Are online degrees valid?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    The validity of an online degree depends on
+                    the university, program and applicable
+                    regulatory requirements. Our counsellors
+                    can help you understand the available options.
+
+                </div>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <div class="faq-question">
+
+                    Which online MBA is best?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    The right MBA depends on your career goals,
+                    budget, eligibility, specialization preference
+                    and the university's program structure.
+
+                </div>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <div class="faq-question">
+
+                    Can Eduplier help me compare universities?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    Yes. Eduplier provides counselling to help
+                    students understand and compare suitable
+                    online education options.
+
+                </div>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <div class="faq-question">
+
+                    How does the admission process work?
+
+                    <span>+</span>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    You can start with a free counselling session.
+                    After understanding your profile, we help you
+                    explore suitable programs and guide you through
+                    the application process.
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FINAL CTA
+========================= -->
+
+<section
+    class="final-cta"
+    id="contact"
+>
+
+    <div class="container cta-inner">
+
+
+        <div>
+
+            <h2>
+                Not Sure Which University Is Right For You?
+            </h2>
+
+            <p>
+                Talk to our education counsellors and make
+                an informed decision.
+            </p>
+
+        </div>
+
+
+        <a
+            href="#counselling"
+            class="btn btn-orange"
+        >
+            Get Free Counselling →
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <div class="footer-logo">
+
+                    Edu<span>plier</span>
+
+                </div>
+
+                <p class="footer-description">
+
+                    Empowering Education Choices.
+
+                    Eduplier Education Services helps students
+                    explore online higher education opportunities
+                    with personalized counselling and admission support.
+
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#programs">Programs</a>
+                    </li>
+
+                    <li>
+                        <a href="#universities">Universities</a>
+                    </li>
+
+                    <li>
+                        <a href="#why">Why Eduplier?</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div>
+
+                <h3>
+                    Programs
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Online MBA
+                    </li>
+
+                    <li>
+                        Online MCA
+                    </li>
+
+                    <li>
+                        Online BBA
+                    </li>
+
+                    <li>
+                        Online BCA
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <ul>
+
+                    <li>
+                        info@eduplier.com
+                    </li>
+
+                    <li>
+                        Delhi, India
+                    </li>
+
+                    <li>
+                        Free Counselling
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Eduplier Education Services.
+            All Rights Reserved.
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     WHATSAPP BUTTON
+========================= -->
+
+<a
+    href="#counselling"
+    class="whatsapp"
+    title="Contact Eduplier"
+>
+    ☎
+</a>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+/* FAQ */
+
+document
+.querySelectorAll(".faq-question")
+.forEach(function(question) {
+
+    question.addEventListener("click", function() {
+
+        this.parentElement.classList.toggle("active");
+
+    });
+
+});
+
+
+
+/* FORM */
+
+function submitForm(event) {
+
+    event.preventDefault();
+
+    alert(
+        "Thank you for contacting Eduplier. Our counselling team will contact you shortly."
+    );
+
+}
+
+
+</script>
+
+
+</body>
+</html>
