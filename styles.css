@@ -369,6 +369,35 @@ header {
     text-align: center;
 }
 
+a.quick-fact.quick-fact-highlight {
+    display: block;
+    text-decoration: none;
+    border: 1px solid var(--orange);
+    position: relative;
+    animation: quickFactPulse 2.2s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.quick-fact-highlight strong {
+    color: var(--orange) !important;
+}
+
+.quick-fact-highlight .quick-fact-hint {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--orange);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+@keyframes quickFactPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 122, 24, 0.35); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 122, 24, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 122, 24, 0); }
+}
+
 .quick-fact strong {
     display: block;
     color: var(--blue);
