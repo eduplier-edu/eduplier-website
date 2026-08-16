@@ -213,36 +213,6 @@ header {
     letter-spacing: 0.6px;
 }
 
-.footer-brand-mark {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 18px;
-}
-
-.footer-brand-icon {
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-.footer-brand-name {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 800;
-    font-size: 22px;
-    color: #ffffff;
-}
-
-.footer-brand-tagline {
-    display: block;
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--orange);
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-}
-
 .nav-links {
     display: flex;
     align-items: center;
