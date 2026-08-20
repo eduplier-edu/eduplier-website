@@ -984,8 +984,158 @@ a.university-card.university-card-highlight {
 
 
 /* =========================================
-   RELATED PROGRAMS (internal linking)
+   COMPARISON TOOL
 ========================================= */
+
+.compare-tool {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+}
+
+.compare-step {
+    margin-bottom: 30px;
+}
+
+.compare-step-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    color: var(--dark);
+    margin-bottom: 14px;
+}
+
+.compare-step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+#programSelect {
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid #dfe6ee;
+    border-radius: 8px;
+    padding: 13px;
+    font-family: inherit;
+    font-size: 14px;
+    background: #fff;
+}
+
+.budget-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    opacity: 0.4;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.budget-pills.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.budget-pill {
+    border: 1px solid var(--border);
+    background: white;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--dark);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.budget-pill:hover {
+    border-color: #bcd6f5;
+}
+
+.budget-pill.selected {
+    background: var(--blue);
+    color: white;
+    border-color: var(--blue);
+}
+
+#compareBtn {
+    margin-top: 10px;
+}
+
+#compareBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.compare-results {
+    margin-top: 40px;
+    display: none;
+}
+
+.compare-results.visible {
+    display: block;
+}
+
+.compare-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    min-width: 640px;
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: normal;
+}
+
+.compare-table thead th {
+    background: var(--blue-dark);
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    position: sticky;
+    top: 0;
+}
+
+.compare-table tbody th {
+    background: #f7faff;
+    font-weight: 700;
+    color: var(--dark);
+    position: sticky;
+    left: 0;
+    min-width: 150px;
+}
+
+.compare-table tbody tr:last-child td,
+.compare-table tbody tr:last-child th {
+    border-bottom: none;
+}
+
+.compare-table td {
+    color: var(--text);
+}
 
 .related-grid {
     display: grid;
