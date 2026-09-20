@@ -322,6 +322,98 @@
             renderResults();
         });
     });
+<script>
+    // Fetches live comparison data generated directly from the audited workbooks
+    var comparisonData = /* Embedded JSON from updated workbooks */;
+
+    var selectedProgram = "";
+    var selectedBudget = null;
+
+    var programSelect = document.getElementById("programSelect");
+    var budgetPills = document.getElementById("budgetPills");
+    var resultsSection = document.getElementById("compareResults");
+    var resultsBody = document.getElementById("resultsBody");
+    var resultsHeading = document.getElementById("resultsHeading");
+    var noResultsMsg = document.getElementById("noResultsMsg");
+
+    function formatRupees(n) {
+        return "\u20B9" + Number(n).toLocaleString("en-IN");
+    }
+
+    function renderResults() {
+        if (!selectedProgram || !selectedBudget) {
+            resultsSection.classList.remove("visible");
+            noResultsMsg.style.display = "none";
+            return;
+        }
+
+        var programData = comparisonData[selectedProgram] || {};
+        var matches = [];
+
+        for (var uniName in programData) {
+            var row = programData[uniName];
+            // Filter out non-offering institutions (actualFee == 0) and match budget range
+            if (row.actualFee > 0 && row.actualFee >= selectedBudget.min && row.actualFee < selectedBudget.max) {
+                matches.push({ name: uniName, data: row });
+            }
+        }
+
+        if (matches.length === 0) {
+            resultsSection.classList.remove("visible");
+            noResultsMsg.style.display = "block";
+            return;
+        }
+
+        noResultsMsg.style.display = "none";
+        resultsHeading.textContent = matches.length + " universities offering " + selectedProgram + " in your budget";
+
+        resultsBody.innerHTML = "";
+        matches.forEach(function (m) {
+            var tr = document.createElement("tr");
+            tr.innerHTML =
+                "<th>" + m.name + "</th>" +
+                "<td>" + m.data.naacRating + "</td>" +
+                "<td>" + m.data.naacCgpa + "</td>" +
+                "<td>" + m.data.nirf + "</td>" +
+                "<td>" + m.data.eligibility + "</td>" +
+                "<td>" + m.data.specializations + "</td>" +
+                "<td>" + m.data.totalFee + "</td>" +
+                "<td>" + m.data.scholarship + "</td>" +
+                "<td>" + m.data.actualFeeDisplay + "</td>";
+            resultsBody.appendChild(tr);
+        });
+
+        resultsSection.classList.add("visible");
+    }
+
+    programSelect.addEventListener("change", function () {
+        selectedProgram = programSelect.value;
+        if (selectedProgram) {
+            budgetPills.classList.add("active");
+        } else {
+            budgetPills.classList.remove("active");
+            selectedBudget = null;
+            Array.prototype.forEach.call(budgetPills.children, function (p) {
+                p.classList.remove("selected");
+            });
+        }
+        renderResults();
+    });
+
+    Array.prototype.forEach.call(budgetPills.children, function (pill) {
+        pill.addEventListener("click", function () {
+            if (!selectedProgram) return;
+            Array.prototype.forEach.call(budgetPills.children, function (p) {
+                p.classList.remove("selected");
+            });
+            pill.classList.add("selected");
+            selectedBudget = {
+                min: parseInt(pill.getAttribute("data-min"), 10),
+                max: parseInt(pill.getAttribute("data-max"), 10)
+            };
+            renderResults();
+        });
+    });
     </script>
 </body>
 </html>
