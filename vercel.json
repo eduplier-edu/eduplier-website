@@ -1,6 +1,9 @@
 {
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/naLogImpressions", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/why-eduplier", "destination": "/why-eduplier.html" }
   ]
 }
-{\n  "redirects": [\n    { "source": "/home", "destination": "/", "permanent": true },\n    { "source": "/naLogImpressions", "destination": "/", "permanent": true }\n  ],\n  "rewrites": [\n    { "source": "/why-eduplier", "destination": "/why-eduplier.html" }\n  ]\n}
