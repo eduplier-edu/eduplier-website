@@ -18,6 +18,36 @@
         70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
         100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
+    
+    /* Beautiful styles for standard grid items featuring logo layouts */
+    .uni-card {
+        background: #ffffff;
+        padding: 24px 20px;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .uni-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+    .uni-logo-container {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+    }
+    .uni-logo-container img {
+        max-height: 100%;
+        max-width: 160px;
+        object-fit: contain;
+    }
     </style>
 </head>
 <body>
@@ -98,7 +128,7 @@
         <section style="padding: 40px 0; background: #f0f4f8;">
             <div class="container" style="text-align:center; background:#ffffff; border-radius:12px; padding:30px; border:1px solid #e2e8f0;">
                 <h3 style="font-size:22px; margin-bottom:10px;">Compare Universities Side by Side</h3>
-                <p style="color:var(--text); max-width:700px; margin:0 auto 20px; font-size:15px;">Compare programs, specializations, fees and learning options with guidance from our academic counsellors or try our budget finder tool tool.</p>
+                <p style="color:var(--text); max-width:700px; margin:0 auto 20px; font-size:15px;">Compare programs, specializations, fees and learning options with guidance from our academic counsellors or try our budget finder tool.</p>
                 <a href="/compare-universities.html" class="btn btn-primary" style="padding:10px 24px;">Try University Comparator Tool &rarr;</a>
             </div>
         </section>
@@ -165,29 +195,61 @@
                 </div>
 
                 <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:20px; margin-top:40px;">
-                    <div style="background:#ffffff; padding:20px; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
-                        <strong>Amity University Online</strong><div style="font-size:13px; color:var(--text-light); margin-top:4px;">Online Degree Programs</div>
+                    <div class="uni-card">
+                        <div class="uni-logo-container">
+                            <img src="/assets/images/universities/amity.png" alt="Amity University Online Logo" onerror="this.style.display='none';">
+                        </div>
+                        <strong>Amity University Online</strong>
+                        <div style="font-size:13px; color:var(--text-light); margin-top:4px;">Online Degree Programs</div>
                     </div>
-                    <div style="background:#ffffff; padding:20px; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
-                        <strong>Manipal University Jaipur Online</strong><div style="font-size:13px; color:var(--text-light); margin-top:4px;">Online Higher Education</div>
+                    <div class="uni-card">
+                        <div class="uni-logo-container">
+                            <img src="/assets/images/universities/manipal.png" alt="Manipal University Jaipur Online Logo" onerror="this.style.display='none';">
+                        </div>
+                        <strong>Manipal University Jaipur Online</strong>
+                        <div style="font-size:13px; color:var(--text-light); margin-top:4px;">Online Higher Education</div>
                     </div>
-                    <div style="background:#ffffff; padding:20px; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
-                        <strong>LPU Online</strong><div style="font-size:13px; color:var(--text-light); margin-top:4px;">Online Degree Programs</div>
+                    <div class="uni-card">
+                        <div class="uni-logo-container">
+                            <img src="/assets/images/universities/lpu.png" alt="LPU Online Logo" onerror="this.style.display='none';">
+                        </div>
+                        <strong>LPU Online</strong>
+                        <div style="font-size:13px; color:var(--text-light); margin-top:4px;">Online Degree Programs</div>
                     </div>
-                    <div style="background:#ffffff; padding:20px; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
-                        <strong>Chandigarh University Online</strong><div style="font-size:13px; color:var(--text-light); margin-top:4px;">Online & Distance Programs</div>
+                    <div class="uni-card">
+                        <div class="uni-logo-container">
+                            <img src="/assets/images/universities/chandigarh.png" alt="Chandigarh University Online Logo" onerror="this.style.display='none';">
+                        </div>
+                        <strong>Chandigarh University Online</strong>
+                        <div style="font-size:13px; color:var(--text-light); margin-top:4px;">Online & Distance Programs</div>
                     </div>
-                    <div style="background:#ffffff; padding:20px; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
-                        <strong>Sikkim Manipal University Online</strong><div style="font-size:13px; color:var(--text-light); margin-top:4px;">Multiple Program Options</div>
+                    <div class="uni-card">
+                        <div class="uni-logo-container">
+                            <img src="/assets/images/universities/smu.png" alt="Sikkim Manipal University Online Logo" onerror="this.style.display='none';">
+                        </div>
+                        <strong>Sikkim Manipal University Online</strong>
+                        <div style="font-size:13px; color:var(--text-light); margin-top:4px;">Multiple Program Options</div>
                     </div>
-                    <div style="background:#ffffff; padding:20px; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
-                        <strong>NMIMS CDOE</strong><div style="font-size:13px; color:var(--text-light); margin-top:4px;">Explore Suitable Programs</div>
+                    <div class="uni-card">
+                        <div class="uni-logo-container">
+                            <img src="/assets/images/universities/nmims.png" alt="NMIMS CDOE Logo" onerror="this.style.display='none';">
+                        </div>
+                        <strong>NMIMS CDOE</strong>
+                        <div style="font-size:13px; color:var(--text-light); margin-top:4px;">Explore Suitable Programs</div>
                     </div>
-                    <div style="background:#ffffff; padding:20px; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
-                        <strong>Shoolini University</strong><div style="font-size:13px; color:var(--text-light); margin-top:4px;">Online Degree Programs</div>
+                    <div class="uni-card">
+                        <div class="uni-logo-container">
+                            <img src="/assets/images/universities/shoolini.png" alt="Shoolini University Logo" onerror="this.style.display='none';">
+                        </div>
+                        <strong>Shoolini University</strong>
+                        <div style="font-size:13px; color:var(--text-light); margin-top:4px;">Online Degree Programs</div>
                     </div>
-                    <div style="background:#ffffff; padding:20px; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
-                        <strong>GLA University</strong><div style="font-size:13px; color:var(--text-light); margin-top:4px;">Online Degree Programs</div>
+                    <div class="uni-card">
+                        <div class="uni-logo-container">
+                            <img src="/assets/images/universities/gla.png" alt="GLA University Logo" onerror="this.style.display='none';">
+                        </div>
+                        <strong>GLA University</strong>
+                        <div style="font-size:13px; color:var(--text-light); margin-top:4px;">Online Degree Programs</div>
                     </div>
                 </div>
                 
