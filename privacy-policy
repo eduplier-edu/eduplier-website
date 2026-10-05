@@ -6,14 +6,14 @@
     <title>Privacy Policy - Eduplier</title>
     <meta name="description" content="Eduplier Privacy Policy - Learn how Eduplier Education Services collects, uses, protects, and retains your personal information.">
     <meta name="author" content="Eduplier Education Services">
-    <link rel="canonical" href="https://www.eduplier.com/privacy-policy.html">
+    <link rel="canonical" href="https://www.eduplier.com/privacy-policy">
     <link rel="icon" type="image/png" href="/logo.png">
 
     <!-- Open Graph Metadata -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Privacy Policy - Eduplier">
     <meta property="og:description" content="Eduplier Education Services Privacy Policy and Data Protection guidelines.">
-    <meta property="og:url" content="https://www.eduplier.com/privacy-policy.html">
+    <meta property="og:url" content="https://www.eduplier.com/privacy-policy">
     <meta property="og:image" content="https://www.eduplier.com/logo.png">
 
     <!-- Fonts & Icons -->
@@ -352,7 +352,7 @@
             </div>
             <div class="flex gap-6">
                 <a href="https://www.eduplier.com/" class="hover:text-white transition-colors">Home</a>
-                <a href="https://www.eduplier.com/privacy-policy.html" class="text-white font-medium">Privacy Policy</a>
+                <a href="https://www.eduplier.com/privacy-policy" class="text-white font-medium">Privacy Policy</a>
             </div>
         </div>
         <div class="border-t border-slate-800 py-4 text-center text-xs text-slate-500">
