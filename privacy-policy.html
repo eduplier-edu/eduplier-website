@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Eduplier, online education, online degree, online MBA, online MCA, online BBA, online BCA, online M.Com, online BA, online MA, distance education, university admission">
     <meta name="author" content="Eduplier Education Services">
-    <link rel="canonical" href="https://www.eduplier.com/index.html">
+    <link rel="canonical" href="https://www.eduplier.com/privacy-policy.html">
     <link rel="icon" type="image/png" href="/logo.png">
 
     <meta property="og:type" content="website">
@@ -20,11 +20,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <style>
-    .whatsapp { animation: wa-attn 2s infinite; }
-    @keyframes wa-attn {
-        0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.65); }
-        70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#172554',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     }
     </style>
 
@@ -68,17 +86,6 @@
                     <span class="brand-tagline">Empowering Education Choices</span>
                 </span>
             </a>
-            <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
-            <nav class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#programs">Programs</a>
-                <a href="#universities">Universities</a>
-                <a href="#why-us">Why Eduplier</a>
-                <a href="#process">How It Works</a>
-                <a href="#contact">Contact</a>
-                <a href="#contact" class="nav-cta">Free Counselling</a>
-            </nav>
-        </div>
     </header>
     
 <!-- Hero Banner -->
