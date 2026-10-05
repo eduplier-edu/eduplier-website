@@ -6,14 +6,14 @@
     <title>Privacy Policy - Eduplier</title>
     <meta name="description" content="Eduplier Privacy Policy - Learn how Eduplier Education Services collects, uses, protects, and retains your personal information.">
     <meta name="author" content="Eduplier Education Services">
-    <link rel="canonical" href="https://www.eduplier.com/privacy-policy">
+    <link rel="canonical" href="https://www.eduplier.com/privacy-policy.html">
     <link rel="icon" type="image/png" href="/logo.png">
 
     <!-- Open Graph Metadata -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Privacy Policy - Eduplier">
     <meta property="og:description" content="Eduplier Education Services Privacy Policy and Data Protection guidelines.">
-    <meta property="og:url" content="https://www.eduplier.com/privacy-policy">
+    <meta property="og:url" content="https://www.eduplier.com/privacy-policy.html">
     <meta property="og:image" content="https://www.eduplier.com/logo.png">
 
     <!-- Fonts & Icons -->
@@ -104,7 +104,7 @@
                     <span class="text-[10px] tracking-widest uppercase text-slate-400 font-semibold">Empowering Education Choices</span>
                 </div>
             </a>
-            
+
             <div class="flex items-center gap-4">
                 <a href="https://www.eduplier.com/" class="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors px-3 py-2 rounded-lg hover:bg-brand-50">
                     <i class="fa-solid fa-globe text-xs"></i>
@@ -125,12 +125,13 @@
             <p class="text-brand-100 text-base sm:text-lg max-w-2xl mx-auto">
                 We value your trust and are dedicated to protecting your personal information.
             </p>
+            <p class="text-brand-200 text-sm mt-3">Last Updated: October 2026</p>
         </div>
     </section>
 
     <!-- MAIN CONTENT LAYOUT -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 grid grid-cols-1 lg:grid-cols-4 gap-8">
-        
+
         <!-- SIDEBAR NAVIGATION -->
         <aside class="lg:col-span-1">
             <div class="sticky top-24 bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-2">
@@ -151,7 +152,7 @@
 
         <!-- PRIVACY POLICY CONTENT CARDS -->
         <main class="lg:col-span-3 space-y-6">
-            
+
             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-brand-600">
                 <p class="text-slate-700 leading-relaxed">
                     <strong class="text-slate-900">Eduplier</strong> (“we”, “our”, “us”) is committed to protecting the privacy of our users. This Privacy Policy explains how we collect, use, store, and protect personal information when you interact with our website <a href="https://www.eduplier.com/" class="text-brand-600 font-semibold hover:underline">https://www.eduplier.com/</a> (the “Site”) and related services. By using the Site, you agree to the terms of this Privacy Policy.
@@ -165,7 +166,7 @@
                     <h2 class="text-xl font-bold text-slate-900">Information We Collect</h2>
                 </div>
                 <p class="text-slate-600 leading-relaxed">We collect information to provide you with a better learning and service experience. This includes:</p>
-                
+
                 <div class="space-y-4 pt-2">
                     <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
                         <h3 class="font-semibold text-slate-900 text-sm mb-2 flex items-center gap-2">
@@ -351,7 +352,7 @@
             </div>
             <div class="flex gap-6">
                 <a href="https://www.eduplier.com/" class="hover:text-white transition-colors">Home</a>
-                <a href="https://www.eduplier.com/privacy-policy" class="text-white font-medium">Privacy Policy</a>
+                <a href="https://www.eduplier.com/privacy-policy.html" class="text-white font-medium">Privacy Policy</a>
             </div>
         </div>
         <div class="border-t border-slate-800 py-4 text-center text-xs text-slate-500">
