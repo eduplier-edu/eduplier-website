@@ -351,7 +351,7 @@
             </div>
             <div class="flex gap-6">
                 <a href="https://www.eduplier.com/" class="hover:text-white transition-colors">Home</a>
-                <a href="https://www.eduplier.com/privacy-policy.html" class="text-white font-medium">Privacy Policy</a>
+                <a href="https://www.eduplier.com/privacy-policy" class="text-white font-medium">Privacy Policy</a>
             </div>
         </div>
         <div class="border-t border-slate-800 py-4 text-center text-xs text-slate-500">
