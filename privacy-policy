@@ -6,14 +6,14 @@
     <title>Privacy Policy - Eduplier</title>
     <meta name="description" content="Eduplier Privacy Policy - Learn how Eduplier Education Services collects, uses, protects, and retains your personal information.">
     <meta name="author" content="Eduplier Education Services">
-    <link rel="canonical" href="https://www.eduplier.com/privacy-policy">
-    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="canonical" href="https://www.eduplier.com/privacy-policy.html">
+    <link rel="icon" type="image/png" href="https://www.eduplier.com/logo.png">
 
     <!-- Open Graph Metadata -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Privacy Policy - Eduplier">
     <meta property="og:description" content="Eduplier Education Services Privacy Policy and Data Protection guidelines.">
-    <meta property="og:url" content="https://www.eduplier.com/privacy-policy">
+    <meta property="og:url" content="https://www.eduplier.com/privacy-policy.html">
     <meta property="og:image" content="https://www.eduplier.com/logo.png">
 
     <!-- Fonts & Icons -->
@@ -98,7 +98,7 @@
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <a href="https://www.eduplier.com/" class="flex items-center gap-3 group">
-                <img src="/logo-icon.png" alt="Eduplier Icon" class="w-10 h-10 object-contain group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://placehold.co/40x40/1e3a8a/ffffff?text=E'">
+                <img src="https://www.eduplier.com/logo-icon.png" alt="Eduplier Icon" class="w-10 h-10 object-contain group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://placehold.co/40x40/1e3a8a/ffffff?text=E'">
                 <div class="flex flex-col">
                     <span class="font-bold text-xl tracking-tight text-slate-900 group-hover:text-brand-600 transition-colors">Eduplier</span>
                     <span class="text-[10px] tracking-widest uppercase text-slate-400 font-semibold">Empowering Education Choices</span>
@@ -189,7 +189,7 @@
                             <li>Pages you visit and how long you spend on the Site</li>
                             <li>Interactions with our content and features</li>
                         </ul>
-                        <p class="text-xs text-slate-500 mt-2">You may manage or revoke these permissions through your device settings at any time. Disabling some permissions may limit functionality.</p>
+                        <p class="text-xs text-slate-500 mt-2">You can limit this collection through your browser or device settings at any time. Doing so may affect some features of the Site.</p>
                     </div>
 
                     <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
@@ -352,13 +352,38 @@
             </div>
             <div class="flex gap-6">
                 <a href="https://www.eduplier.com/" class="hover:text-white transition-colors">Home</a>
-                <a href="https://www.eduplier.com/privacy-policy" class="text-white font-medium">Privacy Policy</a>
+                <a href="https://www.eduplier.com/privacy-policy.html" class="text-white font-medium">Privacy Policy</a>
             </div>
         </div>
         <div class="border-t border-slate-800 py-4 text-center text-xs text-slate-500">
             &copy; 2026 Eduplier Education Services. All rights reserved.
         </div>
     </footer>
+
+    <!-- Highlight the current section in the sidebar while scrolling -->
+    <script>
+        (function () {
+            var links = document.querySelectorAll('.nav-link');
+            var sections = [];
+            links.forEach(function (link) {
+                var target = document.querySelector(link.getAttribute('href'));
+                if (target) sections.push({ link: link, el: target });
+            });
+
+            function onScroll() {
+                var pos = window.scrollY + 140;
+                var current = null;
+                sections.forEach(function (s) {
+                    if (s.el.offsetTop <= pos) current = s;
+                });
+                links.forEach(function (l) { l.classList.remove('active'); });
+                if (current) current.link.classList.add('active');
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+    </script>
 
 </body>
 </html>
