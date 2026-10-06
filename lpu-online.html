@@ -50,13 +50,23 @@ tailwind.config={theme:{extend:{colors:{brand:{50:'#eff6ff',100:'#dbeafe',200:'#
   </div>
 </header>
 
+<!-- University banner -->
+<section class="relative h-56 sm:h-72 lg:h-80 bg-gradient-to-r from-brand-950 to-brand-800 overflow-hidden">
+  <img src="https://www.eduplier.com/lpu-building.jpg" alt="Lovely Professional University campus building" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+  <div class="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/40 to-transparent"></div>
+  <div class="relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-end pb-6 text-white">
+    <p class="text-xs font-semibold uppercase tracking-widest text-brand-200"><i class="fa-solid fa-location-dot mr-1"></i>Phagwara, Punjab</p>
+    <h2 class="text-2xl sm:text-4xl font-extrabold">Lovely Professional University</h2>
+  </div>
+</section>
+
 <!-- Hero -->
 <section class="bg-gradient-to-r from-brand-950 via-brand-900 to-brand-800 text-white">
   <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16 grid lg:grid-cols-2 gap-10 items-center">
     <div>
       <span class="inline-block bg-white/10 border border-white/20 text-brand-100 text-xs font-semibold px-3 py-1 rounded-full mb-4">Admission Open for 2026</span>
       <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">LPU University <span class="text-brand-200">Online Programs</span></h1>
-      <p class="mt-4 text-brand-100 text-lg max-w-xl">Explore LPU Online undergraduate and postgraduate programs with personalised counselling and admission support from Eduplier.</p>
+      <p class="mt-4 text-brand-100 text-lg max-w-xl">Earn a UGC-entitled degree from LPU without leaving home. Eduplier guides you from choosing a program to completing admission.</p>
       <div class="mt-6 grid grid-cols-4 gap-2 max-w-md"><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">MBA</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">MCA</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">M.Com</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">MA</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">BBA</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">BCA</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">B.Com</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">BA</a></div>
       <div class="mt-6 flex flex-wrap gap-3">
         <a href="#enquire" class="bg-white text-brand-800 font-semibold px-6 py-3 rounded-lg shadow hover:bg-brand-50">Get Free Counselling →</a>
@@ -69,10 +79,14 @@ tailwind.config={theme:{extend:{colors:{brand:{50:'#eff6ff',100:'#dbeafe',200:'#
       <h2 class="text-xl font-bold text-slate-900">Request Free Counselling</h2>
       <p class="text-sm text-slate-500 mb-4">Share your details and our counsellor will get in touch.</p>
       <form id="leadForm" class="space-y-3">
-        <input id="name" required placeholder="Full Name *" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
-        <input id="phone" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric" placeholder="Mobile Number (10 digits) *" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
-        <input id="email" type="email" placeholder="Email Address" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
-        <select id="program" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+        <input type="hidden" name="access_key" value="PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" value="New Enquiry - LPU Online Landing Page (Eduplier)">
+        <input type="hidden" name="from_name" value="Eduplier Website">
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
+        <input id="name" name="Name" required placeholder="Full Name *" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+        <input id="phone" name="Mobile" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric" placeholder="Mobile Number (10 digits) *" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+        <input id="email" name="Email" type="email" placeholder="Email Address" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+        <select id="program" name="Program" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-brand-500">
           <option value="">Select Program *</option>
           <optgroup label="Postgraduate (PG)">
             <option>LPU Online MBA</option>
@@ -88,7 +102,8 @@ tailwind.config={theme:{extend:{colors:{brand:{50:'#eff6ff',100:'#dbeafe',200:'#
           </optgroup>
           <option>Other</option>
         </select>
-        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 rounded-lg shadow-sm transition">Submit Enquiry →</button>
+        <button type="submit" id="submitBtn" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 rounded-lg shadow-sm transition">Submit Enquiry →</button>
+        <p id="formMsg" class="hidden text-sm text-center font-medium rounded-lg p-3"></p>
         <p class="text-[11px] text-slate-400 text-center">By submitting, you agree to our <a href="https://www.eduplier.com/privacy-policy.html" class="underline">Privacy Policy</a>.</p>
       </form>
     </div>
@@ -181,11 +196,22 @@ tailwind.config={theme:{extend:{colors:{brand:{50:'#eff6ff',100:'#dbeafe',200:'#
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="max-w-3xl mx-auto px-4 pb-14">
+  <div class="text-center mb-6"><p class="text-xs font-bold uppercase tracking-wider text-brand-600">FAQs</p><h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Common Questions About LPU Online</h2></div>
+  <div class="space-y-3">
+    <details class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm"><summary class="font-semibold text-slate-900 cursor-pointer">Is the LPU Online degree valid?</summary><p class="text-sm text-slate-600 mt-2">LPU Online programs are offered as UGC-entitled degrees. Our counsellors can share the latest approval details with you.</p></details>
+    <details class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm"><summary class="font-semibold text-slate-900 cursor-pointer">Who can apply for LPU Online?</summary><p class="text-sm text-slate-600 mt-2">Fresh graduates, working professionals and career switchers. Eligibility depends on the program, and we will guide you.</p></details>
+    <details class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm"><summary class="font-semibold text-slate-900 cursor-pointer">Can I study while working?</summary><p class="text-sm text-slate-600 mt-2">Yes. Online learning lets you study at your own pace, around your job or other commitments.</p></details>
+    <details class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm"><summary class="font-semibold text-slate-900 cursor-pointer">How does Eduplier help?</summary><p class="text-sm text-slate-600 mt-2">We explain the programs, compare your options and assist with the application. Our counselling is free.</p></details>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="max-w-5xl mx-auto px-4 pb-14">
   <div class="bg-gradient-to-tr from-brand-900 to-brand-700 text-white rounded-2xl p-8 sm:p-10 text-center shadow-md">
-    <h2 class="text-2xl sm:text-3xl font-extrabold">Not sure which program is right for you?</h2>
-    <p class="text-brand-100 mt-2">Speak with an Eduplier academic counsellor before you decide.</p>
+    <h2 class="text-2xl sm:text-3xl font-extrabold">Ready to start your LPU Online journey?</h2>
+    <p class="text-brand-100 mt-2">Talk to an Eduplier counsellor and find the LPU program that fits your goals.</p>
     <div class="mt-5 flex flex-wrap justify-center gap-3">
       <a href="#enquire" class="bg-white text-brand-800 font-semibold px-6 py-3 rounded-lg hover:bg-brand-50">Get Free Counselling →</a>
       <a href="tel:+919315594429" class="border border-white/40 font-semibold px-6 py-3 rounded-lg hover:bg-white/10">+91 93155 94429</a>
@@ -212,13 +238,30 @@ tailwind.config={theme:{extend:{colors:{brand:{50:'#eff6ff',100:'#dbeafe',200:'#
 <a href="https://wa.me/919315594429?text=Hi%2C%20I%27d%20like%20to%20know%20about%20LPU%20Online%20programs." target="_blank" rel="noopener" aria-label="WhatsApp" class="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center text-2xl shadow-lg"><i class="fa-brands fa-whatsapp"></i></a>
 
 <script>
-// Sends the enquiry to WhatsApp (no backend needed). Replace with your form API if you have one.
-document.getElementById('leadForm').addEventListener('submit',function(e){
+// Sends every enquiry to your email via Web3Forms
+document.getElementById('leadForm').addEventListener('submit', async function (e) {
   e.preventDefault();
-  var v=function(id){return document.getElementById(id).value.trim()};
-  var msg='New enquiry (LPU Online page)%0AName: '+encodeURIComponent(v('name'))+'%0AMobile: '+encodeURIComponent(v('phone'))+'%0AEmail: '+encodeURIComponent(v('email')||'-')+'%0AProgram: '+encodeURIComponent(v('program'));
-  window.open('https://wa.me/919315594429?text='+msg,'_blank');
-  this.reset();
+  var form = this, btn = document.getElementById('submitBtn'), msg = document.getElementById('formMsg');
+  var label = btn.textContent;
+  btn.disabled = true; btn.textContent = 'Sending...';
+  msg.className = 'hidden';
+  try {
+    var res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    });
+    var data = await res.json();
+    if (data.success) {
+      form.reset();
+      msg.textContent = 'Thank you! Your enquiry has been received. Our team will contact you soon.';
+      msg.className = 'text-sm text-center font-medium rounded-lg p-3 bg-emerald-50 text-emerald-800 border border-emerald-200';
+    } else { throw new Error(data.message); }
+  } catch (err) {
+    msg.textContent = 'Something went wrong. Please call us on +91 93155 94429.';
+    msg.className = 'text-sm text-center font-medium rounded-lg p-3 bg-red-50 text-red-700 border border-red-200';
+  }
+  btn.disabled = false; btn.textContent = label;
 });
 </script>
 </body>
