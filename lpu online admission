@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LPU Online Degree Programmes | Free Admission Counselling</title>
+<meta name="description" content="UGC-entitled online MBA, MCA, M.Com, MA, BBA, BCA and BA programmes from LPU Online. Get free admission counselling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1712120127580965');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1712120127580965&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+:root{
+  --navy:#0f2a43; --navy2:#16385a; --ink:#17212b; --muted:#5b6876;
+  --orange:#e8590c; --orange-d:#c94a05; --bg:#f4f7fa; --card:#fff; --line:#dbe3ea; --ok:#1d7a4d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;padding-bottom:64px}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+
+/* header */
+header{background:var(--navy);color:#fff}
+header .wrap{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:12px}
+header strong{font-size:15px;font-weight:700}
+.call{background:var(--orange);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:28px 0 36px}
+.hero .wrap{display:grid;gap:26px}
+.hero h1{font-size:clamp(28px,6.2vw,46px);line-height:1.12;font-weight:800;letter-spacing:-.02em}
+.hero p.sub{margin-top:12px;font-size:17px;color:#d3deea;max-width:46ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:13px;font-weight:500;border:1px solid rgba(255,255,255,.3);padding:6px 12px;border-radius:999px}
+.hero ul{list-style:none;margin-top:20px;display:grid;gap:8px;font-size:15px}
+.hero li:before{content:"✓";color:#ffb27a;font-weight:800;margin-right:9px}
+
+/* form */
+.form-card{background:#fff;color:var(--ink);border-radius:14px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.form-card h2{font-size:20px;line-height:1.25}
+.form-card p.note{font-size:13px;color:var(--muted);margin:4px 0 14px}
+label{display:block;font-size:13px;font-weight:700;margin:12px 0 5px}
+input,select{width:100%;font:inherit;font-size:16px;padding:12px;border:1.5px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+input:focus,select:focus{border-color:var(--navy);outline:none}
+.consent{display:flex;gap:9px;align-items:flex-start;font-size:12px;color:var(--muted);margin-top:14px}
+.consent input{width:18px;height:18px;margin-top:2px;flex:none}
+button.submit{width:100%;margin-top:16px;background:var(--orange);color:#fff;font:inherit;font-weight:800;font-size:17px;border:0;border-radius:8px;padding:14px;cursor:pointer}
+button.submit:hover{background:var(--orange-d)}
+button.submit:disabled{opacity:.7;cursor:wait}
+.msg{font-size:14px;margin-top:10px;min-height:20px}
+.msg.err{color:#b3261e}
+
+/* sections */
+section{padding:44px 0}
+h2.title{font-size:clamp(23px,4.6vw,32px);line-height:1.2;letter-spacing:-.015em;margin-bottom:8px}
+p.lead{color:var(--muted);margin-bottom:24px;max-width:60ch}
+.grid{display:grid;gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.card h3{font-size:17px;margin-bottom:6px}
+.card p{font-size:14.5px;color:var(--muted)}
+
+/* programmes */
+.prog{display:flex;flex-direction:column;gap:6px}
+.prog .lvl{font-size:12px;font-weight:700;color:var(--navy2);background:#e4edf6;padding:3px 10px;border-radius:999px;align-self:flex-start}
+.prog h3{font-size:19px;margin-top:4px}
+.prog dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:14px;margin:6px 0 10px}
+.prog dt{color:var(--muted)}
+.prog dd{font-weight:700}
+.prog a.btn{margin-top:auto;text-align:center;text-decoration:none;font-weight:700;font-size:15px;border:2px solid var(--navy);color:var(--navy);padding:10px;border-radius:8px}
+.prog a.btn:hover{background:var(--navy);color:#fff}
+.fine{font-size:12.5px;color:var(--muted);margin-top:14px}
+
+/* steps */
+.steps{counter-reset:s;display:grid;gap:14px}
+.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 18px 18px 64px;position:relative}
+.step:before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:grid;place-items:center}
+.step h3{font-size:16px}
+.step p{font-size:14.5px;color:var(--muted)}
+
+/* cta band */
+.band{background:var(--navy);color:#fff;text-align:center;padding:40px 0}
+.band h2{font-size:clamp(22px,4.5vw,30px);margin-bottom:8px}
+.band p{color:#d3deea;margin-bottom:18px}
+.band a{display:inline-block;margin:4px;text-decoration:none;font-weight:800;padding:13px 24px;border-radius:999px}
+.band .a1{background:var(--orange);color:#fff}
+.band .a2{border:2px solid #fff;color:#fff}
+
+/* disclaimer */
+.disclaimer{background:#e9eef3;padding:24px 0;font-size:12.5px;color:#46525e}
+.disclaimer p+p{margin-top:8px}
+
+/* sticky bar (mobile) */
+.sticky{position:fixed;left:0;right:0;bottom:0;display:flex;gap:8px;padding:8px 10px;background:#fff;border-top:1px solid var(--line);z-index:20}
+.sticky a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:15px;padding:12px;border-radius:8px}
+.sticky .s1{background:var(--navy);color:#fff}
+.sticky .s2{background:var(--orange);color:#fff}
+
+@media(min-width:720px){
+  .grid.g2{grid-template-columns:repeat(2,1fr)}
+  .grid.g4{grid-template-columns:repeat(4,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .step{padding:64px 18px 18px}
+  .step:before{top:18px}
+}
+@media(min-width:900px){
+  .hero{padding:48px 0 56px}
+  .hero .wrap{grid-template-columns:1.15fr .85fr;align-items:center;gap:48px}
+  .grid.g3{grid-template-columns:repeat(3,1fr)}
+  .sticky{display:none}
+  body{padding-bottom:0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <strong>LPU Online Admissions</strong>
+    <a class="call" href="tel:+91XXXXXXXXXX">Call +91 XXXXX XXXXX</a>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Earn a UGC-entitled online degree from LPU</h1>
+      <p class="sub">Study MBA, MCA, M.Com, MA, BBA, BCA or BA from home, at your own pace. Get free counselling to choose the right programme.</p>
+      <div class="chips"><span>MBA</span><span>MCA</span><span>M.Com</span><span>MA</span><span>BBA</span><span>BCA</span><span>BA</span></div>
+      <ul>
+        <li>Live classes plus recorded lectures</li>
+        <li>Exams conducted online</li>
+        <li>Placement assistance</li>
+        <li>Guidance from a certified mentor</li>
+      </ul>
+    </div>
+
+    <div class="form-card" id="apply">
+      <h2>Get free admission counselling</h2>
+      <p class="note">Fill in your details and an admission counsellor will call you.</p>
+      <form id="leadForm" novalidate>
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+        <label for="phone">Mobile number</label>
+        <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="10" placeholder="10-digit number" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <label for="course">Course you are interested in</label>
+        <select id="course" name="course" required>
+          <option value="">Select course</option>
+          <option>MBA</option><option>MCA</option><option>M.Com</option><option>MA</option>
+          <option>M.Sc (Mathematics)</option><option>BBA</option><option>BCA</option><option>BA</option>
+        </select>
+        <label for="state">State</label>
+        <select id="state" name="state" required>
+          <option value="">Select state</option>
+          <option>Andhra Pradesh</option><option>Assam</option><option>Bihar</option><option>Chandigarh</option>
+          <option>Chhattisgarh</option><option>Delhi</option><option>Goa</option><option>Gujarat</option>
+          <option>Haryana</option><option>Himachal Pradesh</option><option>Jammu and Kashmir</option>
+          <option>Jharkhand</option><option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
+          <option>Maharashtra</option><option>Odisha</option><option>Punjab</option><option>Rajasthan</option>
+          <option>Tamil Nadu</option><option>Telangana</option><option>Uttar Pradesh</option><option>Uttarakhand</option>
+          <option>West Bengal</option><option>Other</option>
+        </select>
+        <label class="consent"><input type="checkbox" id="consent" required>
+          <span>I agree to be contacted by phone, SMS, WhatsApp or email about admissions.</span></label>
+        <button class="submit" type="submit" id="btn">Get free counselling</button>
+        <div class="msg" id="msg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2 class="title">Why students choose LPU Online</h2>
+    <p class="lead">Lovely Professional University is a large private university, and its online programmes are designed for working people and students who need flexibility.</p>
+    <div class="grid g2 g4">
+      <div class="card"><h3>Interactive learning platform</h3><p>Learning management system with live lectures, recorded content and a mobile app for schedules and courseware.</p></div>
+      <div class="card"><h3>Industry-oriented curriculum</h3><p>Programmes designed with input from industry experts and taught by experienced faculty.</p></div>
+      <div class="card"><h3>Personal mentorship</h3><p>Academic advisors guide you through the programme from enrolment to exams.</p></div>
+      <div class="card"><h3>Placement assistance</h3><p>Career support to help you prepare for jobs and promotions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff">
+  <div class="wrap">
+    <h2 class="title">Programmes and fees</h2>
+    <p class="lead">Pick a programme to talk to a counsellor about eligibility and admission.</p>
+    <div class="grid g2 g3">
+      <article class="card prog"><span class="lvl">Master's</span><h3>Online MBA</h3>
+        <dl><dt>Eligibility</dt><dd>Bachelor's degree</dd><dt>Duration</dt><dd>2 years</dd><dt>Fee</dt><dd>₹36,400 / semester</dd></dl>
+        <a class="btn" href="#apply" data-course="MBA">Enquire now</a></article>
+      <article class="card prog"><span class="lvl">Master's</span><h3>Online MCA</h3>
+        <dl><dt>Eligibility</dt><dd>Bachelor's degree</dd><dt>Duration</dt><dd>2 years</dd><dt>Fee</dt><dd>₹28,400 / semester</dd></dl>
+        <a class="btn" href="#apply" data-course="MCA">Enquire now</a></article>
+      <article class="card prog"><span class="lvl">Master's</span><h3>Online M.Com</h3>
+        <dl><dt>Eligibility</dt><dd>Bachelor's degree</dd><dt>Duration</dt><dd>2 years</dd><dt>Fee</dt><dd>₹20,400 / semester</dd></dl>
+        <a class="btn" href="#apply" data-course="M.Com">Enquire now</a></article>
+      <article class="card prog"><span class="lvl">Master's</span><h3>Online MA</h3>
+        <dl><dt>Eligibility</dt><dd>Bachelor's degree</dd><dt>Duration</dt><dd>2 years</dd><dt>Fee</dt><dd>₹16,400 / semester</dd></dl>
+        <a class="btn" href="#apply" data-course="MA">Enquire now</a></article>
+      <article class="card prog"><span class="lvl">Bachelor's</span><h3>Online BBA</h3>
+        <dl><dt>Eligibility</dt><dd>10+2</dd><dt>Duration</dt><dd>3 years</dd><dt>Fee</dt><dd>₹24,400 / semester</dd></dl>
+        <a class="btn" href="#apply" data-course="BBA">Enquire now</a></article>
+      <article class="card prog"><span class="lvl">Bachelor's</span><h3>Online BCA</h3>
+        <dl><dt>Eligibility</dt><dd>10+2</dd><dt>Duration</dt><dd>3 years</dd><dt>Fee</dt><dd>₹24,400 / semester</dd></dl>
+        <a class="btn" href="#apply" data-course="BCA">Enquire now</a></article>
+      <article class="card prog"><span class="lvl">Bachelor's</span><h3>Online BA</h3>
+        <dl><dt>Eligibility</dt><dd>10+2</dd><dt>Duration</dt><dd>3 years</dd><dt>Fee</dt><dd>₹16,400 / semester</dd></dl>
+        <a class="btn" href="#apply" data-course="BA">Enquire now</a></article>
+      <article class="card prog"><span class="lvl">Master's</span><h3>Online M.Sc (Mathematics)</h3>
+        <dl><dt>Eligibility</dt><dd>10+2</dd><dt>Duration</dt><dd>3 years</dd><dt>Fee</dt><dd>₹16,400 / semester</dd></dl>
+        <a class="btn" href="#apply" data-course="M.Sc (Mathematics)">Enquire now</a></article>
+    </div>
+    <p class="fine">Fees are per semester, indicative, and may change. A one-time registration fee applies. Confirm current fees with your counsellor and the university.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="title">More than just a degree</h2>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card"><h3>Workshops and seminars</h3><p>Sessions that give you an industry-oriented view of your field.</p></div>
+      <div class="card"><h3>Online certification courses</h3><p>Add industry-designed certificates to your resume.</p></div>
+      <div class="card"><h3>Research resources</h3><p>Access to online scholarly articles, case studies and journals.</p></div>
+      <div class="card"><h3>Online exams</h3><p>Take your exams through the university's LMS portal.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff">
+  <div class="wrap">
+    <h2 class="title">How admission works</h2>
+    <p class="lead" style="margin-bottom:18px">Three steps from registration to your first class.</p>
+    <div class="steps">
+      <div class="step"><h3>Register</h3><p>Sign up on the university's official website and pay the registration fee.</p></div>
+      <div class="step"><h3>Apply online</h3><p>Fill in the application form, upload documents and pay the programme fee.</p></div>
+      <div class="step"><h3>Start learning</h3><p>Get enrolled and receive your LMS login by email.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <h2>Not sure which course is right for you?</h2>
+    <p>Talk to an admission counsellor. It's free.</p>
+    <a class="a1" href="#apply">Get free counselling</a>
+    <a class="a2" href="tel:+91XXXXXXXXXX">Call +91 XXXXX XXXXX</a>
+  </div>
+</div>
+</main>
+
+<footer class="disclaimer">
+  <div class="wrap">
+    <p><strong>Disclaimer:</strong> We act as a marketing service partner only. Lovely Professional University holds full rights to request change or removal of any content. Logos and images are used for illustrative purposes and do not directly represent the respective colleges or universities. Programme details, eligibility, fees and dates are subject to change by the university; please verify them on the university's official website before applying.</p>
+    <p>By submitting the form you agree to be contacted by phone, SMS, WhatsApp or email regarding admissions. Your details are used only to respond to your enquiry.</p>
+    <p>&copy; 2026 All Rights Reserved.</p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="s1" href="tel:+91XXXXXXXXXX">Call now</a>
+  <a class="s2" href="#apply">Apply now</a>
+</div>
+
+<script>
+/* ====== SETTINGS ====== */
+var FORM_ENDPOINT = "";            // e.g. your Formspree URL: https://formspree.io/f/xxxxxxx
+var THANK_YOU_URL = "thank-you.html"; // page that opens after a successful submit
+/* ====================== */
+
+document.querySelectorAll('[data-course]').forEach(function(a){
+  a.addEventListener('click',function(){ document.getElementById('course').value=a.getAttribute('data-course'); });
+});
+
+var form=document.getElementById('leadForm'), msg=document.getElementById('msg'), btn=document.getElementById('btn');
+function say(t,err){ msg.textContent=t; msg.className='msg'+(err?' err':''); }
+
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  var d={name:name.value.trim(),phone:phone.value.trim(),email:email.value.trim(),course:course.value,state:state.value};
+  if(d.name.length<2) return say('Please enter your full name.',1);
+  if(!/^[6-9]\d{9}$/.test(d.phone)) return say('Enter a valid 10-digit mobile number.',1);
+  if(!/^\S+@\S+\.\S+$/.test(d.email)) return say('Enter a valid email address.',1);
+  if(!d.course) return say('Please select a course.',1);
+  if(!d.state) return say('Please select your state.',1);
+  if(!consent.checked) return say('Please tick the consent box to continue.',1);
+
+  btn.disabled=true; say('Submitting...');
+  var params=new URLSearchParams(location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content','fbclid'].forEach(function(k){ d[k]=params.get(k)||''; });
+
+  function done(){
+    try{ fbq('track','Lead'); }catch(x){}
+    setTimeout(function(){ location.href=THANK_YOU_URL; },400);
+  }
+  if(!FORM_ENDPOINT){ done(); return; }
+  fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+    .then(function(r){ if(r.ok) done(); else throw 0; })
+    .catch(function(){ btn.disabled=false; say('Something went wrong. Please try again or call us.',1); });
+});
+</script>
+</body>
+</html>
