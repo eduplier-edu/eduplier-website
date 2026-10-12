@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Eduplier - Online Degree Admission Guidance & University Counselling</title>
+<meta name="description" content="Guides, comparisons and admission tips on Online MBA, MCA, BBA, BCA, M.Com, BA & MA programs from Eduplier Education Services.">
+<meta name="author" content="Eduplier Education Services">
+<meta name="keywords" content="Eduplier, online education, online degree, online MBA, online MCA, online BBA, online BCA, distance education, university admission">
+<meta property="og:title" content="Blog | Eduplier">
+<meta property="og:description" content="Compare online degree programs and universities with expert academic counselling from Eduplier.">
+<meta property="og:image" content="https://www.eduplier.com/logo.png">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://www.eduplier.com/blog.html">
+<link rel="icon" href="logo-icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+/* ===== EDIT BRAND COLORS HERE (match your index.html) ===== */
+:root{
+  --primary:#1e3a8a;      /* main brand color: header text, hero, footer */
+  --primary-dark:#142a66; /* dark shade: top bar, footer */
+  --accent:#f59e0b;       /* buttons, tags, highlights */
+  --accent-dark:#d97706;  /* button hover */
+  --soft:#fef3c7;         /* light tint behind tags */
+  --bg:#f5f7fb; --card:#ffffff; --ink:#1b2437; --mute:#5f6b85; --line:#e3e8f2;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1180px;margin:auto;padding:0 20px}
+
+/* top bar */
+.topbar{background:var(--primary-dark);color:#dbe3f7;font-size:.8rem}
+.topbar .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.topbar a:hover{color:#fff}
+
+/* header */
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.bar{display:flex;align-items:center;gap:20px;padding:10px 0}
+.brand{display:flex;align-items:center;gap:10px;color:var(--primary);font-weight:700;font-size:1.25rem;line-height:1.1}
+.brand img{height:40px;width:auto}
+.brand small{display:block;font-size:.66rem;font-weight:500;color:var(--mute)}
+nav{margin-left:auto;display:flex;align-items:center;gap:22px;font-size:.9rem;font-weight:500;color:var(--mute)}
+nav a:hover,nav a.on{color:var(--primary)}
+.btn{display:inline-block;background:var(--accent);color:#fff;font:inherit;font-weight:600;padding:11px 22px;border:0;border-radius:999px;cursor:pointer}
+.btn:hover{background:var(--accent-dark)}
+.btn.line{background:transparent;border:2px solid #fff}
+.btn.line:hover{background:#fff;color:var(--primary)}
+nav .btn{color:#fff;padding:9px 18px}
+.menu{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;font-size:1.3rem;padding:4px 12px;cursor:pointer;color:var(--primary)}
+@media(max-width:900px){
+  .menu{display:block}
+  nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;align-items:flex-start;padding:16px 20px;border-bottom:1px solid var(--line)}
+  nav.open{display:flex}
+}
+
+/* hero */
+.hero{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;text-align:center;padding:56px 20px 76px}
+.hero .crumb{font-size:.85rem;opacity:.75;margin-bottom:12px}
+.hero h1{margin:0 0 10px;font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.2}
+.hero p{margin:0 auto;max-width:60ch;opacity:.9}
+
+/* filters */
+main{margin-top:-34px}
+.filters{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;box-shadow:0 8px 28px rgba(20,42,102,.08)}
+.filters button{font:inherit;font-size:.84rem;font-weight:500;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--mute);cursor:pointer}
+.filters button.on{background:var(--primary);border-color:var(--primary);color:#fff}
+.filters input{margin-left:auto;font:inherit;font-size:.9rem;padding:8px 16px;border:1px solid var(--line);border-radius:999px;min-width:230px}
+@media(max-width:640px){.filters input{margin-left:0;width:100%}}
+
+/* posts */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:28px 0 0}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}}
+.post{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.post:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,42,102,.12)}
+.post.feat{grid-column:1/-1;flex-direction:row}
+@media(max-width:760px){.post.feat{flex-direction:column}}
+.thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,var(--primary),#3b5bb8)}
+.thumb.t1{background:linear-gradient(135deg,var(--accent-dark),var(--accent))}
+.thumb.t2{background:linear-gradient(135deg,var(--primary-dark),var(--primary))}
+.post.feat .thumb{flex:1.1;aspect-ratio:auto;min-height:260px;font-size:4.5rem}
+.body{padding:20px;display:flex;flex-direction:column;gap:9px;flex:1}
+.post.feat .body{flex:1;justify-content:center;padding:34px}
+.tag{align-self:flex-start;background:var(--soft);color:var(--accent-dark);font-size:.75rem;font-weight:600;padding:3px 12px;border-radius:999px}
+.post h2{margin:0;font-size:1.08rem;line-height:1.35}
+.post.feat h2{font-size:1.6rem}
+.post h2 a:hover{color:var(--primary)}
+.meta{font-size:.8rem;color:var(--mute)}
+.ex{margin:0;color:var(--mute);font-size:.9rem}
+.more{margin-top:auto;font-weight:600;color:var(--primary);font-size:.9rem}
+.more:hover{color:var(--accent-dark)}
+.empty{grid-column:1/-1;text-align:center;color:var(--mute);padding:40px 0}
+
+/* sections */
+section.block{padding:56px 0 0}
+.eyebrow{color:var(--accent-dark);font-weight:600;font-size:.85rem}
+.block h2.title{margin:4px 0 8px;font-size:1.7rem;color:var(--primary)}
+.block p.sub{margin:0 0 24px;color:var(--mute);max-width:62ch}
+.progs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:980px){.progs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.progs{grid-template-columns:1fr}}
+.prog{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.prog:hover{border-color:var(--accent)}
+.prog b{display:block;color:var(--primary)}
+.prog span{font-size:.85rem;color:var(--mute)}
+.prog em{display:block;margin-top:8px;font-style:normal;font-weight:600;font-size:.85rem;color:var(--accent-dark)}
+.unis{display:flex;flex-wrap:wrap;gap:10px}
+.unis a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:.88rem;font-weight:500}
+.unis a:hover{border-color:var(--primary);color:var(--primary)}
+
+/* CTA + form */
+.cta{margin-top:56px;background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;border-radius:22px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media(max-width:820px){.cta{grid-template-columns:1fr;padding:28px}}
+.cta h2{margin:0 0 8px;font-size:1.6rem}
+.cta p{margin:0 0 14px;opacity:.9}
+.cta ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.92rem}
+form{background:#fff;color:var(--ink);border-radius:16px;padding:22px;display:grid;gap:10px}
+form h3{margin:0;color:var(--primary)}
+form small{color:var(--mute)}
+form input,form select,form textarea{font:inherit;font-size:.9rem;padding:10px 12px;border:1px solid var(--line);border-radius:10px;width:100%}
+form .btn{width:100%}
+
+/* footer */
+footer{background:var(--primary-dark);color:#c4cdea;margin-top:60px}
+.f{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;padding:48px 20px 26px;max-width:1180px;margin:auto}
+@media(max-width:760px){.f{grid-template-columns:1fr 1fr}}
+footer img.fl{height:44px;margin-bottom:12px}
+footer h3{color:#fff;font-size:1rem;margin:0 0 12px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.9rem}
+footer a:hover{color:#fff;text-decoration:underline}
+.social{display:flex;gap:10px;margin-top:12px}
+.social a{border:1px solid #3a4c85;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.85rem}
+.copy{border-top:1px solid #2b3d78;text-align:center;padding:16px 20px;font-size:.8rem}
+.wa{position:fixed;right:18px;bottom:18px;background:#25d366;color:#fff;font-weight:600;padding:12px 18px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:60}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span>🎓 Empowering Education Choices • Expert Academic Guidance</span>
+  <span>📧 <a href="mailto:info@eduplier.com">info@eduplier.com</a> • <a href="tel:+919891967284">📞 +91 98919 67284</a></span>
+</div></div>
+
+<header><div class="wrap bar">
+  <a class="brand" href="index.html"><img src="logo-icon.png" alt="Eduplier icon"><span>Eduplier<small>Empowering Education Choices</small></span></a>
+  <button class="menu" id="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav id="nav" aria-label="Main">
+    <a href="index.html#home">Home</a>
+    <a href="index.html#programs">Programs</a>
+    <a href="index.html#universities">Universities</a>
+    <a href="index.html#why-us">Why Eduplier</a>
+    <a href="index.html#process">How It Works</a>
+    <a class="on" href="blog.html">Blog</a>
+    <a href="index.html#contact">Contact</a>
+    <a class="btn" href="index.html#contact">Free Counselling</a>
+  </nav>
+</div></header>
+
+<section class="hero">
+  <div class="crumb">Home › Blog</div>
+  <h1>The Eduplier Blog</h1>
+  <p>Clear guidance on online degrees, universities, fees, eligibility and admissions, so you can make the right education choice.</p>
+</section>
+
+<main class="wrap">
+  <div class="filters" id="filters" role="group" aria-label="Filter articles"></div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+
+  <section class="block">
+    <div class="eyebrow">Popular Programs</div>
+    <h2 class="title">Find a Program That Fits Your Goals</h2>
+    <p class="sub">Explore popular online degree programs and discover the right specialization for your career.</p>
+    <div class="progs">
+      <a class="prog" href="online-mba.html"><b>💼 Online MBA</b><span>Management &amp; Business</span><em>Learn More →</em></a>
+      <a class="prog" href="online-mca.html"><b>💻 Online MCA</b><span>Computer Applications</span><em>Learn More →</em></a>
+      <a class="prog" href="online-bba.html"><b>📊 Online BBA</b><span>Business Administration</span><em>Learn More →</em></a>
+      <a class="prog" href="online-bca.html"><b>🖥️ Online BCA</b><span>Computer Applications</span><em>Learn More →</em></a>
+      <a class="prog" href="online-mcom.html"><b>📈 Online M.Com</b><span>Commerce &amp; Finance</span><em>Learn More →</em></a>
+      <a class="prog" href="online-ba.html"><b>📚 Online BA</b><span>Flexible undergraduate education</span><em>Learn More →</em></a>
+      <a class="prog" href="online-ma.html"><b>🎓 Online MA</b><span>Postgraduate programs</span><em>Learn More →</em></a>
+      <a class="prog" href="index.html#contact"><b>🙋 Other Programs</b><span>Tell us your career goal</span><em>Ask an Expert →</em></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="eyebrow">University Options</div>
+    <h2 class="title">Choose From Leading Universities</h2>
+    <p class="sub">Compare programs, specializations, fees and learning options with guidance from our academic counsellors.</p>
+    <div class="unis">
+      <a href="amity-online.html">Amity University Online</a>
+      <a href="all-universities.html">Manipal University Jaipur Online</a>
+      <a href="lpu-online.html">LPU Online</a>
+      <a href="all-universities.html">Chandigarh University Online</a>
+      <a href="all-universities.html">Sikkim Manipal University Online</a>
+      <a href="all-universities.html">NMIMS CDOE</a>
+      <a href="all-universities.html">Shoolini University</a>
+      <a href="all-universities.html">GLA University</a>
+      <a href="all-universities.html"><b>View all 30+ Universities →</b></a>
+      <a href="compare-universities.html"><b>Compare Now →</b></a>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div>
+      <h2>Not sure which online degree is right for you?</h2>
+      <p>Speak with an Eduplier academic counsellor and understand your options before making a decision.</p>
+      <ul>
+        <li>✉ info@eduplier.com</li>
+        <li>📞 +91 98919 67284</li>
+        <li>🎓 Get guidance based on your goals</li>
+        <li>⏱ Submit your enquiry and our team will connect</li>
+      </ul>
+    </div>
+    <form id="enq">
+      <h3>Request Free Counselling</h3>
+      <small>Fill in your details and tell us what you're looking for.</small>
+      <input name="name" placeholder="Full Name *" required>
+      <input name="mobile" type="tel" placeholder="Mobile Number *" required>
+      <input name="email" type="email" placeholder="Email Address">
+      <select name="program" aria-label="Program interested in">
+        <option value="">Select a program</option><option>Online MBA</option><option>Online MCA</option><option>Online BBA</option><option>Online BCA</option><option>Online M.Com</option><option>Online BA</option><option>Online MA</option><option>Other</option>
+      </select>
+      <textarea name="msg" rows="3" placeholder="Message"></textarea>
+      <button class="btn" type="submit">Submit Enquiry →</button>
+      <small id="ok" hidden>Thank you! Your enquiry has been received. Our team will contact you soon.</small>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="f">
+    <div>
+      <a href="index.html"><img class="fl" src="logo-footer.png" alt="Eduplier - Empowering Education Choices"></a>
+      <p>Eduplier Education Services helps students make informed education choices through personalised academic counselling and admission guidance.</p>
+      <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=61588271393079" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/eduplier" aria-label="Instagram">ig</a>
+        <a href="https://www.linkedin.com/company/eduplier-education-services/" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <div><h3>Quick Links</h3><ul>
+      <li><a href="index.html#home">Home</a></li><li><a href="index.html#programs">Programs</a></li><li><a href="index.html#universities">Universities</a></li><li><a href="index.html#why-us">Why Eduplier</a></li><li><a href="blog.html">Blog</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div>
+    <div><h3>Programs</h3><ul>
+      <li><a href="online-mba.html">Online MBA</a></li><li><a href="online-mca.html">Online MCA</a></li><li><a href="online-bba.html">Online BBA</a></li><li><a href="online-bca.html">Online BCA</a></li><li><a href="online-mcom.html">Online M.Com</a></li><li><a href="online-ba.html">Online BA</a></li><li><a href="online-ma.html">Online MA</a></li></ul></div>
+    <div><h3>Contact</h3><ul>
+      <li><a href="mailto:info@eduplier.com">info@eduplier.com</a></li><li><a href="tel:+919891967284">+91 98919 67284</a></li><li><a href="index.html#contact">Free Counselling</a></li><li><a href="index.html#contact">Admission Assistance</a></li></ul></div>
+  </div>
+  <div class="copy">© 2026 Eduplier Education Services. All Rights Reserved. Empowering Education Choices</div>
+</footer>
+
+<a class="wa" href="https://wa.me/919891967284?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20online%20degree%20programs." aria-label="Chat on WhatsApp">💬 WhatsApp</a>
+
+<script>
+/* ===== YOUR BLOG POSTS: edit this list. u = link to the article page ===== */
+const posts=[
+{cat:"Online MBA",icon:"💼",t:"Online MBA in India: Fees, Eligibility and Specializations Explained",d:"October 8, 2026",min:7,u:"online-mba.html",x:"Compare online MBA programs: who can apply, what it costs and which specialization fits your career."},
+{cat:"Online MCA",icon:"💻",t:"Online MCA vs Regular MCA: Is an Online Degree Valued by Employers?",d:"September 28, 2026",min:6,u:"online-mca.html",x:"UGC-DEB recognition, learning format and career outcomes, explained simply."},
+{cat:"University Guides",icon:"🏛️",t:"How to Compare Online Universities Before You Apply",d:"September 17, 2026",min:5,u:"compare-universities.html",x:"A checklist covering approvals, fees, duration, specializations and learning options."},
+{cat:"Admissions",icon:"📝",t:"Online Degree Admission Process: A Step-by-Step Guide",d:"September 5, 2026",min:5,u:"index.html#process",x:"From your first enquiry and counselling to comparing options and starting your application."},
+{cat:"Online BBA",icon:"📊",t:"Online BBA After 12th: Who Should Choose It?",d:"August 24, 2026",min:4,u:"online-bba.html",x:"Course structure, subjects and the business career paths a flexible BBA opens up."},
+{cat:"Online BCA",icon:"🖥️",t:"Online BCA: Skills You Build and Jobs You Can Target",d:"August 12, 2026",min:5,u:"online-bca.html",x:"A strong foundation in computer applications and technology roles."},
+{cat:"Career Advice",icon:"🚀",t:"Can You Work Full-Time and Study an Online Degree?",d:"July 30, 2026",min:4,u:"index.html#contact",x:"Practical time-management tips for working professionals."},
+{cat:"Online M.Com",icon:"📈",t:"Online M.Com: Is It Right for Finance and Commerce Careers?",d:"July 18, 2026",min:5,u:"online-mcom.html",x:"What the program covers and how it supports commerce and finance roles."},
+{cat:"Online MA",icon:"🎓",t:"Online MA: Advance Your Academic and Professional Knowledge",d:"July 6, 2026",min:4,u:"online-ma.html",x:"Postgraduate options for students who want to deepen their expertise."}
+];
+
+const cats=["All",...new Set(posts.map(p=>p.cat))];
+let cur="All",q="";
+const F=document.getElementById("filters"),G=document.getElementById("grid");
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function draw(){
+  F.innerHTML=cats.map(c=>`<button class="${c==cur?"on":""}" data-c="${esc(c)}">${esc(c)}</button>`).join("")+`<input id="s" type="search" placeholder="Search articles" aria-label="Search articles" value="${esc(q)}">`;
+  const list=posts.filter(p=>(cur=="All"||p.cat==cur)&&(p.t+p.x).toLowerCase().includes(q.toLowerCase()));
+  G.innerHTML=list.length?list.map((p,i)=>`<article class="post${i==0&&cur=="All"&&!q?" feat":""}"><div class="thumb t${posts.indexOf(p)%3}" aria-hidden="true">${p.icon}</div><div class="body"><span class="tag">${esc(p.cat)}</span><h2><a href="${p.u}">${esc(p.t)}</a></h2><div class="meta">${p.d} • ${p.min} min read</div><p class="ex">${esc(p.x)}</p><a class="more" href="${p.u}">Read more →</a></div></article>`).join(""):`<p class="empty">No articles match your search. Try another keyword or category.</p>`;
+  if(q){const s=document.getElementById("s");s.focus();s.setSelectionRange(q.length,q.length)}
+}
+F.addEventListener("click",e=>{const b=e.target.closest("button");if(b){cur=b.dataset.c;draw()}});
+F.addEventListener("input",e=>{if(e.target.id=="s"){q=e.target.value;draw()}});
+draw();
+
+/* mobile menu */
+const m=document.getElementById("menu"),n=document.getElementById("nav");
+m.addEventListener("click",()=>{const o=n.classList.toggle("open");m.setAttribute("aria-expanded",o)});
+
+/* enquiry form: opens WhatsApp with the details (no backend needed) */
+document.getElementById("enq").addEventListener("submit",e=>{
+  e.preventDefault();
+  const d=new FormData(e.target);
+  const t=`Hi Eduplier, I'd like free counselling.%0AName: ${encodeURIComponent(d.get("name"))}%0AMobile: ${encodeURIComponent(d.get("mobile"))}%0AEmail: ${encodeURIComponent(d.get("email")||"-")}%0AProgram: ${encodeURIComponent(d.get("program")||"-")}%0AMessage: ${encodeURIComponent(d.get("msg")||"-")}`;
+  document.getElementById("ok").hidden=false;
+  window.open("https://wa.me/919891967284?text="+t,"_blank");
+  e.target.reset();
+});
+</script>
+</body>
+</html>
