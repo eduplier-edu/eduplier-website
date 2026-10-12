@@ -359,9 +359,10 @@
   <input type="hidden" name="access_key" value="497360d2-a86c-4712-983d-e6c84be948dc">
   <input type="hidden" name="subject" value="New Eduplier Enquiry">
 
-  <input type="text" name="name" placeholder="Full Name" required>
-  <input type="tel" name="mobile" placeholder="Mobile Number" required>
-  <input type="email" name="email" placeholder="Email Address">
+  <div class="form-group"><label>Full Name *</label><input type="text" id="name" placeholder="Enter your name" required></div>
+                            <div class="form-group"><label>Mobile Number *</label><input type="tel" id="phone" placeholder="Enter mobile number" required></div>
+                            <div class="form-group"><label>Email Address</label><input type="email" id="email" placeholder="Enter your email"></div>
+
         <div class="form-group">                         
   <select name="program">
     <option value="">Select a program</option>
