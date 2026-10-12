@@ -354,13 +354,15 @@
                 <div class="form-card">
                     <h3>Request Free Counselling</h3>
                     <p>Fill in your details and tell us what you're looking for.</p>
-                    <form id="enquiryForm">
+                    <form id="leadForm">
+                        <div class="form-grid">
   <input type="hidden" name="access_key" value="497360d2-a86c-4712-983d-e6c84be948dc">
   <input type="hidden" name="subject" value="New Eduplier Enquiry">
 
   <input type="text" name="name" placeholder="Full Name" required>
   <input type="tel" name="mobile" placeholder="Mobile Number" required>
   <input type="email" name="email" placeholder="Email Address">
+        <div class="form-group">                         
   <select name="program">
     <option value="">Select a program</option>
     <option>Online MBA</option>
@@ -374,9 +376,10 @@
   </select>
   <textarea name="message" placeholder="Message"></textarea>
 
-  <button type="submit">Submit Enquiry →</button>
-  <p id="formMsg" style="display:none">Thank you! Your enquiry has been received. Our team will contact you soon.</p>
-</form>
+  <button type="submit" class="btn btn-primary form-submit">Submit Enquiry &rarr;</button>
+                        <div class="form-message" id="formMessage">Thank you! Your enquiry has been received. Our team will contact you soon.</div>
+                 
+                    </form>
                 </div>
             </div>
         </section>
