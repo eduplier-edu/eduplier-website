@@ -577,5 +577,103 @@ document.getElementById("leadForm").addEventListener("submit",async function(e){
 })();
 </script>
 <!-- ===== END EDUPLIER CHATBOT ===== -->
+  <!--
+=====================================================================
+ EDUPLIER: send website enquiry forms to Google Sheets
+ 1. Replace PASTE_YOUR_WEB_APP_URL_HERE with the URL you get after
+    deploying google-apps-script.gs as a Web app.
+ 2. Paste this block just before </body> on index.html (and on any
+    other page that has an enquiry form).
+ 3. Remove any OLD script that handled this form's submit, otherwise
+    the form will be processed twice.
+=====================================================================
+-->
+<script>
+(function () {
+  var ENDPOINT = 'https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnQciIKuhaXJfwFrLIHvC5-SCIB8aHG8JRvjc49JAEmuEsOKBRhcYUUWRzujfefMzRyDokeCDOoD9p5DBmhY306-nhwifLiRCfmoOUtG1xJGfQK0QWjQkFNw2raQmLfYF-cQ8bakTag2BDnhCo6euZhDi6B9fwB1jrUS6zqvmpi0Pj_V5SEclfHrRH6sGeIMZy4K9_BoycCPVTvma0fH3GMkVn31g8GhOzlWR8spKhnW3KaZVhMkpYArgsT1xZwY4y-hUdySRpdWpDfrfGWx2fh8EktShw&lib=MNaPth74BQDheUrcJ1EIq5KT4gvPgbv4k;
+
+  var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'];
+
+  // Remember ad parameters for the whole visit
+  try {
+    var q = new URLSearchParams(location.search);
+    UTM_KEYS.forEach(function (k) { if (q.get(k)) sessionStorage.setItem(k, q.get(k)); });
+  } catch (e) {}
+  function saved(k) { try { return sessionStorage.getItem(k) || ''; } catch (e) { return ''; } }
+
+  // Works with any field names: identifies fields by type / name / placeholder
+  function collect(form) {
+    var d = { name: '', mobile: '', email: '', program: '', message: '' };
+    var firstText = null;
+    Array.prototype.forEach.call(form.elements, function (el) {
+      if (!el.name && !el.id && !el.placeholder) return;
+      if (/^(submit|button|reset|hidden|checkbox|radio|file)$/.test(el.type)) return;
+      var hint = ((el.name || '') + ' ' + (el.id || '') + ' ' + (el.placeholder || '')).toLowerCase();
+      var val = (el.value || '').trim();
+      if (el.type === 'tel' || /mobile|phone|contact/.test(hint)) d.mobile = d.mobile || val;
+      else if (el.type === 'email' || /e-?mail/.test(hint)) d.email = d.email || val;
+      else if (el.tagName === 'SELECT' || /program|course/.test(hint)) d.program = d.program || val;
+      else if (el.tagName === 'TEXTAREA' || /message|query|comment/.test(hint)) d.message = d.message || val;
+      else if (!firstText) firstText = el;
+    });
+    if (firstText) d.name = (firstText.value || '').trim();
+    return d;
+  }
+
+  function notice(form, text, ok) {
+    var box = form.parentNode.querySelector('.sheet-notice');
+    if (!box) {
+      box = document.createElement('div');
+      box.className = 'sheet-notice';
+      box.setAttribute('role', 'status');
+      box.style.cssText = 'margin-top:14px;padding:12px 16px;border-radius:10px;font-weight:600;';
+      form.insertAdjacentElement('afterend', box);
+    }
+    box.style.background = ok ? '#DDF3EA' : '#FDE4DC';
+    box.style.color = ok ? '#0B5A3C' : '#B3361A';
+    box.textContent = text;
+  }
+
+  document.querySelectorAll('form').forEach(function (form) {
+    // Hidden spam-trap field (bots fill it, people never see it)
+    var trap = document.createElement('input');
+    trap.type = 'text'; trap.name = 'website'; trap.tabIndex = -1; trap.autocomplete = 'off';
+    trap.setAttribute('aria-hidden', 'true');
+    trap.style.cssText = 'position:absolute;left:-9999px;opacity:0;height:0;width:0;';
+    form.appendChild(trap);
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('[type="submit"], button:not([type])');
+      var oldLabel = btn ? btn.textContent : '';
+
+      var d = collect(form);
+      if (!d.name) { notice(form, 'Please enter your name.', false); return; }
+      if (d.mobile.replace(/\D/g, '').length < 10) { notice(form, 'Please enter a valid 10-digit mobile number.', false); return; }
+
+      var body = new URLSearchParams();
+      Object.keys(d).forEach(function (k) { body.append(k, d[k]); });
+      body.append('website', trap.value);
+      body.append('page', location.href.split('?')[0]);
+      body.append('form', form.id || form.getAttribute('name') || 'enquiry');
+      UTM_KEYS.forEach(function (k) { body.append(k, saved(k)); });
+
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+
+      fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: body })
+        .then(function () {
+          notice(form, 'Thank you! Your enquiry has been received. Our team will contact you soon.', true);
+          form.reset();
+        })
+        .catch(function () {
+          notice(form, 'Something went wrong. Please call +91 93155 94429 or message us on WhatsApp.', false);
+        })
+        .finally(function () {
+          if (btn) { btn.disabled = false; btn.textContent = oldLabel; }
+        });
+    });
+  });
+})();
+</script>
 </body>
 </html>
