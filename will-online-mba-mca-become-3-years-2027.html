@@ -547,39 +547,63 @@
 
 <div class="sticky-bar">🎓 Free one-to-one counselling for online degrees <a href="https://www.eduplier.com/index.html#contact">Enquire Now</a></div>
 
-<a class="wa-float" href="https://wa.me/919315594429?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20online%20degree%20programs." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.12.55 4.19 1.6 6.01L4 29l8.1-1.57a12 12 0 0 0 3.94.66C22.68 28.09 28 22.69 28 16.05 28 9.4 22.68 3 16.04 3Zm0 22.05c-1.2 0-2.38-.32-3.4-.93l-.24-.15-4.8.93.97-4.67-.16-.25a9.9 9.9 0 0 1-1.52-5.3c0-5.5 4.47-9.97 9.98-9.97 5.5 0 9.96 4.47 9.96 9.97 0 5.5-4.47 10.37-9.96 10.37Zm5.47-7.47c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
-</a>
+  <!-- ===== EDUPLIER CHATBOT: paste this whole block just before </body> on every page ===== -->
+<style>
+#edu-btn{position:fixed;left:18px;bottom:78px;z-index:99999;width:58px;height:58px;border-radius:50%;border:0;background:#1d4ed8;color:#fff;font-size:26px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+#edu-box{position:fixed;left:18px;bottom:148px;z-index:99999;width:340px;max-width:calc(100vw - 36px);height:470px;max-height:calc(100vh - 170px);display:none;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 34px rgba(0,0,0,.3);font:14px/1.45 system-ui,Arial,sans-serif;color:#1f2937}
+#edu-box.open{display:flex}
+#edu-head{background:#1d4ed8;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#edu-head b{display:block;font-size:15px}#edu-head small{opacity:.85}
+#edu-head button{background:none;border:0;color:#fff;font-size:20px;cursor:pointer}
+#edu-msgs{flex:1;overflow-y:auto;padding:12px;background:#f3f4f6}
+.em{max-width:86%;padding:8px 11px;margin:6px 0;border-radius:12px;word-wrap:break-word}
+.em.bot{background:#fff;border:1px solid #e5e7eb;border-bottom-left-radius:3px}
+.em.me{background:#1d4ed8;color:#fff;margin-left:auto;border-bottom-right-radius:3px}
+.em a{color:#1d4ed8;font-weight:600}
+.ec{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px}
+.ec button{border:1px solid #1d4ed8;background:#fff;color:#1d4ed8;border-radius:16px;padding:5px 10px;font-size:13px;cursor:pointer}
+.ec button:hover{background:#1d4ed8;color:#fff}
+#edu-form{display:flex;border-top:1px solid #e5e7eb}
+#edu-in{flex:1;border:0;padding:12px;font-size:14px;outline:none}
+#edu-form button{border:0;background:#1d4ed8;color:#fff;padding:0 16px;cursor:pointer}
+.lead input,.lead select{width:100%;box-sizing:border-box;margin:3px 0;padding:7px;border:1px solid #d1d5db;border-radius:6px;font-size:13px}
+.lead button{width:100%;margin-top:4px;padding:8px;border:0;border-radius:6px;background:#16a34a;color:#fff;cursor:pointer;font-weight:600}
+</style>
 
-<script>
-  // Mobile menu toggle
-  (function () {
-    var btn = document.getElementById('menuBtn'), nav = document.getElementById('nav');
-    if (!btn || !nav) return;
-    btn.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open);
-      btn.textContent = open ? '✕' : '☰';
-    });
-  })();
-</script>
-<script>
-  // Reading progress bar + table-of-contents highlight
-  (function () {
-    var bar = document.getElementById('progress');
-    var links = Array.prototype.slice.call(document.querySelectorAll('#tocList a'));
-    var heads = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
-    function update() {
-      var h = document.documentElement;
-      var pct = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight) * 100;
-      if (bar) bar.style.width = pct + '%';
-      var cur = 0;
-      heads.forEach(function (el, i) { if (el && el.getBoundingClientRect().top < 140) cur = i; });
-      links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
-    }
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-  })();
-</script>
+<button id="edu-btn" aria-label="Chat with Eduplier">💬</button>
+<div id="edu-box" role="dialog" aria-label="Eduplier chat">
+  <div id="edu-head"><div><b>🎓 Eduplier Assistant</b><small>Online degree guidance</small></div><button id="edu-x" aria-label="Close">×</button></div>
+  <div id="edu-msgs"></div>
+  <form id="edu-form"><input id="edu-in" placeholder="Type your question…" autocomplete="off"><button>Send</button></form>
+</div>
+
+
+<!-- WhatsApp floating button -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<a class="wa-float" href="https://wa.me/919315594429?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20online%20degree%20programs."
+   target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+<style>
+  .wa-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+    z-index: 9999;
+  }
+  .wa-float:hover { background: #1ebe5b; }
+</style>
+
 </body>
 </html>
