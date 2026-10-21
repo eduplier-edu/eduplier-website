@@ -194,13 +194,7 @@ footer a:hover{color:#fff;text-decoration:underline}
   <div class="copy">© 2026 Eduplier Education Services. All Rights Reserved. Empowering Education Choices</div>
 </footer>
 
-<a class="wa" href="https://wa.me/919315594429?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20online%20degree%20programs." aria-label="Chat on WhatsApp">💬 WhatsApp</a>
-
-<script>
-const m=document.getElementById("menu"),n=document.getElementById("nav");
-m.addEventListener("click",()=>{const o=n.classList.toggle("open");m.setAttribute("aria-expanded",o)});
-</script>
-  <!-- ===== EDUPLIER CHATBOT: paste this whole block just before </body> on every page ===== -->
+<!-- ===== EDUPLIER CHATBOT: paste this whole block just before </body> on every page ===== -->
 <style>
 #edu-btn{position:fixed;left:18px;bottom:78px;z-index:99999;width:58px;height:58px;border-radius:50%;border:0;background:#1d4ed8;color:#fff;font-size:26px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.28)}
 #edu-box{position:fixed;left:18px;bottom:148px;z-index:99999;width:340px;max-width:calc(100vw - 36px);height:470px;max-height:calc(100vh - 170px);display:none;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 34px rgba(0,0,0,.3);font:14px/1.45 system-ui,Arial,sans-serif;color:#1f2937}
@@ -230,59 +224,33 @@ m.addEventListener("click",()=>{const o=n.classList.toggle("open");m.setAttribut
   <form id="edu-form"><input id="edu-in" placeholder="Type your question…" autocomplete="off"><button>Send</button></form>
 </div>
 
-<script>
-(function(){
-  // ---------- SETTINGS ----------
-  var PHONE="919891967284", PHONE_DISPLAY="+91 98919 67284", EMAIL="info@eduplier.com";
-  var LEAD_ENDPOINT=""; // optional: your form/webhook URL. Leads are POSTed as JSON. Leave "" to use WhatsApp only.
-  var BASE="https://www.eduplier.com/";
-  var CHIPS=["Online MBA","Online MCA","Online BBA / BCA","Fees & EMI","Compare universities","Talk to a counsellor"];
 
-  var PROG={
-    mba:["Online MBA","Postgraduate program for graduates and working professionals, offered with multiple specializations.","online-mba.html"],
-    mca:["Online MCA","Postgraduate computer applications program, suited to BCA / IT-background graduates.","online-mca.html"],
-    bba:["Online BBA","Undergraduate management program for students after 12th.","online-bba.html"],
-    bca:["Online BCA","Undergraduate computer applications program for students after 12th.","online-bca.html"],
-    mcom:["Online M.Com","Postgraduate commerce program for commerce graduates.","online-mcom.html"],
-    ba:["Online BA","Undergraduate arts program for students after 12th.","online-ba.html"],
-    ma:["Online MA","Postgraduate arts program for graduates.","online-ma.html"]
-  };
-
-  var msgs=document.getElementById("edu-msgs"),box=document.getElementById("edu-box"),inp=document.getElementById("edu-in");
-  var lead={},started=false;
-
-  function add(html,cls){var d=document.createElement("div");d.className="em "+cls;d.innerHTML=html;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d}
-  function chips(list){var c=document.createElement("div");c.className="ec";list.forEach(function(t){var b=document.createElement("button");b.textContent=t;b.onclick=function(){c.remove();user(t)};c.appendChild(b)});msgs.appendChild(c);msgs.scrollTop=msgs.scrollHeight}
-  function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-  function bot(html,after){setTimeout(function(){add(html,"bot");if(after)chips(after)},350)}
-  function link(p,t){return '<a href="'+BASE+p+'" target="_blank" rel="noopener">'+t+'</a>'}
-
-  function showLead(){
-    var d=add('<div class="lead"><b>Get free counselling</b><input id="l-n" placeholder="Full name *"><input id="l-m" placeholder="Mobile number *" inputmode="tel"><select id="l-p"><option value="">Program interested in</option>'+
-      ["Online MBA","Online MCA","Online BBA","Online BCA","Online M.Com","Online BA","Online MA","Other"].map(function(x){return"<option>"+x+"</option>"}).join("")+
-      '</select><button id="l-s">Request callback</button></div>',"bot");
-    d.querySelector("#l-s").onclick=function(){
-      var n=d.querySelector("#l-n").value.trim(),m=d.querySelector("#l-m").value.trim(),p=d.querySelector("#l-p").value;
-      if(n.length<2||!/^[+\d\s-]{10,15}$/.test(m)){alert("Please enter your name and a valid mobile number.");return}
-      var data={name:n,mobile:m,program:p||"Not specified",source:"chatbot"};
-      if(LEAD_ENDPOINT){try{fetch(LEAD_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)})}catch(e){}}
-      d.remove();
-      var wa="https://wa.me/"+PHONE+"?text="+encodeURIComponent("Hi, I'm "+n+" ("+m+"). I'd like guidance on: "+data.program);
-      add("Thanks, "+esc(n)+"! 🎉 Our counsellor will contact you soon. For a faster reply, you can also <a href='"+wa+"' target='_blank' rel='noopener'>message us on WhatsApp</a>.","bot");
-    };
+<!-- WhatsApp floating button -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<a class="wa-float" href="https://wa.me/919315594429?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20online%20degree%20programs."
+   target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+<style>
+  .wa-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+    z-index: 9999;
   }
+  .wa-float:hover { background: #1ebe5b; }
+</style>
 
-  function answer(q){
-    var t=q.toLowerCase();
-    var has=function(){for(var i=0;i<arguments.length;i++)if(t.indexOf(arguments[i])>-1)return true;return false};
-    if(has("counsel","callback","call me","talk","expert","contact","human","agent","enquir","inquir")){bot("Happy to connect you with an expert. Share your details below 👇");setTimeout(showLead,700);return}
-    if(has("whatsapp"))return bot("Chat with us on <a href='https://wa.me/"+PHONE+"' target='_blank' rel='noopener'>WhatsApp</a>.");
-    if(has("phone","number","email","mail"))return bot("📞 "+PHONE_DISPLAY+"<br>✉️ "+EMAIL,["Talk to a counsellor"]);
-    if(has("fee","cost","price","emi","scholar","afford","budget","payment"))
-      return bot("Fees differ by university and program. Many universities offer scholarships and EMI options (where offered). Our counsellors can share the latest fee structure for your chosen program. You can also use our "+link("compare-universities.html","comparison tool")+".",["Talk to a counsellor","Compare universities"]);
-    if(has("compare","comparison","which university","best university","better"))
-      return bot("Compare fees, duration, eligibility and specializations side by side across 30+ universities: "+link("compare-universities.html","Compare Universities")+".",["Talk to a counsellor"]);
-    if(has("universit","college","amity","lpu","manipal","chandigarh","nmims","shoolini","gla","smu","sikkim"))
-      return bot("We guide students across 30+ UGC-DEB entitled online universities, including Amity Online, LPU Online, Manipal University Jaipur, Chandigarh University, Sikkim Manipal, NMIMS CDOE, Shoolini and GLA. See them all: "+link("all-universities.html","All Universities")+".",["Compare universities","Talk to a counsellor"]);
-    if(has("ugc","valid","recogni","approved","deb"))
-      return bot("The online degrees we guide on are from UGC-DEB entitled universities. Entitlement and accreditation can change, so please confirm on the official university
+</body>
+</html>
