@@ -548,5 +548,63 @@
     });
   })();
 </script>
+  <!-- ===== EDUPLIER CHATBOT: paste this whole block just before </body> on every page ===== -->
+<style>
+#edu-btn{position:fixed;left:18px;bottom:78px;z-index:99999;width:58px;height:58px;border-radius:50%;border:0;background:#1d4ed8;color:#fff;font-size:26px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+#edu-box{position:fixed;left:18px;bottom:148px;z-index:99999;width:340px;max-width:calc(100vw - 36px);height:470px;max-height:calc(100vh - 170px);display:none;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 34px rgba(0,0,0,.3);font:14px/1.45 system-ui,Arial,sans-serif;color:#1f2937}
+#edu-box.open{display:flex}
+#edu-head{background:#1d4ed8;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+#edu-head b{display:block;font-size:15px}#edu-head small{opacity:.85}
+#edu-head button{background:none;border:0;color:#fff;font-size:20px;cursor:pointer}
+#edu-msgs{flex:1;overflow-y:auto;padding:12px;background:#f3f4f6}
+.em{max-width:86%;padding:8px 11px;margin:6px 0;border-radius:12px;word-wrap:break-word}
+.em.bot{background:#fff;border:1px solid #e5e7eb;border-bottom-left-radius:3px}
+.em.me{background:#1d4ed8;color:#fff;margin-left:auto;border-bottom-right-radius:3px}
+.em a{color:#1d4ed8;font-weight:600}
+.ec{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px}
+.ec button{border:1px solid #1d4ed8;background:#fff;color:#1d4ed8;border-radius:16px;padding:5px 10px;font-size:13px;cursor:pointer}
+.ec button:hover{background:#1d4ed8;color:#fff}
+#edu-form{display:flex;border-top:1px solid #e5e7eb}
+#edu-in{flex:1;border:0;padding:12px;font-size:14px;outline:none}
+#edu-form button{border:0;background:#1d4ed8;color:#fff;padding:0 16px;cursor:pointer}
+.lead input,.lead select{width:100%;box-sizing:border-box;margin:3px 0;padding:7px;border:1px solid #d1d5db;border-radius:6px;font-size:13px}
+.lead button{width:100%;margin-top:4px;padding:8px;border:0;border-radius:6px;background:#16a34a;color:#fff;cursor:pointer;font-weight:600}
+</style>
+
+<button id="edu-btn" aria-label="Chat with Eduplier">💬</button>
+<div id="edu-box" role="dialog" aria-label="Eduplier chat">
+  <div id="edu-head"><div><b>🎓 Eduplier Assistant</b><small>Online degree guidance</small></div><button id="edu-x" aria-label="Close">×</button></div>
+  <div id="edu-msgs"></div>
+  <form id="edu-form"><input id="edu-in" placeholder="Type your question…" autocomplete="off"><button>Send</button></form>
+</div>
+
+
+<!-- WhatsApp floating button -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<a class="wa-float" href="https://wa.me/919315594429?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20online%20degree%20programs."
+   target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+<style>
+  .wa-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+    z-index: 9999;
+  }
+  .wa-float:hover { background: #1ebe5b; }
+</style>
+
 </body>
 </html>
