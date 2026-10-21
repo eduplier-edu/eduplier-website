@@ -155,13 +155,81 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 .faq-content{padding:16px 20px;font-size:.95rem;color:#475569}
 .faq-content p{margin:0}
 
-/* Sticky Enquiry Bar & WhatsApp */
+/* Ready to Explore Card */
+.explore-banner-wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+}
+.explore-banner {
+  background: #1447e6;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 20px;
+  padding: 48px 24px;
+  box-shadow: 0 10px 30px rgba(20, 71, 230, 0.15);
+}
+.explore-banner h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  margin: 0 0 12px;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+.explore-banner p {
+  font-size: 1.05rem;
+  color: #e2e8f0;
+  max-width: 650px;
+  margin: 0 auto 28px;
+  line-height: 1.5;
+}
+.explore-banner-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-banner-white {
+  background: #ffffff;
+  color: #14307f;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.btn-banner-white:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+.btn-banner-outline {
+  background: transparent;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 11px 24px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.btn-banner-outline:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 600px) {
+  .explore-banner { padding: 36px 18px; }
+  .explore-banner-btns { flex-direction: column; width: 100%; }
+  .btn-banner-white, .btn-banner-outline { width: 100%; text-align: center; }
+}
+
+/* Sticky Enquiry Bar */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--blue-dark);color:#fff;display:flex;align-items:center;justify-content:center;gap:16px;padding:10px 16px;font-size:.92rem;font-weight:600}
 .bar a{background:var(--orange);color:#fff;text-decoration:none;font-weight:700;padding:8px 18px;border-radius:8px;white-space:nowrap}
 .bar a:hover{background:var(--orange-dark)}
-.wa{position:fixed;right:18px;bottom:78px;width:48px;height:48px;border-radius:50%;background:#21a53f;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.28);z-index:71}
-.wa:hover{transform:scale(1.08)}
-.wa svg{width:26px;height:26px;fill:#fff}
 
 /* Footer */
 .ftr{background:#0b1120;color:#94a3b8;font-size:.9rem}
@@ -173,6 +241,9 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 .ftr li{margin-bottom:8px}
 .ftr a{text-decoration:none}
 .ftr a:hover{color:#fff;text-decoration:underline}
+.social{display:flex;gap:10px}
+.social a{width:36px;height:36px;border-radius:50%;background:#1e293b;color:#fff;display:grid;place-items:center;font-weight:700;font-size:.85rem}
+.social a:hover{background:var(--orange);text-decoration:none}
 .disc{border-top:1px solid #1e293b;padding:18px 20px;font-size:.78rem;line-height:1.65}
 .copy{border-top:1px solid #1e293b;padding:14px 20px;font-size:.8rem;text-align:center}
 @media(max-width:860px){.ftr-grid{grid-template-columns:1fr 1fr}}
@@ -578,17 +649,17 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
   </div>
 </section>
 
-<!-- CTA -->
-<section class="max-w-5xl mx-auto px-4 pb-14">
-  <div class="bg-gradient-to-tr from-brand-900 to-brand-700 text-white rounded-2xl p-8 sm:p-10 text-center shadow-md">
-    <h2 class="text-2xl sm:text-3xl font-extrabold">Ready to explore Amity Online?</h2>
-    <p class="text-brand-100 mt-2">Speak with an Eduplier counsellor to compare programs, tracks and payment options.</p>
-    <div class="mt-5 flex flex-wrap justify-center gap-3">
-      <a href="#enquire" class="bg-white text-brand-800 font-semibold px-6 py-3 rounded-lg hover:bg-brand-50">Get Free Counselling →</a>
-      <a href="tel:+919315594429" class="border border-white/40 font-semibold px-6 py-3 rounded-lg hover:bg-white/10">+91 93155 94429</a>
+<!-- Centered Rounded Blue Explore Banner Block (Matching Amity Page Style) -->
+<div class="explore-banner-wrap">
+  <div class="explore-banner">
+    <h2>Ready to explore Chandigarh University Online?</h2>
+    <p>Speak with an Eduplier counsellor to compare programs, tracks and payment options[cite: 2, 3].</p>
+    <div class="explore-banner-btns">
+      <a href="#leadForm" class="btn-banner-white">Get Free Counselling &rarr;[cite: 2, 3]</a>
+      <a href="tel:+919315594429" class="btn-banner-outline">+91 93155 94429[cite: 2, 3]</a>
     </div>
   </div>
-</section>
+</div>
 
 <!-- Footer -->
 <footer class="ftr">
@@ -597,7 +668,7 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
       <a href="https://www.eduplier.com/index.html">
         <img class="flogo" src="https://www.eduplier.com/logo-footer.png" alt="Eduplier Education Services">
       </a>
-      <p>Eduplier Education Services provides personalized guidance and comparative evaluations to help learners choose the right university program.</p>
+      <p>Eduplier Education Services provides personalized guidance and comparative evaluations to help learners choose the right university program[cite: 2].</p>
       <div class="social">
         <a href="https://www.facebook.com/profile.php?id=61588271393079" target="_blank" rel="noopener" aria-label="Facebook">f</a>
         <a href="https://www.instagram.com/eduplier" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
@@ -608,34 +679,34 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
     <div>
       <h4>Top Universities</h4>
       <ul>
-        <li><a href="https://www.eduplier.com/chandigarh-universities.html">Chandigarh University</a></li>
-        <li><a href="https://www.eduplier.com/manipal-universities-jaipur.html">Manipal University Jaipur</a></li>
-        <li><a href="https://www.eduplier.com/amity-online.html">Amity University Online</a></li>
-        <li><a href="https://www.eduplier.com/lpu-online.html">LPU Online</a></li>
-        <li><a href="https://www.eduplier.com/all-universities.html">NMIMS CDOE</a></li>
+        <li><a href="https://www.eduplier.com/chandigarh-universities.html">Chandigarh University[cite: 2]</a></li>
+        <li><a href="https://www.eduplier.com/manipal-universities-jaipur.html">Manipal University Jaipur[cite: 2]</a></li>
+        <li><a href="https://www.eduplier.com/amity-online.html">Amity University Online[cite: 2]</a></li>
+        <li><a href="https://www.eduplier.com/lpu-online.html">LPU Online[cite: 2]</a></li>
+        <li><a href="https://www.eduplier.com/all-universities.html">NMIMS CDOE[cite: 2]</a></li>
       </ul>
     </div>
 
     <div>
       <h4>Top Programs</h4>
       <ul>
-        <li><a href="https://www.eduplier.com/online-mba.html">Online MBA</a></li>
-        <li><a href="https://www.eduplier.com/online-mca.html">Online MCA</a></li>
-        <li><a href="https://www.eduplier.com/online-bba.html">Online BBA</a></li>
-        <li><a href="https://www.eduplier.com/online-bca.html">Online BCA</a></li>
-        <li><a href="https://www.eduplier.com/online-mcom.html">Online M.Com</a></li>
+        <li><a href="https://www.eduplier.com/online-mba.html">Online MBA[cite: 2]</a></li>
+        <li><a href="https://www.eduplier.com/online-mca.html">Online MCA[cite: 2]</a></li>
+        <li><a href="https://www.eduplier.com/online-bba.html">Online BBA[cite: 2]</a></li>
+        <li><a href="https://www.eduplier.com/online-bca.html">Online BCA[cite: 2]</a></li>
+        <li><a href="https://www.eduplier.com/online-mcom.html">Online M.Com[cite: 2]</a></li>
       </ul>
     </div>
 
     <div>
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="https://www.eduplier.com/index.html">Home</a></li>
-        <li><a href="https://www.eduplier.com/compare-universities.html">Compare Universities</a></li>
-        <li><a href="https://www.eduplier.com/blog.html">Blog</a></li>
-        <li><a href="https://www.eduplier.com/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="mailto:info@eduplier.com">info@eduplier.com</a></li>
-        <li><a href="tel:+919315594429">+91 93155 94429</a></li>
+        <li><a href="https://www.eduplier.com/index.html">Home[cite: 2]</a></li>
+        <li><a href="https://www.eduplier.com/compare-universities.html">Compare Universities[cite: 2]</a></li>
+        <li><a href="https://www.eduplier.com/blog.html">Blog[cite: 2]</a></li>
+        <li><a href="https://www.eduplier.com/privacy-policy.html">Privacy Policy[cite: 2]</a></li>
+        <li><a href="mailto:info@eduplier.com">info@eduplier.com[cite: 2]</a></li>
+        <li><a href="tel:+919315594429">+91 93155 94429[cite: 2]</a></li>
       </ul>
     </div>
   </div>
@@ -668,7 +739,8 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
   });
 })();
 </script>
-  <!-- ===== EDUPLIER CHATBOT: paste this whole block just before </body> on every page ===== -->
+
+<!-- Eduplier Chatbot -->
 <style>
 #edu-btn{position:fixed;left:18px;bottom:78px;z-index:99999;width:58px;height:58px;border-radius:50%;border:0;background:#1d4ed8;color:#fff;font-size:26px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.28)}
 #edu-box{position:fixed;left:18px;bottom:148px;z-index:99999;width:340px;max-width:calc(100vw - 36px);height:470px;max-height:calc(100vh - 170px);display:none;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 34px rgba(0,0,0,.3);font:14px/1.45 system-ui,Arial,sans-serif;color:#1f2937}
@@ -697,7 +769,6 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
   <div id="edu-msgs"></div>
   <form id="edu-form"><input id="edu-in" placeholder="Type your question…" autocomplete="off"><button>Send</button></form>
 </div>
-
 
 <!-- WhatsApp floating button -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
