@@ -79,27 +79,42 @@ body{font-family:'Inter',sans-serif;scroll-behavior:smooth}
       </div>
     </div>
 
-    <div class="fc">
-      <h3>Request Free Counselling</h3>
-      <p>Fill in your details and tell us what you're looking for.</p>
-      <form id="leadForm">
-        <input type="hidden" name="access_key" value="497360d2-a86c-4712-983d-e6c84be948dc">
-        <input type="hidden" name="subject" value="New Eduplier Enquiry">
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-        <div class="fg"><label for="name">Full Name *</label><input type="text" id="name" name="name" placeholder="Enter your name" required></div>
-        <div class="fg"><label for="phone">Mobile Number *</label><input type="tel" id="phone" name="mobile" placeholder="Enter mobile number" required></div>
-        <div class="fg"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="Enter your email"></div>
-        <div class="fg"><label for="program">Program Interested In</label>
-          <select id="program" name="program"><option value="">Select a program</option><option>Online MBA</option><option>Online MCA</option><option>Online BBA</option><option>Online BCA</option><option>Online M.Com</option><option>Online BA</option><option>Online MA</option><option>Other</option></select></div>
-        <div class="fg"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us what you are looking for..."></textarea></div>
-        <button type="submit" class="btn">Submit Enquiry →</button>
-        <div class="fm" id="formMessage" role="status">Thank you! Your enquiry has been received. Our team will contact you soon.</div>
+    
+    <!-- Enquiry form -->
+    <div id="enquire" class="scroll-mt-24 bg-white text-slate-800 rounded-2xl shadow-xl p-6 sm:p-8">
+      <h2 class="text-xl font-bold text-slate-900">Request Free Counselling</h2>
+      <p class="text-sm text-slate-500 mb-4">Share your details and our counsellor will get in touch.</p>
+      <form id="leadForm" class="space-y-3">
+        <input type="hidden" name="access_key" value="PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" value="New Enquiry - LPU Online Landing Page (Eduplier)">
+        <input type="hidden" name="from_name" value="Eduplier Website">
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
+        <input id="name" name="Name" required placeholder="Full Name *" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+        <input id="phone" name="Mobile" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric" placeholder="Mobile Number (10 digits) *" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+        <input id="email" name="Email" type="email" placeholder="Email Address" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+        <select id="program" name="Program" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+          <option value="">Select Program *</option>
+          <optgroup label="Postgraduate (PG)">
+            <option>LPU Online MBA</option>
+            <option>LPU Online MCA</option>
+            <option>LPU Online M.Com</option>
+            <option>LPU Online MA</option>
+          </optgroup>
+          <optgroup label="Undergraduate (UG)">
+            <option>LPU Online BBA</option>
+            <option>LPU Online BCA</option>
+            <option>LPU Online B.Com</option>
+            <option>LPU Online BA</option>
+          </optgroup>
+          <option>Other</option>
+        </select>
+        <button type="submit" id="submitBtn" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 rounded-lg shadow-sm transition">Submit Enquiry →</button>
+        <p id="formMsg" class="hidden text-sm text-center font-medium rounded-lg p-3"></p>
+        <p class="text-[11px] text-slate-400 text-center">By submitting, you agree to our <a href="https://www.eduplier.com/privacy-policy.html" class="underline">Privacy Policy</a>.</p>
       </form>
     </div>
   </div>
 </section>
-</main>
-
 <!-- Highlights -->
 <section class="max-w-7xl mx-auto px-4 py-14">
   <div class="text-center max-w-2xl mx-auto mb-8">
