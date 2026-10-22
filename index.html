@@ -185,7 +185,7 @@ form textarea{min-height:84px;resize:vertical}
 .fm{display:none;background:#e8f7ee;color:#116b35;border-radius:10px;padding:10px 14px;font-size:.9rem;font-weight:600}
 .fm.show{display:block}
 
-footer{background:var(--navy);color:#b9cbe6;margin-top:64px;font-size:.9rem}
+footer{background:var(--navy);color:#b9cbe6;margin-top:0;font-size:.9rem}
 .fg4{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:28px;padding:44px 20px 20px;max-width:1200px;margin:auto}
 @media(max-width:860px){.fg4{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.fg4{grid-template-columns:1fr}}
@@ -206,6 +206,32 @@ footer .fl img{height:44px;margin-bottom:12px}
 .whatsapp svg{width:28px;height:28px;fill:#fff}
 @keyframes wa{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
 @media(prefers-reduced-motion:reduce){.whatsapp{animation:none}.slides{transition:none}}
+
+/* social icons in brand colours */
+.soc a{width:40px;height:40px;border:0;padding:0;background:#fff;transition:.25s}
+.soc a svg{width:22px;height:22px;display:block}
+.soc a:hover{transform:translateY(-4px) scale(1.08);background:#fff;box-shadow:0 8px 18px rgba(0,0,0,.35)}
+
+/* stylish sitemap */
+.smap{position:relative;margin-top:64px;padding:56px 0 48px;background:radial-gradient(circle at 15% 20%,#14407f 0,transparent 45%),radial-gradient(circle at 85% 80%,#7a3a0c 0,transparent 40%),var(--navy);color:#cfe0f7;overflow:hidden}
+.smap::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--orange),#ffb26b,var(--blue),var(--orange));background-size:200% 100%;animation:smv 6s linear infinite}
+@keyframes smv{to{background-position:200% 0}}
+.smap h2{margin:0 0 6px;text-align:center;color:#fff;font-size:clamp(1.5rem,3vw,2.1rem)}
+.smap .sub{text-align:center;margin:0 0 30px;color:#9fb6da}
+.smap .sub span{color:#ffb26b;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;display:block;margin-bottom:4px}
+.smg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:960px){.smg{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.smg{grid-template-columns:1fr}}
+.smc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:20px;backdrop-filter:blur(6px);transition:.25s}
+.smc:hover{transform:translateY(-5px);border-color:var(--orange);background:rgba(255,255,255,.1)}
+.smc h3{margin:0 0 12px;color:#fff;font-size:1.05rem;display:flex;align-items:center;gap:10px}
+.smc h3 i{font-style:normal;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--orange),#ffb26b);display:grid;place-items:center;font-size:1.1rem}
+.smc ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.smc a{display:block;padding:5px 0 5px 16px;position:relative;font-size:.9rem;color:#b9cbe6;transition:.2s}
+.smc a::before{content:"›";position:absolute;left:0;color:var(--orange);font-weight:800;transition:.2s}
+.smc a:hover{color:#fff;padding-left:22px}
+.smc a:hover::before{left:4px}
+@media(prefers-reduced-motion:reduce){.smap::before{animation:none}}
 </style>
 
 <!-- Meta Pixel Code -->
@@ -398,14 +424,84 @@ fbq('track', 'PageView');
 </section>
 </main>
 
+<!-- ===== SITE MAP ===== -->
+<section class="smap" aria-label="Website map">
+  <div class="c">
+    <h2>Explore Our Website</h2>
+    <p class="sub"><span>Site Map</span>Find everything on Eduplier in one place.</p>
+    <div class="smg">
+      <div class="smc">
+        <h3><i>🏠</i>Main Pages</h3>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about-us.html">About Us</a></li>
+          <li><a href="/team.html">Our Team</a></li>
+          <li><a href="/vision-mission.html">Vision &amp; Mission</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="smc">
+        <h3><i>🏛️</i>Universities</h3>
+        <ul>
+          <li><a href="/amity-online.html">Amity University Online</a></li>
+          <li><a href="/lpu-online.html">LPU Online</a></li>
+          <li><a href="/online-manipal-universities.html">Manipal University</a></li>
+          <li><a href="/chandigarh-universities.html">Chandigarh University</a></li>
+          <li><a href="/nmims-cdoe.html">NMIMS CDOE</a></li>
+          <li><a href="/all-universities.html">All 30+ Universities</a></li>
+        </ul>
+      </div>
+      <div class="smc">
+        <h3><i>🎓</i>Programs</h3>
+        <ul>
+          <li><a href="/online-mba.html">Online MBA</a></li>
+          <li><a href="/online-mca.html">Online MCA</a></li>
+          <li><a href="/online-mcom.html">Online M.Com</a></li>
+          <li><a href="/online-ma.html">Online MA</a></li>
+          <li><a href="/online-bba.html">Online BBA</a></li>
+          <li><a href="/online-bca.html">Online BCA</a></li>
+          <li><a href="/online-ba.html">Online BA</a></li>
+        </ul>
+      </div>
+      <div class="smc">
+        <h3><i>🧰</i>Tools &amp; Help</h3>
+        <ul>
+          <li><a href="/compare-universities.html">Compare Universities</a></li>
+          <li><a href="/top-10-online-mba-colleges-india-2027.html">Top 10 Online MBA Colleges</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#why-us">Why Eduplier</a></li>
+          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="fg4">
     <div><a class="fl" href="/index.html"><img src="/logo-footer.png" alt="Eduplier - Empowering Education Choices"></a>
       <p>Eduplier Education Services helps students make informed education choices through personalised academic counselling and admission guidance.</p>
-      <div class="soc"><a href="https://www.facebook.com/profile.php?id=61588271393079" target="_blank" rel="noopener" aria-label="Facebook">f</a><a href="https://www.instagram.com/eduplier" target="_blank" rel="noopener" aria-label="Instagram">ig</a><a href="https://www.linkedin.com/company/eduplier-education-services/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a></div></div>
+      <div class="soc">
+        <a href="https://www.facebook.com/profile.php?id=61588271393079" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path fill="#fff" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.4 1.5-1.4h1.6V4.5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.2H7.9v3h2.6V21z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/eduplier" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".3" stop-color="#fa7e1e"/><stop offset=".55" stop-color="#d62976"/><stop offset=".8" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs>
+            <rect width="24" height="24" rx="6" fill="url(#ig)"/>
+            <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="3.3" fill="none" stroke="#fff" stroke-width="1.8"/>
+            <circle cx="16.4" cy="7.6" r="1.1" fill="#fff"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/eduplier-education-services/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#0A66C2"/><rect x="5.2" y="9.5" width="3" height="9" fill="#fff"/><circle cx="6.7" cy="6.5" r="1.8" fill="#fff"/><path fill="#fff" d="M11 9.5h2.9v1.3c.5-.9 1.6-1.5 3-1.5 2.8 0 3.6 1.8 3.6 4.4v4.8h-3v-4.3c0-1.1-.1-2.4-1.6-2.4s-1.9 1.1-1.9 2.4v4.3h-3z"/></svg>
+        </a>
+      </div></div>
     <div><h4>Top Universities</h4><ul><li><a href="/amity-online.html">Amity University Online</a></li><li><a href="/lpu-online.html">LPU Online</a></li><li><a href="/online-manipal-universities.html">Manipal University Jaipur</a></li><li><a href="/chandigarh-universities.html">Chandigarh University</a></li><li><a href="/nmims-cdoe.html">NMIMS CDOE</a></li><li><a href="/all-universities.html">View all universities</a></li></ul></div>
     <div><h4>Programs</h4><ul><li><a href="/online-mba.html">Online MBA</a></li><li><a href="/online-mca.html">Online MCA</a></li><li><a href="/online-bba.html">Online BBA</a></li><li><a href="/online-bca.html">Online BCA</a></li><li><a href="/online-mcom.html">Online M.Com</a></li><li><a href="/online-ba.html">Online BA</a></li><li><a href="/online-ma.html">Online MA</a></li></ul></div>
-    <div><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="/compare-universities.html">Compare Universities</a></li><li><a href="/blog.html">Blog</a></li><li><a href="#contact">Contact Us</a></li><li><a href="/vision-mission.html">Vission Mission</a></li><li><a href="/privacy-policy.html">Privacy Policy</a></li><li><a href="mailto:info@eduplier.com">info@eduplier.com</a></li><li><a href="tel:+919315594429">+91 93155 94429</a></li></ul></div>
+    <div><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="/compare-universities.html">Compare Universities</a></li><li><a href="/blog.html">Blog</a></li><li><a href="#contact">Contact Us</a></li><li><a href="/vision-mission.html">Vision Mission</a></li><li><a href="/privacy-policy.html">Privacy Policy</a></li><li><a href="mailto:info@eduplier.com">info@eduplier.com</a></li><li><a href="tel:+919315594429">+91 93155 94429</a></li></ul></div>
   </div>
   <div class="disc"><b>Disclaimer:</b> Eduplier provides unbiased guidance and comparative information on universities and programs for admission aspirants. Content such as text, graphics, images and university logos is for information purposes only. University names, logos and trademarks belong to their respective owners and are used only to identify the programs on which we offer guidance. Admission, program delivery and examinations are managed solely by the respective universities. Fees, eligibility, rankings and accreditations are subject to change; please confirm final details on the official university website before applying.</div>
   <div class="copy">© 2026 Eduplier Education Services. All Rights Reserved. • Empowering Education Choices</div>
