@@ -17,6 +17,183 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Montserrat:wght@500;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+  /* ---------- MODERN CARDS FOOTER (Matches Website Theme) ---------- */
+  .footer-card-section {
+    background: linear-gradient(135deg, #091b2c 0%, #0d2b45 50%, #153b5c 100%);
+    color: #ffffff;
+    padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer-card-section::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,145,0,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .footer-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+  .footer-col-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 1.8rem 1.6rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+  .footer-col-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .footer-col-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .footer-badge-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #ff5722;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.35);
+  }
+  .footer-col-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+  }
+  .footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .footer-links-list li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: #cfd9e5;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  .footer-links-list li a::before {
+    content: "›";
+    color: #ff9800;
+    font-size: 1.15rem;
+    line-height: 1;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+  }
+  .footer-links-list li a:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+  }
+  .footer-links-list li a:hover::before {
+    transform: translateX(2px);
+  }
+
+  /* Footer Bottom Bar */
+  .footer-bottom-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .footer-bottom-brand img {
+    height: 48px;
+    width: auto;
+    background: #ffffff;
+    padding: 4px 10px;
+    border-radius: 10px;
+  }
+  .footer-bottom-brand p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.6rem;
+    max-width: 480px;
+  }
+  .footer-follow-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+  }
+  .footer-follow-box span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  .footer-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .footer-social-icons a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    text-decoration: none;
+  }
+  .footer-social-icons a:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.95);
+  }
+  .footer-social-icons svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-legal-copy {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .footer-legal-copy strong {
+    color: #ffffff;
+  }
+
+  @media (max-width: 1024px) {
+    .footer-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .footer-cards-grid { grid-template-columns: 1fr; }
+    .footer-bottom-flex { flex-direction: column; align-items: flex-start; }
+    .footer-follow-box { align-items: flex-start; }
+  }
+
   /* ---------- Tokens: change these to match your brand ---------- */
   :root {
     --ink: #0D2B45;          /* deep navy: headings, dark sections */
@@ -356,59 +533,119 @@
 
 </main>
 
-<!-- Footer -->
-<footer>
+<!-- ===== MODERN CARD FOOTER (Matches Website Theme) ===== -->
+<footer class="footer-card-section" aria-label="Website footer">
   <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-about">
-        <a href="index.html"><img src="https://www.eduplier.com/logo-footer.png" alt="Eduplier - Empowering Education Choices"></a>
-        <p>Eduplier Education Services helps students make informed education choices through personalised academic counselling and admission guidance.</p>
-        <div class="social">
-          <a href="https://www.facebook.com/profile.php?id=61588271393079" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-          <a href="https://www.instagram.com/eduplier" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
-          <a href="https://www.linkedin.com/company/eduplier-education-services/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+    
+    <div class="footer-cards-grid">
+      
+      <!-- Card 1: Main Pages -->
+      <div class="footer-col-card">
+        <div class="footer-col-header">
+          <div class="footer-badge-icon">🏠</div>
+          <h3>Main Pages</h3>
         </div>
-      </div>
-      <div>
-        <h4>Top Universities</h4>
-        <ul>
-          <li><a href="amity-online.html">Amity University Online</a></li>
-          <li><a href="lpu-online.html">LPU Online</a></li>
-          <li><a href="all-universities.html">Manipal University Jaipur</a></li>
-          <li><a href="all-universities.html">Chandigarh University</a></li>
-          <li><a href="all-universities.html">NMIMS CDOE</a></li>
-          <li><a href="all-universities.html">View all universities</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Programs</h4>
-        <ul>
-          <li><a href="online-mba.html">Online MBA</a></li>
-          <li><a href="online-mca.html">Online MCA</a></li>
-          <li><a href="online-bba.html">Online BBA</a></li>
-          <li><a href="online-bca.html">Online BCA</a></li>
-          <li><a href="online-mcom.html">Online M.Com</a></li>
-          <li><a href="online-ba.html">Online BA</a></li>
-          <li><a href="online-ma.html">Online MA</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
+        <ul class="footer-links-list">
           <li><a href="index.html#home">Home</a></li>
           <li><a href="about-us.html">About Us</a></li>
+          <li><a href="team.html">Our Team</a></li>
           <li><a href="vision-mission.html">Vision &amp; Mission</a></li>
-          <li><a href="compare-universities.html">Compare Universities</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="index.html#contact">Contact Us</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="mailto:info@eduplier.com">info@eduplier.com</a></li>
-          <li><a href="tel:+919315594429">+91 93155 94429</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#visit">Visit Our Office</a></li>
         </ul>
       </div>
+
+      <!-- Card 2: Universities -->
+      <div class="footer-col-card">
+        <div class="footer-col-header">
+          <div class="footer-badge-icon">🏛️</div>
+          <h3>Universities</h3>
+        </div>
+        <ul class="footer-links-list">
+          <li><a href="amity-online.html">Amity University Online</a></li>
+          <li><a href="lpu-online.html">LPU Online</a></li>
+          <li><a href="manipal-university-jaipur-online.html">Manipal University Jaipur</a></li>
+          <li><a href="chandigarh-universities.html">Chandigarh University</a></li>
+          <li><a href="nmims-cdoe.html">NMIMS CDOE</a></li>
+          <li><a href="all-universities.html">All 30+ Universities</a></li>
+        </ul>
+      </div>
+
+      <!-- Card 3: Programs -->
+      <div class="footer-col-card">
+        <div class="footer-col-header">
+          <div class="footer-badge-icon">🎓</div>
+          <h3>Programs</h3>
+        </div>
+        <ul class="footer-links-list">
+          <li><a href="online-mba.html">Online MBA</a></li>
+          <li><a href="online-mca.html">Online MCA</a></li>
+          <li><a href="online-mcom.html">Online M.Com</a></li>
+          <li><a href="online-ma.html">Online MA</a></li>
+          <li><a href="online-bba.html">Online BBA</a></li>
+          <li><a href="online-bca.html">Online BCA</a></li>
+          <li><a href="online-ba.html">Online BA</a></li>
+        </ul>
+      </div>
+
+      <!-- Card 4: Tools & Help -->
+      <div class="footer-col-card">
+        <div class="footer-col-header">
+          <div class="footer-badge-icon">🧰</div>
+          <h3>Tools &amp; Help</h3>
+        </div>
+        <ul class="footer-links-list">
+          <li><a href="compare-universities.html">Compare Universities</a></li>
+          <li><a href="top-10-online-mba-colleges-india-2027.html">Top 10 Online MBA Colleges</a></li>
+          <li><a href="index.html#process">How It Works</a></li>
+          <li><a href="index.html#why-us">Why Eduplier</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+
     </div>
-    <p class="foot-disc"><strong>Disclaimer:</strong> Eduplier provides unbiased guidance and comparative information on universities and programs for admission aspirants. Content such as text, graphics, images and university logos is for information purposes only. University names, logos and trademarks belong to their respective owners and are used only to identify the programs on which we offer guidance. Admission, program delivery and examinations are managed solely by the respective universities. Fees, eligibility, rankings and accreditations are subject to change; please confirm final details on the official university website before applying.</p>
-    <p class="foot-copy">© 2026 Eduplier Education Services. All Rights Reserved. • Empowering Education Choices</p>
+
+    <!-- Bottom Flex Row -->
+    <div class="footer-bottom-flex">
+      <div class="footer-bottom-brand">
+        <a href="index.html">
+          <img src="https://www.eduplier.com/logo-footer.png" alt="Eduplier - Empowering Education Choices">
+        </a>
+        <p>Eduplier Education Services helps students make informed education choices through personalised academic counselling and admission guidance.</p>
+      </div>
+
+      <div class="footer-follow-box">
+        <span>Follow us</span>
+        <div class="footer-social-icons">
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/profile.php?id=61588271393079" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path fill="#1877F2" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/eduplier" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24">
+              <defs>
+                <radialGradient id="igG" cx="0.2" cy="1" r="1"><stop offset="0%" stop-color="#FFDD55"/><stop offset="50%" stop-color="#FF543E"/><stop offset="100%" stop-color="#C837AB"/></radialGradient>
+              </defs>
+              <rect width="24" height="24" rx="6" fill="url(#igG)"/>
+              <path fill="#fff" d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zm5.2-8.4a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/>
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/company/eduplier-education-services/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path fill="#0A66C2" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0-.02-3.28 1.64 1.64 0 0 0 .02 3.28M7.86 18.5V10.1H5.06v8.4h2.8z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Disclaimer & Copyright -->
+    <div class="footer-legal-copy">
+      <p><strong>Disclaimer:</strong> Eduplier provides unbiased guidance and comparative information on universities and programs for admission aspirants. Content such as text, graphics, images and university logos is for information purposes only. University names, logos and trademarks belong to their respective owners and are used only to identify the programs on which we offer guidance. Admission, program delivery and examinations are managed solely by the respective universities. Fees, eligibility, rankings and accreditations are subject to change; please confirm final details on the official university website before applying.</p>
+      <p style="margin-top: 0.8rem;">© 2026 Eduplier Education Services. All Rights Reserved. • Empowering Education Choices</p>
+    </div>
+
   </div>
 </footer>
 
