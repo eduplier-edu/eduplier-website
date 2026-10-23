@@ -327,22 +327,101 @@ fbq('track', 'PageView');
   <div class="dots" id="dots"><button class="on" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button></div>
 </section>
 
+<!-- ADD THIS CSS to your stylesheet (or inside <style>) -->
+<style>
+  /* Moving strip – replaces the old .ustrip layout */
+  .umq{
+    --umq-gap:18px;
+    --umq-speed:80s;              /* smaller = faster */
+    position:relative;
+    overflow:hidden;
+    padding:6px 0 14px;
+    -webkit-mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);
+            mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);
+  }
+  .umq-track{
+    display:flex;
+    gap:var(--umq-gap);
+    width:max-content;
+    animation:umq-scroll var(--umq-speed) linear infinite;
+  }
+  .umq:hover .umq-track,
+  .umq:focus-within .umq-track{animation-play-state:paused}
+  .umq .ucard{
+    flex:0 0 230px;               /* fixed width so every card lines up */
+    width:230px;
+    height:auto;
+  }
+  .umq .ucard b{display:block}    /* full name always visible, wraps if long */
+  @keyframes umq-scroll{
+    from{transform:translateX(0)}
+    to{transform:translateX(calc(-50% - (var(--umq-gap) / 2)))}
+  }
+  @media (max-width:600px){
+    .umq{--umq-speed:60s}
+    .umq .ucard{flex-basis:190px;width:190px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .umq{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+    .umq-track{animation:none}
+  }
+</style>
+
 <section class="unis" id="universities">
   <div class="c">
     <h2>Top Universities &amp; Colleges</h2>
     <p>Compare programs, specializations, fees and learning options with guidance from our academic counsellors.</p>
-    <div class="ustrip">
-      <a class="ucard" href="/amity-online.html"><em>Admission Open</em><div class="lg"><img src="/amity.png" alt="Amity University Online logo" loading="lazy"></div><b>Amity University Online</b><small>Online Degree Programs</small></a>
-      <a class="ucard" href="/online-manipal-universities.html"><em>Admission Open</em><div class="lg"><img src="/muj.jpg" alt="Manipal University Online logo" loading="lazy"></div><b>Manipal University</b><small>Online Higher Education</small></a>
-      <a class="ucard" href="/lpu-online.html"><em>Admission Open</em><div class="lg"><img src="/lpu.jpg" alt="LPU Online logo" loading="lazy"></div><b>LPU Online</b><small>Online Degree Programs</small></a>
-      <a class="ucard" href="/chandigarh-universities.html"><em>Admission Open</em><div class="lg"><img src="/cu.png" alt="Chandigarh University Online logo" loading="lazy"></div><b>Chandigarh University</b><small>Online &amp; Distance Programs</small></a>
-      <a class="ucard" href="/nmims-cdoe.html"><em>Admission Open</em><div class="lg"><img src="/nmims.png" alt="NMIMS CDOE logo" loading="lazy"></div><b>NMIMS CDOE</b><small>Explore Suitable Programs</small></a>
-      <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/shoolini.png" alt="Shoolini University logo" loading="lazy"></div><b>Shoolini University</b><small>Online Degree Programs</small></a>
-      <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/gla.jpg" alt="GLA University logo" loading="lazy"></div><b>GLA University</b><small>Online Degree Programs</small></a>
+
+    <div class="umq" aria-label="Partner universities">
+      <div class="umq-track" id="umqTrack">
+
+        <a class="ucard" href="/amity-online.html"><em>Admission Open</em><div class="lg"><img src="/amity.png" alt="Amity University Online logo" loading="lazy"></div><b>Amity University Online</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/online-manipal-universities.html"><em>Admission Open</em><div class="lg"><img src="/muj.jpg" alt="Manipal University Online logo" loading="lazy"></div><b>Manipal University</b><small>Online Higher Education</small></a>
+        <a class="ucard" href="/lpu-online.html"><em>Admission Open</em><div class="lg"><img src="/lpu.jpg" alt="LPU Online logo" loading="lazy"></div><b>LPU Online</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/chandigarh-universities.html"><em>Admission Open</em><div class="lg"><img src="/cu.png" alt="Chandigarh University Online logo" loading="lazy"></div><b>Chandigarh University</b><small>Online &amp; Distance Programs</small></a>
+        <a class="ucard" href="/nmims-cdoe.html"><em>Admission Open</em><div class="lg"><img src="/nmims.png" alt="NMIMS CDOE logo" loading="lazy"></div><b>NMIMS CDOE</b><small>Explore Suitable Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/shoolini.png" alt="Shoolini University logo" loading="lazy"></div><b>Shoolini University</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/gla.jpg" alt="GLA University logo" loading="lazy"></div><b>GLA University</b><small>Online Degree Programs</small></a>
+
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/dypatil-pune.png" alt="DY Patil University (Pune) logo" loading="lazy"></div><b>DY Patil University (Pune)</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/dypatil-navimumbai.png" alt="DY Patil University (Navi Mumbai) logo" loading="lazy"></div><b>DY Patil University (Navi Mumbai)</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/upes.jpg" alt="University of Petroleum and Energy Studies logo" loading="lazy"></div><b>University of Petroleum and Energy Studies</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/amrita.jpg" alt="Amrita University logo" loading="lazy"></div><b>Amrita University</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/vgu.png" alt="Vivekanand Global University logo" loading="lazy"></div><b>Vivekanand Global University</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/smu.jpg" alt="Sikkim Manipal University Online logo" loading="lazy"></div><b>Sikkim Manipal University Online</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/srm.jpg" alt="SRM University (Sikkim) logo" loading="lazy"></div><b>SRM University (Sikkim)</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/sharda.png" alt="Sharda University logo" loading="lazy"></div><b>Sharda University</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/uttaranchal.png" alt="Uttaranchal University logo" loading="lazy"></div><b>Uttaranchal University</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/kurukshetra.png" alt="Kurukshetra University logo" loading="lazy"></div><b>Kurukshetra University</b><small>Online &amp; Distance Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/parul.png" alt="Parul University logo" loading="lazy"></div><b>Parul University</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/galgotias.png" alt="Galgotias University logo" loading="lazy"></div><b>Galgotias University</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/andhra.png" alt="Andhra University logo" loading="lazy"></div><b>Andhra University</b><small>Online &amp; Distance Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/mangalayatan.png" alt="Mangalyatan University logo" loading="lazy"></div><b>Mangalyatan University</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/bennett.png" alt="Bennett University logo" loading="lazy"></div><b>Bennett University</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/alliance.jpg" alt="Alliance University logo" loading="lazy"></div><b>Alliance University</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/subharti.jpg" alt="Swami Vivekanand Subharti University logo" loading="lazy"></div><b>Swami Vivekanand Subharti University</b><small>Online Degree Programs</small></a>
+        <a class="ucard" href="/all-universities.html"><em>Admission Open</em><div class="lg"><img src="/aligarh-muslim.jpg" alt="Aligarh Muslim University logo" loading="lazy"></div><b>Aligarh Muslim University</b><small>Distance Education Programs</small></a>
+
+      </div>
     </div>
+
     <div class="vall"><a class="btn blue" href="/all-universities.html">View All 30+ Universities →</a></div>
   </div>
 </section>
+
+<script>
+  // Duplicate the cards once so the loop is seamless
+  (function(){
+    var t=document.getElementById('umqTrack');
+    if(!t) return;
+    Array.prototype.slice.call(t.children).forEach(function(c){
+      var k=c.cloneNode(true);
+      k.setAttribute('aria-hidden','true');
+      k.setAttribute('tabindex','-1');
+      t.appendChild(k);
+    });
+  })();
+</script>
 
 <section class="c sec" id="courses">
   <div class="sh"><span>Explore our courses</span><h2>Explore Our Courses &amp; Be Awesome</h2><p>Select the category and compare the university.</p></div>
