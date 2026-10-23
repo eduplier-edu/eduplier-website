@@ -65,48 +65,80 @@ body{font-family:'Inter',sans-serif;scroll-behavior:smooth}
   </div>
 </section>
 
-<!-- Hero -->
+<!-- =====================================================================
+  STEP 1
+  In amity-online.html, DELETE everything from
+      <section class="c sec" id="contact">
+  down to and including the stray
+      </main>
+  (that is the home-page contact section that got pasted in; it relies on
+  home-page CSS classes that this Tailwind page doesn't have).
+  Put THIS block in its place, right after the university banner section.
+====================================================================== -->
+
+<!-- Hero + enquiry form -->
 <section class="bg-gradient-to-r from-brand-950 via-brand-900 to-brand-800 text-white">
   <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16 grid lg:grid-cols-2 gap-10 items-center">
     <div>
       <span class="inline-block bg-white/10 border border-white/20 text-brand-100 text-xs font-semibold px-3 py-1 rounded-full mb-4">Admission Open for 2026</span>
-      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">LPU University <span class="text-brand-200">Online Programs</span></h1>
-      <p class="mt-4 text-brand-100 text-lg max-w-xl">Earn a UGC-entitled degree from LPU without leaving home. Eduplier guides you from choosing a program to completing admission.</p>
-      <div class="mt-6 grid grid-cols-4 gap-2 max-w-md"><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">MBA</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">MCA</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">M.Com</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">MA</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">BBA</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">BCA</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">B.Com</a><a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">BA</a></div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">Amity University <span class="text-brand-200">Online Programs</span></h1>
+      <p class="mt-4 text-brand-100 text-lg max-w-xl">Explore Amity Online UG and PG programs with free expert counselling. Eduplier guides you from choosing a program to completing admission.</p>
+      <div class="mt-6 grid grid-cols-4 gap-2 max-w-md">
+        <a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">MBA</a>
+        <a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">MCA</a>
+        <a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">M.Com</a>
+        <a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">MA</a>
+        <a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">BBA</a>
+        <a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">BCA</a>
+        <a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">B.Com</a>
+        <a href="#programs" class="bg-white/10 border border-white/10 rounded-lg py-2.5 text-center text-sm font-semibold hover:bg-white/20">BA</a>
+      </div>
       <div class="mt-6 flex flex-wrap gap-3">
         <a href="#enquire" class="bg-white text-brand-800 font-semibold px-6 py-3 rounded-lg shadow hover:bg-brand-50">Get Free Counselling →</a>
         <a href="tel:+919315594429" class="border border-white/40 font-semibold px-6 py-3 rounded-lg hover:bg-white/10"><i class="fa-solid fa-phone mr-2 text-sm"></i>Call Now</a>
       </div>
     </div>
 
-    <!-- Enquiry form -->
+    <!-- Enquiry form: same fields and field names as the home page -->
     <div id="enquire" class="scroll-mt-24 bg-white text-slate-800 rounded-2xl shadow-xl p-6 sm:p-8">
       <h2 class="text-xl font-bold text-slate-900">Request Free Counselling</h2>
-      <p class="text-sm text-slate-500 mb-4">Share your details and our counsellor will get in touch.</p>
+      <p class="text-sm text-slate-500 mb-4">Fill in your details and tell us what you're looking for.</p>
       <form id="leadForm" class="space-y-3">
-        <input type="hidden" name="access_key" value="PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE">
-        <input type="hidden" name="subject" value="New Enquiry - LPU Online Landing Page (Eduplier)">
-        <input type="hidden" name="from_name" value="Eduplier Website">
-        <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
-        <input id="name" name="Name" required placeholder="Full Name *" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
-        <input id="phone" name="Mobile" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric" placeholder="Mobile Number (10 digits) *" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
-        <input id="email" name="Email" type="email" placeholder="Email Address" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
-        <select id="program" name="Program" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-brand-500">
-          <option value="">Select Program *</option>
-          <optgroup label="Postgraduate (PG)">
-            <option>LPU Online MBA</option>
-            <option>LPU Online MCA</option>
-            <option>LPU Online M.Com</option>
-            <option>LPU Online MA</option>
-          </optgroup>
-          <optgroup label="Undergraduate (UG)">
-            <option>LPU Online BBA</option>
-            <option>LPU Online BCA</option>
-            <option>LPU Online B.Com</option>
-            <option>LPU Online BA</option>
-          </optgroup>
-          <option>Other</option>
-        </select>
+        <input type="hidden" name="access_key" value="497360d2-a86c-4712-983d-e6c84be948dc">
+        <input type="hidden" name="subject" value="New Enquiry - Amity Online Page (Eduplier)">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div>
+          <label for="name" class="block text-sm font-semibold text-slate-700 mb-1">Full Name *</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+        </div>
+        <div>
+          <label for="phone" class="block text-sm font-semibold text-slate-700 mb-1">Mobile Number *</label>
+          <input type="tel" id="phone" name="mobile" placeholder="Enter mobile number" required class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-semibold text-slate-700 mb-1">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+        </div>
+        <div>
+          <label for="program" class="block text-sm font-semibold text-slate-700 mb-1">Program Interested In</label>
+          <select id="program" name="program" class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+            <option value="">Select a program</option>
+            <option>Online MBA</option>
+            <option>Online MCA</option>
+            <option>Online BBA</option>
+            <option>Online BCA</option>
+            <option>Online M.Com</option>
+            <option>Online BA</option>
+            <option>Online MA</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-semibold text-slate-700 mb-1">Message</label>
+          <textarea id="message" name="message" rows="3" placeholder="Tell us what you are looking for..." class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+        </div>
+
         <button type="submit" id="submitBtn" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 rounded-lg shadow-sm transition">Submit Enquiry →</button>
         <p id="formMsg" class="hidden text-sm text-center font-medium rounded-lg p-3"></p>
         <p class="text-[11px] text-slate-400 text-center">By submitting, you agree to our <a href="https://www.eduplier.com/privacy-policy.html" class="underline">Privacy Policy</a>.</p>
@@ -115,6 +147,14 @@ body{font-family:'Inter',sans-serif;scroll-behavior:smooth}
   </div>
 </section>
 
+
+<!-- =====================================================================
+  STEP 2
+  Your existing <script> that starts with
+      // Sends every enquiry to your email via Web3Forms
+  already looks for #submitBtn and #formMsg. Those IDs now exist again in
+  the block above, so that script needs NO change. Leave it as it is.
+====================================================================== -->
 <!-- Highlights -->
 <section class="max-w-7xl mx-auto px-4 py-14">
   <div class="text-center max-w-2xl mx-auto mb-8">
