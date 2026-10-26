@@ -16,6 +16,11 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden;padding-bottom:calc(var(--bar-h) + env(safe-area-inset-bottom,0px))}
 a{color:inherit;text-decoration:none}
 .wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+header .wrap{max-width:1400px}
+.topbar{background:#0f2744;color:#fff;font-size:13px;font-weight:500}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:7px;padding-bottom:7px}
+.topbar a{font-weight:700;white-space:nowrap}
+@media(max-width:560px){.topbar .t{display:none}.topbar .wrap{justify-content:center}}
 
 /* HEADER – never overflows; links collapse into a menu */
 header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
@@ -23,7 +28,8 @@ header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px s
 .logo{display:flex;flex-direction:column;line-height:1.05;flex-shrink:0}
 .logo b{font-size:24px;font-weight:800;color:var(--navy)}
 .logo small{font-size:9.5px;letter-spacing:.8px;font-weight:700;color:var(--orange);text-transform:uppercase}
-.links{display:flex;gap:18px;list-style:none;margin:0 auto;padding:0;font-size:14.5px;font-weight:500;color:var(--muted);white-space:nowrap;min-width:0}
+.links{display:flex;flex:1 1 auto;justify-content:center;gap:15px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap;min-width:0}
+.links .x{display:none}
 .links a:hover{color:var(--blue)}
 .right{display:flex;align-items:center;gap:14px;flex-shrink:0;margin-left:auto}
 .call{font-weight:700;font-size:14.5px;white-space:nowrap}
@@ -31,7 +37,8 @@ header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px s
 .btn.blue{background:var(--blue)}
 .btn.line{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
 .burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:40px;height:40px;font-size:20px;color:var(--text);cursor:pointer}
-@media(max-width:1180px){.links{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);flex-direction:column;gap:0;padding:8px 24px 16px;border-bottom:1px solid var(--line);margin:0}.links.open{display:flex}.links a{display:block;padding:10px 0}.burger{display:block}.nav{position:relative}}
+@media(min-width:1241px) and (max-width:1499px){.call span{display:none}}
+@media(max-width:1240px){.links .x{display:block}.links{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);flex-direction:column;gap:0;padding:8px 24px 16px;border-bottom:1px solid var(--line);margin:0}.links.open{display:flex}.links a{display:block;padding:10px 0}.burger{display:block}.nav{position:relative}}
 @media(max-width:640px){.call span{display:none}.btn{padding:10px 16px}.logo b{font-size:21px}}
 
 /* HERO */
@@ -89,13 +96,13 @@ footer{background:var(--surface);border-top:1px solid var(--line);padding:28px 0
 </style>
 </head>
 <body>
+<div class="topbar"><div class="wrap"><span class="t">Free counselling for online MBA &amp; BBA programs</span><a href="tel:+919315594429">📞 +91 93155 94429</a></div></div>
 <header><div class="wrap"><div class="nav">
 <a class="logo" href="#"><b>Eduplier</b><small>Empowering Education Choices</small></a>
 <ul class="links" id="links">
-<li><a href="#">Home</a></li><li><a href="#">About Us</a></li><li><a href="#">Top Universities</a></li><li><a href="#programs">Trending Courses</a></li><li><a href="#">Compare Colleges</a></li><li><a href="#">Why Eduplier</a></li><li><a href="#">Our Team</a></li><li><a href="#">Blog</a></li><li><a href="#faq">FAQs</a></li><li><a href="#">Contact</a></li>
+<li><a href="#">Home</a></li><li><a href="#">About Us</a></li><li><a href="#">Top Universities</a></li><li><a href="#programs">Trending Courses</a></li><li><a href="#">Compare Colleges</a></li><li><a href="#">Why Eduplier</a></li><li class="x"><a href="#">Our Team</a></li><li><a href="#">Blog</a></li><li><a href="#faq">FAQs</a></li><li><a href="#">Contact</a></li>
 </ul>
 <div class="right">
-<a class="call" href="tel:+919315594429">📞 <span>+91 93155 94429</span></a>
 <a class="btn" href="#enquire">Enquire Now</a>
 <button class="burger" id="burger" aria-label="Menu">☰</button>
 </div></div></div></header>
