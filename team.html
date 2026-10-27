@@ -55,7 +55,7 @@ section{padding:clamp(4rem,8vw,7rem) 0}
 .head-cta{display:flex;align-items:center;gap:.7rem;flex:none}
 .head-cta .btn{padding:.65rem 1.2rem;font-size:.93rem;white-space:nowrap}
 .menu-btn{display:none;background:none;border:2px solid var(--line);border-radius:12px;font-size:1.4rem;line-height:1;padding:.45rem .7rem;color:var(--ink);cursor:pointer}
-@media(max-width:1180px){
+@media(1180px to 1319px){
 .menu-btn{display:block}
 .head-cta .btn-ghost{display:none}
 .nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;align-items:flex-start;gap:0;padding:.5rem 1.25rem 1rem;border-bottom:1px solid var(--line);box-shadow:0 20px 30px -20px rgba(13,43,69,.35)}
@@ -195,6 +195,17 @@ section{padding:clamp(4rem,8vw,7rem) 0}
 html{scroll-behavior:auto}
 .btn,.t-card,.wa-float,.footer-col-card{transition:none}
 .t-card:hover,.btn-primary:hover,.wa:hover,.wa-float:hover{transform:none}}
+  .brand{flex:none}
+.brand-logo{flex:none;width:auto;max-width:none;height:48px}
+ 
+/* give the desktop header enough room so nothing is crushed or cut */
+@media(min-width:521px){.topbar .wrap{width:min(1400px,100% - 2.5rem)}}
+@media(min-width:1320px){.nav{gap:clamp(.7rem,1.2vw,1.3rem)}}
+@media(max-width:1499px){.head-cta .btn-ghost{display:none}}
+ 
+/* phones */
+@media(max-width:520px){.brand-logo{height:36px}}
+@media(max-width:360px){.brand-logo{height:30px}}
 </style>
 </head>
 <body>
@@ -213,11 +224,11 @@ html{scroll-behavior:auto}
       <span class="brand-text"><span class="brand-name">Eduplier</span><span class="brand-tag">Empowering Education Choices</span></span></a>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="index.html#home">Home</a>
-      <a href="index.html#universities">Top Universities</a>
-      <a href="index.html#courses">Trending Courses</a>
-      <a href="compare-universities.html">Compare Colleges</a>
-      <a href="index.html#why-us">Why Eduplier</a>
-      <a href="index.html#process">How It Works</a>
+      <a href="https://www.eduplier.com/all-universities.html#University">Top Universities</a>
+      <a href="https://www.eduplier.com/index.html#programs">Trending Courses</a>
+      <a href="https://www.eduplier.com/compare-universities.html">Compare Colleges</a>
+      <a href="https://www.eduplier.com/index.html#why-us">Why Eduplier</a>
+      <a href="https://www.eduplier.com/index.html#process">How It Works</a>
       <a href="blog.html">Blog</a>
       <a href="index.html#contact">Contact</a>
     </nav>
