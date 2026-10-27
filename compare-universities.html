@@ -195,6 +195,69 @@
         70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
         100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
+        CSS = r"""
+/* ===== HOME-STYLE HEADER (same as index.html) ===== */
+.strip{background:#0b2447;color:#cfe0f7;font-size:.82rem}
+.strip-inner{max-width:1200px;margin:0 auto;padding:7px 20px;display:flex;justify-content:space-between;gap:6px 14px;flex-wrap:wrap}
+.strip a{color:inherit;text-decoration:none}
+.strip a:hover{color:#fff}
+header.site-header{position:sticky;top:0;z-index:1000;width:100%;background:#fff;border-bottom:1px solid #dfe7f3;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:0}
+.site-header .header-container{max-width:1380px;margin:0 auto;padding:.75rem 1.5rem;display:flex;align-items:center;gap:1rem}
+.site-header .logo-area{display:flex;align-items:center;gap:.75rem;text-decoration:none;flex:0 0 auto}
+.site-header .logo-img{height:48px;width:auto;max-width:none;flex:none}
+.site-header .logo-text{display:flex;flex-direction:column}
+.site-header .brand-name{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:1.5rem;font-weight:700;color:#0b5ed7;line-height:1.1}
+.site-header .brand-tagline{font-size:.62rem;font-weight:700;color:#ff6a00;letter-spacing:.5px}
+.site-header .nav-menu{display:flex;flex-direction:row;align-items:center;justify-content:center;flex:1 1 auto;min-width:0;gap:clamp(.6rem,1.4vw,1.4rem);margin:0;padding:0;position:static;background:none;border:0}
+.site-header .nav-link,.site-header .dropdown-btn{font:600 .92rem Inter,system-ui,sans-serif;color:#2b3940;text-decoration:none;white-space:nowrap;padding:6px 2px;margin:0;background:none;border:0;cursor:pointer;transition:color .2s}
+.site-header .nav-link:hover,.site-header .nav-link.active,.site-header .dropdown-btn:hover{color:#0b5ed7}
+.site-header .nav-dropdown{position:relative}
+.site-header .dropdown-content{display:none;position:absolute;top:100%;left:0;min-width:170px;z-index:1100;background:#fff;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.12);padding:.5rem 0}
+.site-header .dropdown-content a{display:block;padding:8px 16px;color:#333;font:500 .88rem Inter,system-ui,sans-serif;text-decoration:none}
+.site-header .dropdown-content a:hover{background:#f4f7fb;color:#0b5ed7}
+.site-header .nav-dropdown:hover .dropdown-content,.site-header .nav-dropdown.open .dropdown-content{display:block}
+.site-header .header-actions{display:flex;align-items:center;gap:1rem;flex:0 0 auto;margin-left:auto}
+.site-header .phone-link{display:flex;align-items:center;gap:.4rem;text-decoration:none;color:#1f2937;font-size:.95rem;font-weight:700;white-space:nowrap}
+.site-header .btn-enquire{display:inline-block;background:#ff6a00;color:#fff;padding:.6rem 1.4rem;font-weight:700;font-size:.95rem;border-radius:8px;text-decoration:none;white-space:nowrap;flex:0 0 auto;transition:background .2s}
+.site-header .btn-enquire:hover{background:#e55e00}
+.site-header .nav-toggle{display:none;width:44px;height:44px;flex:0 0 44px;border:1px solid #dfe7f3;border-radius:10px;background:#fff;cursor:pointer;position:relative;padding:0}
+.site-header .nav-toggle span,.site-header .nav-toggle span::before,.site-header .nav-toggle span::after{position:absolute;left:11px;width:20px;height:2.5px;border-radius:2px;background:#0b2447;content:"";transition:.2s}
+.site-header .nav-toggle span{top:20px}
+.site-header .nav-toggle span::before{left:0;top:-7px}
+.site-header .nav-toggle span::after{left:0;top:7px}
+.site-header .nav-toggle[aria-expanded="true"] span{background:transparent}
+.site-header .nav-toggle[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.site-header .nav-toggle[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+@media(max-width:1359px){.site-header .phone-link{display:none}}
+@media(max-width:1100px){
+  .site-header .nav-toggle{display:inline-block}
+  .site-header .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;background:#fff;padding:6px 1.5rem 16px;border-bottom:1px solid #dfe7f3;box-shadow:0 14px 24px rgba(11,36,71,.12);max-height:calc(100vh - 120px);overflow-y:auto}
+  .site-header .nav-menu.open{display:flex}
+  .site-header .nav-link,.site-header .dropdown-btn{display:block;width:100%;text-align:left;padding:14px 2px;border-bottom:1px solid #eef2f8;font-size:1rem}
+  .site-header .nav-dropdown{width:100%}
+  .site-header .dropdown-content{position:static;display:none;box-shadow:none;border-radius:0;padding:0 0 6px 14px;min-width:0}
+  .site-header .nav-dropdown:hover .dropdown-content{display:none}
+  .site-header .nav-dropdown.open .dropdown-content{display:block}
+  .site-header .dropdown-content a{padding:11px 4px}
+}
+@media(max-width:560px){
+  .strip-inner{justify-content:center;text-align:center;font-size:.75rem}
+  .site-header .header-container{padding:.6rem 1rem;gap:.5rem}
+  .site-header .logo-img{height:36px}
+  .site-header .brand-name{font-size:1.25rem}
+  .site-header .brand-tagline{font-size:.5rem;letter-spacing:.2px}
+  .site-header .header-actions{gap:.5rem}
+  .site-header .btn-enquire{padding:.5rem .9rem;font-size:.85rem}
+  .site-header .nav-toggle{width:40px;height:40px;flex-basis:40px}
+  .site-header .nav-toggle span{top:18px}
+}
+@media(max-width:380px){
+  .site-header .brand-tagline{display:none}
+  .site-header .logo-img{height:30px}
+  .site-header .btn-enquire{padding:.45rem .7rem;font-size:.8rem}
+}
+/* ===== END HOME-STYLE HEADER ===== */
+"""
     </style>
 </head>
 <body>
@@ -214,27 +277,57 @@
         </div>
     </div>
 
-    <header>
-        <div class="container navbar">
-            <a href="/index.html" class="brand">
-                <img src="/logo-icon.png" alt="Eduplier icon" class="brand-icon">
-                <span class="brand-text">
-                    <span class="brand-name">Eduplier</span>
-                    <span class="brand-tagline">Empowering Education Choices</span>
-                </span>
-            </a>
-            <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
-            <nav class="nav-links" id="navLinks">
-                <a href="/index.html">Home</a>
-                <a href="/index.html#programs">Programs</a>
-                <a href="/index.html#universities">Universities</a>
-                <a href="/index.html#why-us">Why Eduplier</a>
-                <a href="/index.html#process">How It Works</a>
-                <a href="#contact">Contact</a>
-                <a href="#contact" class="nav-cta">Free Counselling</a>
-            </nav>
+    
+    <body id="home">
+
+<div class="strip"><div class="c"><span>🎓 Empowering Education Choices • Expert Academic Guidance</span><span>📧 <a href="mailto:info@eduplier.com">info@eduplier.com</a> &nbsp;•&nbsp; <a href="tel:+919315594429">📞 +91 93155 94429</a></span></div></div>
+
+
+<header class="site-header">
+  <div class="header-container">
+ 
+    <!-- Logo -->
+    <a href="https://www.eduplier.com/index.html" class="logo-area">
+      <img src="logo.png" alt="Eduplier Logo" class="logo-img">
+      <div class="logo-text">
+        <span class="brand-name">Eduplier</span>
+        <span class="brand-tagline">EMPOWERING EDUCATION CHOICES</span>
+      </div>
+    </a>
+ 
+    <!-- Navigation Menu -->
+    <nav class="nav-menu" id="siteNav" aria-label="Main">
+      <a href="https://www.eduplier.com/index.html" class="nav-link active">Home</a>
+      <a href="https://www.eduplier.com/all-universities.html" class="nav-link">Top Universities</a>
+      <a href="#courses" class="nav-link">Trending Courses</a>
+      <a href="https://www.eduplier.com/compare-universities.html" class="nav-link">Compare Colleges</a>
+ 
+      <div class="nav-dropdown" id="navDd">
+        <button type="button" class="dropdown-btn" aria-expanded="false" aria-haspopup="true">About &amp; More &#9662;</button>
+        <div class="dropdown-content">
+          <a href="https://www.eduplier.com/about-us.html">About Us</a>
+          <a href="https://www.eduplier.com/index.html#why-us">Why Eduplier</a>
+          <a href="https://www.eduplier.com/team.html">Our Team</a>
+          <a href="https://www.eduplier.com/index.html#process">How It Works</a>
         </div>
-    </header>
+      </div>
+ 
+      <a href="https://www.eduplier.com/blog.html" class="nav-link">Blog</a>
+      <a href="https://www.eduplier.com/index.html#contact" class="nav-link">Contact</a>
+    </nav>
+ 
+    <!-- Header Actions (Call, CTA, hamburger) -->
+    <div class="header-actions">
+      <a href="tel:+919315594429" class="phone-link">
+        <span class="phone-icon">📞</span>
+        <span class="phone-number">+91 93155 94429</span>
+      </a>
+      <a href="#contact" class="btn-enquire">Enquire</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><span></span></button>
+    </div>
+ 
+  </div>
+</header>
 
     <nav class="breadcrumb">
         <div class="container">
