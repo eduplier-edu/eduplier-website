@@ -382,6 +382,25 @@
     .btn, .t-card, .wa-float, .social a { transition: none; }
     .t-card:hover, .btn-primary:hover, .wa:hover, .wa-float:hover { transform: none; }
   }
+  img{max-width:100%}
+ 
+/* ---------- 1) ENQUIRE BUTTON CUT OFF (header) ---------- */
+/* logo + button + menu icon must fit one row; logo shrinks, button never does */
+@media(max-width:700px){
+  .hd,.header-container{gap:8px!important;padding-left:12px;padding-right:12px}
+  .brand,.logo-area{min-width:0;flex:1 1 auto!important;gap:8px!important;overflow:hidden}
+  .brand img,.logo-img{height:34px!important;width:auto!important}
+  .brand b,.brand-name{font-size:1.1rem!important}
+  .brand small,.brand-tagline{font-size:.5rem!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+  .hcta,.header-actions{flex:0 0 auto!important;gap:8px!important;margin-left:0!important}
+  .hcta .tel,.hcta .phone-link,.header-actions .phone-link{display:none!important}
+  .hcta .btn,.btn-enquire{padding:9px 14px!important;font-size:.85rem!important;white-space:nowrap}
+  .menu,.nav-toggle{flex:0 0 auto;margin-left:0!important}
+}
+@media(max-width:400px){
+  .brand small,.brand-tagline{display:none!important}
+  .hcta .btn,.btn-enquire{padding:8px 11px!important;font-size:.8rem!important}
+}
 </style>
 </head>
 <body>
