@@ -428,28 +428,51 @@
   </div>
 </div>
 
-<!-- Header -->
-<header class="topbar">
-  <div class="wrap">
-    <a class="brand" href="https://www.eduplier.com/index.html" aria-label="Eduplier - Empowering Education Choices">
-      <img class="brand-logo" src="https://www.eduplier.com/logo-icon.png" alt="Eduplier icon" width="64" height="48">
-      <span class="brand-text"><span class="brand-name">Eduplier</span><span class="brand-tag">Empowering Education Choices</span></span>
+<body id="home">
+
+<header class="site-header">
+  <div class="header-container">
+ 
+    <!-- Logo -->
+    <a href="https://www.eduplier.com/index.html" class="logo-area">
+      <img src="logo.png" alt="Eduplier Logo" class="logo-img">
+      <div class="logo-text">
+        <span class="brand-name">Eduplier</span>
+        <span class="brand-tagline">EMPOWERING EDUCATION CHOICES</span>
+      </div>
     </a>
-    <nav class="nav" id="nav" aria-label="Main">
-      <a href="index.html#home">Home</a>
-      <a href="index.html#universities">Top Universities</a>
-      <a href="index.html#courses">Trending Courses</a>
-      <a href="compare-universities.html">Compare Colleges</a>
-      <a href="index.html#why-us">Why Eduplier</a>
-      <a href="index.html#process">How It Works</a>
-      <a href="blog.html">Blog</a>
-      <a href="index.html#contact">Contact</a>
+ 
+    <!-- Navigation Menu -->
+    <nav class="nav-menu" id="siteNav" aria-label="Main">
+      <a href="https://www.eduplier.com/index.html" class="nav-link active">Home</a>
+      <a href="https://www.eduplier.com/all-universities.html" class="nav-link">Top Universities</a>
+      <a href="#courses" class="nav-link">Trending Courses</a>
+      <a href="https://www.eduplier.com/compare-universities.html" class="nav-link">Compare Colleges</a>
+ 
+      <div class="nav-dropdown" id="navDd">
+        <button type="button" class="dropdown-btn" aria-expanded="false" aria-haspopup="true">About &amp; More &#9662;</button>
+        <div class="dropdown-content">
+          <a href="https://www.eduplier.com/about-us.html">About Us</a>
+          <a href="https://www.eduplier.com/index.html#why-us">Why Eduplier</a>
+          <a href="https://www.eduplier.com/team.html">Our Team</a>
+          <a href="https://www.eduplier.com/index.html#process">How It Works</a>
+        </div>
+      </div>
+ 
+      <a href="https://www.eduplier.com/blog.html" class="nav-link">Blog</a>
+      <a href="https://www.eduplier.com/index.html#contact" class="nav-link">Contact</a>
     </nav>
-    <div class="head-cta">
-      <a class="btn btn-ghost" href="tel:+919315594429">📞 +91 93155 94429</a>
-      <a class="btn btn-primary" href="index.html#contact">Enquire Now</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">☰</button>
+ 
+    <!-- Header Actions (Call, CTA, hamburger) -->
+    <div class="header-actions">
+      <a href="tel:+919315594429" class="phone-link">
+        <span class="phone-icon">📞</span>
+        <span class="phone-number">+91 93155 94429</span>
+      </a>
+      <a href="#contact" class="btn-enquire">Enquire</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><span></span></button>
     </div>
+ 
   </div>
 </header>
 
