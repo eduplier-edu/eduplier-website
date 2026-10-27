@@ -68,34 +68,232 @@
   .btn-light { border-color: rgba(255,255,255,.5); color: var(--white); }
   .btn-light:hover { background: var(--white); color: var(--ink); }
 
-  /* ---------- Top strip + header ---------- */
+  /* ---------- Top strip ---------- */
   .strip { background: var(--ink); color: rgba(255,255,255,.9); font-size: .86rem; }
-  .strip .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: .5rem; flex-wrap: wrap; }
-  .strip a { text-decoration: none; }
+  .strip .wrap-strip { width: min(1160px, 100% - 2.5rem); margin-inline: auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: .5rem; flex-wrap: wrap; }
+  .strip a { text-decoration: none; color: inherit; }
   .strip a:hover { color: var(--marigold); }
-  @media (max-width: 700px) { .strip .strip-right { display: none; } .strip .wrap { justify-content: center; } }
+  @media (max-width: 700px) { .strip .strip-right { display: none; } .strip .wrap-strip { justify-content: center; } }
 
-  .topbar { background: var(--white); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 30; }
-  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: 1rem; }
-  .brand { text-decoration: none; display: flex; align-items: center; gap: .7rem; flex: none; }
-  .brand-logo { height: 48px; width: auto; display: block; }
-  .brand-text { display: flex; flex-direction: column; line-height: 1; }
-  .brand-name { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; letter-spacing: -.01em; color: var(--ink); }
-  .brand-tag { font-size: .68rem; color: var(--ink-soft); margin-top: .3rem; }
-  .nav { display: flex; gap: 1.3rem; align-items: center; }
-  .nav a { text-decoration: none; font-weight: 500; font-size: .95rem; white-space: nowrap; }
-  .nav a:hover { color: var(--ink); }
-  .head-cta { display: flex; align-items: center; gap: .7rem; flex: none; }
-  .head-cta .btn { padding: .65rem 1.2rem; font-size: .93rem; }
-  .menu-btn { display: none; background: none; border: 2px solid var(--line); border-radius: 12px; font-size: 1.4rem; line-height: 1; padding: .45rem .7rem; color: var(--ink); cursor: pointer; }
-  @media (max-width: 1180px) {
-    .menu-btn { display: block; }
-    .head-cta .btn-ghost { display: none; }
-    .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; align-items: flex-start; gap: 0; padding: .5rem 1.25rem 1rem; border-bottom: 1px solid var(--line); box-shadow: 0 20px 30px -20px rgba(13,43,69,.35); }
-    .nav.open { display: flex; }
-    .nav a { padding: .8rem 0; width: 100%; border-bottom: 1px solid var(--line); font-size: 1rem; }
+  /* ---------- Site Header & Navigation Fixes ---------- */
+  .site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
-  @media (max-width: 520px) { .brand-tag { display: none; } .brand-name { font-size: 1.4rem; } .brand-logo { height: 42px; } .head-cta .btn-primary { display: none; } }
+  .header-container {
+    width: min(1160px, 100% - 2.5rem);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 76px;
+    gap: 1.5rem;
+  }
+
+  /* Logo Area */
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  /* Crucial Fix: Keep logo constrained */
+  .logo-img {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.45rem;
+    letter-spacing: -.01em;
+    color: var(--ink);
+  }
+  .brand-tagline {
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: #e06c1b;
+  }
+
+  /* Navigation Links */
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .nav-link {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .95rem;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    transition: color .2s ease;
+  }
+  .nav-link:hover, .nav-link.active {
+    color: var(--ink);
+  }
+
+  /* Dropdown Menu */
+  .nav-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-btn {
+    background: var(--ink);
+    color: var(--white);
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: .92rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    transition: background .2s ease;
+  }
+  .dropdown-btn:hover {
+    background: #174269;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 190px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: .5rem 0;
+    box-shadow: 0 12px 24px -6px rgba(13,43,69,.15);
+    z-index: 110;
+  }
+  .nav-dropdown:hover .dropdown-content,
+  .nav-dropdown:focus-within .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a {
+    display: block;
+    padding: .6rem 1.2rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: .92rem;
+    font-weight: 500;
+    transition: background .15s ease, color .15s ease;
+  }
+  .dropdown-content a:hover {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  /* Header Actions */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+  .phone-link {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .92rem;
+    color: var(--ink);
+  }
+  .phone-link:hover {
+    color: var(--sky);
+  }
+  .btn-enquire {
+    background: var(--marigold);
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: .9rem;
+    padding: .55rem 1.25rem;
+    border-radius: 999px;
+    transition: background .2s ease, transform .2s ease;
+  }
+  .btn-enquire:hover {
+    background: var(--marigold-deep);
+    transform: translateY(-1px);
+  }
+
+  /* Mobile Nav Toggle */
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: .5rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  /* Header Responsive Breakpoints */
+  @media (max-width: 1080px) {
+    .phone-link { display: none; }
+  }
+  @media (max-width: 960px) {
+    .nav-toggle { display: block; }
+    .nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      padding: 1rem 1.5rem 1.5rem;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 15px 30px -10px rgba(13,43,69,.15);
+    }
+    .nav-menu.open {
+      display: flex;
+    }
+    .nav-link {
+      padding: .85rem 0;
+      width: 100%;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-dropdown {
+      width: 100%;
+      padding-top: .7rem;
+    }
+    .dropdown-btn {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+      border: 1px solid var(--line);
+      margin-top: .5rem;
+    }
+  }
+  @media (max-width: 520px) {
+    .brand-tagline { display: none; }
+    .btn-enquire { display: none; }
+    .logo-img { height: 38px; }
+  }
 
   /* ---------- Hero ---------- */
   .hero { padding-top: clamp(3.5rem, 7vw, 6rem); overflow: hidden; }
@@ -227,7 +425,7 @@
   .wa:hover { background: #1fb858; transform: translateY(-2px); }
   @media (max-width: 860px) { .cta-box { grid-template-columns: 1fr; } }
 
-  /* ---------- MODERN CARDS FOOTER (Matches screenshot) ---------- */
+  /* ---------- MODERN CARDS FOOTER ---------- */
   .footer-card-section {
     background: linear-gradient(135deg, #091b2c 0%, #0d2b45 50%, #153b5c 100%);
     color: #ffffff;
@@ -265,7 +463,7 @@
     border-color: rgba(255, 255, 255, 0.25);
     background: rgba(255, 255, 255, 0.08);
   }
-  .footer-col- {
+  .footer-col-header {
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -420,9 +618,15 @@
 </head>
 <body id="home">
 
-<div class="strip"><div class="c"><span>🎓 Empowering Education Choices • Expert Academic Guidance</span><span>📧 <a href="mailto:info@eduplier.com">info@eduplier.com</a> &nbsp;•&nbsp; <a href="tel:+919315594429">📞 +91 93155 94429</a></span></div></div>
+<!-- Top Strip -->
+<div class="strip">
+  <div class="wrap-strip">
+    <span>🎓 Empowering Education Choices • Expert Academic Guidance</span>
+    <span class="strip-right">📧 <a href="mailto:info@eduplier.com">info@eduplier.com</a> &nbsp;•&nbsp; <a href="tel:+919315594429">📞 +91 93155 94429</a></span>
+  </div>
+</div>
 
-
+<!-- Main Header -->
 <header class="site-header">
   <div class="header-container">
  
@@ -437,11 +641,12 @@
  
     <!-- Navigation Menu -->
     <nav class="nav-menu" id="siteNav" aria-label="Main">
-      <a href="https://www.eduplier.com/index.html" class="nav-link active">Home</a>
+      <a href="https://www.eduplier.com/index.html" class="nav-link">Home</a>
       <a href="https://www.eduplier.com/all-universities.html" class="nav-link">Top Universities</a>
       <a href="#courses" class="nav-link">Trending Courses</a>
       <a href="https://www.eduplier.com/compare-universities.html" class="nav-link">Compare Colleges</a>
  
+      <!-- Dropdown -->
       <div class="nav-dropdown" id="navDd">
         <button type="button" class="dropdown-btn" aria-expanded="false" aria-haspopup="true">About &amp; More &#9662;</button>
         <div class="dropdown-content">
@@ -456,19 +661,18 @@
       <a href="https://www.eduplier.com/index.html#contact" class="nav-link">Contact</a>
     </nav>
  
-    <!-- Header Actions (Call, CTA, hamburger) -->
+    <!-- Header Actions (Call, CTA, Hamburger) -->
     <div class="header-actions">
       <a href="tel:+919315594429" class="phone-link">
         <span class="phone-icon">📞</span>
         <span class="phone-number">+91 93155 94429</span>
       </a>
       <a href="#contact" class="btn-enquire">Enquire</a>
-      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><span></span></button>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">☰</button>
     </div>
  
   </div>
 </header>
-
 
 <main>
 
@@ -635,7 +839,7 @@
 
 </main>
 
-<!-- ===== MODERN CARD FOOTER (Matches Website Theme) ===== -->
+<!-- ===== MODERN CARD FOOTER ===== -->
 <footer class="footer-card-section" aria-label="Website footer">
   <div class="wrap">
     
@@ -757,20 +961,22 @@
   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.12.55 4.19 1.6 6.01L4 29l8.1-1.57a12 12 0 0 0 3.94.66C22.68 28.09 28 22.69 28 16.05 28 9.4 22.68 3 16.04 3Zm0 22.05c-1.2 0-2.38-.32-3.4-.93l-.24-.15-4.8.93.97-4.67-.16-.25a9.9 9.9 0 0 1-1.52-5.3c0-5.5 4.47-9.97 9.98-9.97 5.5 0 9.96 4.47 9.96 9.97 0 5.5-4.47 10.37-9.96 10.37Zm5.47-7.47c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
 </a>
 
+<!-- Mobile Menu Script -->
 <script>
-  // Mobile menu toggle
   (function () {
-    var btn = document.getElementById('menuBtn'), nav = document.getElementById('nav');
-    if (!btn || !nav) return;
-    btn.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open);
-      btn.textContent = open ? '✕' : '☰';
+    var navToggle = document.getElementById('navToggle');
+    var siteNav = document.getElementById('siteNav');
+    if (!navToggle || !siteNav) return;
+    navToggle.addEventListener('click', function () {
+      var isOpen = siteNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      navToggle.textContent = isOpen ? '✕' : '☰';
     });
   })();
 </script>
+
+<!-- Shortlist Visual Script -->
 <script>
-  // Builds the 30-dot "shortlist" visual in the hero
   (function () {
     var box = document.getElementById('dots');
     if (!box) return;
@@ -783,6 +989,13 @@
     }
   })();
 </script>
+
 <script src="form-to-sheet.js"></script>
 </body>
 </html>
+```<FollowUp>
+Would you like help with any of the following?
+1. Adding mobile drawer slide-in animations.
+2. Adjusting the sticky navigation background on scroll.
+3. Adding click-outside listeners to automatically close the "About & More" dropdown on touch devices.
+</FollowUp>
