@@ -45,6 +45,8 @@
     color: var(--ink-soft);
     background: var(--paper);
   }
+  /* FIX: stops any sideways scrolling on the page */
+  html, body { overflow-x: clip; }
   img { max-width: 100%; display: block; }
   a { color: inherit; }
   h1, h2, h3 { font-family: var(--font-display); color: var(--ink); line-height: 1.1; margin: 0; }
@@ -76,22 +78,26 @@
   .strip a:hover { color: var(--marigold); }
   @media (max-width: 700px) { .strip .strip-right { display: none; } .strip .wrap { justify-content: center; } }
 
+  /* ---------- Header (FIXED: Enquire Now button no longer gets cut off) ---------- */
   .topbar { background: var(--white); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 30; }
-  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: 1rem; }
+  .topbar .wrap { width: min(1400px, 100% - 2rem); display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: 1rem; }
   .brand { text-decoration: none; display: flex; align-items: center; gap: .7rem; flex: none; }
   .brand-logo { height: 48px; width: auto; display: block; }
   .brand-text { display: flex; flex-direction: column; line-height: 1; }
   .brand-name { font-family: "Montserrat", var(--font-display); font-weight: 800; font-size: 1.7rem; letter-spacing: -.01em; color: #153E92; }
   .brand-tag { font-family: "Montserrat", var(--font-body); font-weight: 600; font-size: .66rem; color: #F26A1B; margin-top: .32rem; letter-spacing: .01em; }
-    .nav { display: flex; gap: 1.3rem; align-items: center; }
-  .nav a { text-decoration: none; font-weight: 500; font-size: .95rem; white-space: nowrap; }
+  .nav { display: flex; gap: 1rem; align-items: center; min-width: 0; }
+  .nav a { text-decoration: none; font-weight: 500; font-size: .9rem; white-space: nowrap; }
   .nav a:hover { color: var(--ink); }
   .head-cta { display: flex; align-items: center; gap: .7rem; flex: none; }
-  .head-cta .btn { padding: .65rem 1.2rem; font-size: .93rem; }
+  .head-cta .btn { padding: .65rem 1.2rem; font-size: .93rem; white-space: nowrap; }
   .menu-btn { display: none; background: none; border: 2px solid var(--line); border-radius: 12px; font-size: 1.4rem; line-height: 1; padding: .45rem .7rem; color: var(--ink); cursor: pointer; }
-  @media (max-width: 1180px) {
+
+  /* Phone button is already in the top strip, so hide it on mid-size screens to give Enquire Now room */
+  @media (max-width: 1560px) { .head-cta .btn-ghost { display: none; } }
+
+  @media (max-width: 1280px) {
     .menu-btn { display: block; }
-    .head-cta .btn-ghost { display: none; }
     .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; align-items: flex-start; gap: 0; padding: .5rem 1.25rem 1rem; border-bottom: 1px solid var(--line); box-shadow: 0 20px 30px -20px rgba(13,43,69,.35); }
     .nav.open { display: flex; }
     .nav a { padding: .8rem 0; width: 100%; border-bottom: 1px solid var(--line); font-size: 1rem; }
