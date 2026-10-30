@@ -3,16 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>UG & PG Programs – Shoolini University | EduPlier</title>
+<title>UG &amp; PG Programs – Shoolini University | EduPlier</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
 <style>
-<section class="campus" aria-label="University campus">
-  <img src="shoolini university building.jpg" alt="Amrita Vishwa Vidyapeetham campus" width="1024" height="576" fetchpriority="high">
-  <div class="campus-cap"><div>🎓 Shoolini University · MBA, MCA, BCA<span>Admissions Open</span></div></div>
-</section>
-
 /* ===== GLOBAL RESET & VARIABLES ===== */
 :root {
   --bg: #ffffff;
@@ -245,19 +240,51 @@ header.site-header {
   .site-header .phone-link { display: none; }
 }
 
-/* ===== BANNER & HERO ===== */
-.banner {
-  height: clamp(180px, 26vw, 320px);
-  background: linear-gradient(135deg, #0b5ed7, #0e1b4d) center/cover no-repeat;
+/* ===== CAMPUS BANNER ===== */
+.campus {
+  position: relative;
+  width: 100%;
+  max-height: 480px;
+  overflow: hidden;
+  background: #091b2c;
+}
+.campus img {
+  width: 100%;
+  height: clamp(240px, 35vw, 480px);
+  object-fit: cover;
+  display: block;
+}
+.campus-cap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(9, 27, 44, 0.9) 0%, rgba(9, 27, 44, 0.4) 65%, transparent 100%);
+  padding: 30px 20px 18px;
+  color: #ffffff;
+}
+.campus-cap > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 700;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-align: center;
-  padding: 20px;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
+.campus-cap span {
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== HERO ===== */
 .hero {
   background: var(--surface);
   padding: 48px 0;
@@ -716,11 +743,15 @@ details p { color: var(--muted); margin-top: 10px; font-size: 14px; }
   </div>
 </header>
 
+<!-- Campus Banner -->
 <section class="campus" aria-label="University campus">
-  <img src="shoolini university building.jpg" alt="Amrita Vishwa Vidyapeetham campus" width="1024" height="576" fetchpriority="high">
-  <div class="campus-cap"><div>🎓 Amrita Online · MBA, MCA, BCA<span>Admissions Open</span></div></div>
+  <img src="shoolini university building.jpg" alt="Shoolini University campus building" width="1024" height="576" fetchpriority="high">
+  <div class="campus-cap">
+    <div>🎓 Shoolini University · Top UG &amp; PG Degrees<span>Admissions Open 2026</span></div>
+  </div>
 </section>
 
+<!-- Hero Section -->
 <div class="hero">
   <div class="wrap">
     <div>
@@ -755,6 +786,7 @@ details p { color: var(--muted); margin-top: 10px; font-size: 14px; }
   </div>
 </div>
 
+<!-- Programs Filter Section -->
 <section id="programs">
   <div class="wrap">
     <h2>Programs Offered</h2>
@@ -770,6 +802,7 @@ details p { color: var(--muted); margin-top: 10px; font-size: 14px; }
   </div>
 </section>
 
+<!-- Why Section -->
 <section class="alt" id="why">
   <div class="wrap">
     <h2>Why Shoolini University?</h2>
@@ -795,6 +828,7 @@ details p { color: var(--muted); margin-top: 10px; font-size: 14px; }
   </div>
 </section>
 
+<!-- Process Section -->
 <section id="process">
   <div class="wrap">
     <h2>Admission Process</h2>
@@ -824,6 +858,7 @@ details p { color: var(--muted); margin-top: 10px; font-size: 14px; }
   </div>
 </section>
 
+<!-- FAQ Section -->
 <section class="alt" id="faq">
   <div class="wrap">
     <h2>Frequently Asked Questions</h2>
