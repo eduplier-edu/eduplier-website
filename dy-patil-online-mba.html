@@ -10,6 +10,58 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
 <style>
+  /* Full-Width Campus Hero Banner */
+.campus {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #091b2c;
+}
+
+.campus img {
+  width: 100%;
+  height: clamp(260px, 36vw, 480px);
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.campus-cap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(9, 27, 44, 0.92) 0%, rgba(9, 27, 44, 0.4) 60%, transparent 100%);
+  padding: 28px 24px 16px;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.campus-cap > div {
+  max-width: 1380px;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.campus-cap span {
+  background: #ff6a00;
+  color: #ffffff;
+  font-size: 0.8rem;
+  padding: 4px 14px;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
 /* ===== GLOBAL VARIABLES & THEME ===== */
 :root {
   --bg: #ffffff;
@@ -648,14 +700,16 @@ details p { color: var(--muted); margin-top: 10px; font-size: 14px; }
   </div>
 </header>
 
-<!-- =========================================================================
-       SECTION 1: HERO BANNER (Full Uncropped Image on Desktop & Mobile)
-       ========================================================================= -->
-  <section class="hero-banner-section">
-    <div class="banner-wrap">
-      <img src="/dy patil university building.jpg" alt="Shoolini University Online Degree Programs" class="hero-banner-img">
+<!-- Full Width Campus Banner -->
+<section class="campus" aria-label="DY Patil University Campus">
+  <img src="dy patil university building.jpg" alt="Dr. D. Y. Patil University Campus, Navi Mumbai" fetchpriority="high">
+  <div class="campus-cap">
+    <div>
+      🎓 Dr. D. Y. Patil University · Centre for Online Learning, Navi Mumbai
+      <span>Admissions Open 2026–2027</span>
     </div>
-  </section>
+  </div>
+</section>
 
   
 <div class="hero">
