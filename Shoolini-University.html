@@ -4,324 +4,671 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>UG & PG Programs – Shoolini University | EduPlier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
 <style>
-         /* ---------- MODERN CARDS FOOTER (Matches Website Theme) ---------- */
-  .footer-card-section {
-    background: linear-gradient(135deg, #091b2c 0%, #0d2b45 50%, #153b5c 100%);
-    color: #ffffff;
-    padding: clamp(3rem, 6vw, 5rem) 0 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .footer-card-section::after {
-    content: "";
+/* ===== GLOBAL RESET & VARIABLES ===== */
+:root {
+  --bg: #ffffff;
+  --surface: #f3f5fb;
+  --text: #14213d;
+  --muted: #5b6478;
+  --brand: #0b5ed7;
+  --accent: #ff6a00;
+  --border: #dde2ee;
+  --on-brand: #ffffff;
+  color-scheme: light;
+  box-sizing: border-box;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-padding-top: 80px; scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ===== TOPBAR ===== */
+.topbar {
+  background: #0b2447;
+  color: #cfe0f7;
+  font-size: 0.82rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.topbar-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 8px 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+.topbar-left, .topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.topbar a:hover { color: #ffffff; }
+
+/* ===== SITE HEADER ===== */
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #dfe7f3;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.site-header .header-container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.site-header .logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.site-header .logo-img {
+  height: 46px;
+  max-height: 46px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+.site-header .logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.site-header .brand-name {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #0b5ed7;
+  line-height: 1.1;
+}
+.site-header .brand-tagline {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #ff6a00;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.site-header .nav-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.6rem, 1.3vw, 1.3rem);
+  list-style: none;
+}
+.site-header .nav-link, .site-header .dropdown-btn {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #2b3940;
+  padding: 6px 4px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  transition: color 0.2s ease;
+}
+.site-header .nav-link:hover,
+.site-header .nav-link.active,
+.site-header .dropdown-btn:hover {
+  color: #0b5ed7;
+}
+.site-header .nav-dropdown { position: relative; }
+.site-header .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  border: 1px solid #eef2f8;
+  padding: 0.5rem 0;
+}
+.site-header .dropdown-content a {
+  display: block;
+  padding: 8px 16px;
+  color: #333333;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.site-header .dropdown-content a:hover {
+  background: #f4f7fb;
+  color: #0b5ed7;
+}
+.site-header .nav-dropdown:hover .dropdown-content,
+.site-header .nav-dropdown.open .dropdown-content {
+  display: block;
+}
+.site-header .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.site-header .phone-link {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #1f2937;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.site-header .phone-link:hover { color: #0b5ed7; }
+.site-header .btn-enquire {
+  background: #ff6a00;
+  color: #ffffff;
+  padding: 0.55rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+.site-header .btn-enquire:hover { background: #e55e00; }
+
+/* Responsive Nav */
+.site-header .nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #dfe7f3;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  position: relative;
+}
+.site-header .nav-toggle span,
+.site-header .nav-toggle span::before,
+.site-header .nav-toggle span::after {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 2px;
+  background: #0b2447;
+  transition: 0.2s;
+}
+.site-header .nav-toggle span { top: 19px; }
+.site-header .nav-toggle span::before { content: ""; top: -6px; left: 0; }
+.site-header .nav-toggle span::after { content: ""; top: 6px; left: 0; }
+.site-header .nav-toggle[aria-expanded="true"] span { background: transparent; }
+.site-header .nav-toggle[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+.site-header .nav-toggle[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
+
+@media (max-width: 1100px) {
+  .site-header .nav-toggle { display: inline-block; }
+  .site-header .nav-menu {
+    display: none;
     position: absolute;
+    top: 100%;
+    left: 0;
     right: 0;
-    bottom: 0;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(255,145,0,0.15) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .footer-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 3.5rem;
-  }
-  .footer-col-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
-    padding: 1.8rem 1.6rem;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-  }
-  .footer-col-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.25);
-    background: rgba(255, 255, 255, 0.08);
-  }
-  .footer-col-header {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
-  }
-  .footer-badge-icon {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    background: #ff5722;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.15rem;
-    color: #fff;
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.35);
-  }
-  .footer-col-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -0.01em;
-  }
-  .footer-links-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
     flex-direction: column;
-    gap: 0.85rem;
-  }
-  .footer-links-list li a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    color: #cfd9e5;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.2s ease, transform 0.2s ease;
-  }
-  .footer-links-list li a::before {
-    content: "›";
-    color: #ff9800;
-    font-size: 1.15rem;
-    line-height: 1;
-    font-weight: 700;
-    transition: transform 0.2s ease;
-  }
-  .footer-links-list li a:hover {
-    color: #ffffff;
-    transform: translateX(3px);
-  }
-  .footer-links-list li a:hover::before {
-    transform: translateX(2px);
-  }
-
-  /* Footer Bottom Bar */
-  .footer-bottom-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  .footer-bottom-brand img {
-    height: 48px;
-    width: auto;
+    align-items: stretch;
     background: #ffffff;
-    padding: 4px 10px;
-    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #dfe7f3;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
   }
-  .footer-bottom-brand p {
-    font-size: 0.88rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: 0.6rem;
-    max-width: 480px;
+  .site-header .nav-menu.open { display: flex; }
+  .site-header .nav-link, .site-header .dropdown-btn {
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f4f9;
   }
-  .footer-follow-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.75rem;
-  }
-  .footer-follow-box span {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #ffffff;
-  }
-  .footer-social-icons {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .footer-social-icons a {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #ffffff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease, filter 0.2s ease;
-    text-decoration: none;
-  }
-  .footer-social-icons a:hover {
-    transform: translateY(-2px);
-    filter: brightness(0.95);
-  }
-  .footer-social-icons svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .footer-legal-copy {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 0.82rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.6);
-  }
-  .footer-legal-copy strong {
-    color: #ffffff;
-  }
-
-  @media (max-width: 1024px) {
-    .footer-cards-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 640px) {
-    .footer-cards-grid { grid-template-columns: 1fr; }
-    .footer-bottom-flex { flex-direction: column; align-items: flex-start; }
-    .footer-follow-box { align-items: flex-start; }
-  }
-
-    .whatsapp { animation: wa-attn 2s infinite; }
-    @keyframes wa-attn {
-        0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.65); }
-        70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-    }
-        CSS = r"""
-/* ===== HOME-STYLE HEADER (same as index.html) ===== */
-.strip{background:#0b2447;color:#cfe0f7;font-size:.82rem}
-.strip-inner{max-width:1200px;margin:0 auto;padding:7px 20px;display:flex;justify-content:space-between;gap:6px 14px;flex-wrap:wrap}
-.strip a{color:inherit;text-decoration:none}
-.strip a:hover{color:#fff}
-header.site-header{position:sticky;top:0;z-index:1000;width:100%;background:#fff;border-bottom:1px solid #dfe7f3;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:0}
-.site-header .header-container{max-width:1380px;margin:0 auto;padding:.75rem 1.5rem;display:flex;align-items:center;gap:1rem}
-.site-header .logo-area{display:flex;align-items:center;gap:.75rem;text-decoration:none;flex:0 0 auto}
-.site-header .logo-img{height:48px;width:auto;max-width:none;flex:none}
-.site-header .logo-text{display:flex;flex-direction:column}
-.site-header .brand-name{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:1.5rem;font-weight:700;color:#0b5ed7;line-height:1.1}
-.site-header .brand-tagline{font-size:.62rem;font-weight:700;color:#ff6a00;letter-spacing:.5px}
-.site-header .nav-menu{display:flex;flex-direction:row;align-items:center;justify-content:center;flex:1 1 auto;min-width:0;gap:clamp(.6rem,1.4vw,1.4rem);margin:0;padding:0;position:static;background:none;border:0}
-.site-header .nav-link,.site-header .dropdown-btn{font:600 .92rem Inter,system-ui,sans-serif;color:#2b3940;text-decoration:none;white-space:nowrap;padding:6px 2px;margin:0;background:none;border:0;cursor:pointer;transition:color .2s}
-.site-header .nav-link:hover,.site-header .nav-link.active,.site-header .dropdown-btn:hover{color:#0b5ed7}
-.site-header .nav-dropdown{position:relative}
-.site-header .dropdown-content{display:none;position:absolute;top:100%;left:0;min-width:170px;z-index:1100;background:#fff;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.12);padding:.5rem 0}
-.site-header .dropdown-content a{display:block;padding:8px 16px;color:#333;font:500 .88rem Inter,system-ui,sans-serif;text-decoration:none}
-.site-header .dropdown-content a:hover{background:#f4f7fb;color:#0b5ed7}
-.site-header .nav-dropdown:hover .dropdown-content,.site-header .nav-dropdown.open .dropdown-content{display:block}
-.site-header .header-actions{display:flex;align-items:center;gap:1rem;flex:0 0 auto;margin-left:auto}
-.site-header .phone-link{display:flex;align-items:center;gap:.4rem;text-decoration:none;color:#1f2937;font-size:.95rem;font-weight:700;white-space:nowrap}
-.site-header .btn-enquire{display:inline-block;background:#ff6a00;color:#fff;padding:.6rem 1.4rem;font-weight:700;font-size:.95rem;border-radius:8px;text-decoration:none;white-space:nowrap;flex:0 0 auto;transition:background .2s}
-.site-header .btn-enquire:hover{background:#e55e00}
-.site-header .nav-toggle{display:none;width:44px;height:44px;flex:0 0 44px;border:1px solid #dfe7f3;border-radius:10px;background:#fff;cursor:pointer;position:relative;padding:0}
-.site-header .nav-toggle span,.site-header .nav-toggle span::before,.site-header .nav-toggle span::after{position:absolute;left:11px;width:20px;height:2.5px;border-radius:2px;background:#0b2447;content:"";transition:.2s}
-.site-header .nav-toggle span{top:20px}
-.site-header .nav-toggle span::before{left:0;top:-7px}
-.site-header .nav-toggle span::after{left:0;top:7px}
-.site-header .nav-toggle[aria-expanded="true"] span{background:transparent}
-.site-header .nav-toggle[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
-.site-header .nav-toggle[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
-@media(max-width:1359px){.site-header .phone-link{display:none}}
-@media(max-width:1100px){
-  .site-header .nav-toggle{display:inline-block}
-  .site-header .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;background:#fff;padding:6px 1.5rem 16px;border-bottom:1px solid #dfe7f3;box-shadow:0 14px 24px rgba(11,36,71,.12);max-height:calc(100vh - 120px);overflow-y:auto}
-  .site-header .nav-menu.open{display:flex}
-  .site-header .nav-link,.site-header .dropdown-btn{display:block;width:100%;text-align:left;padding:14px 2px;border-bottom:1px solid #eef2f8;font-size:1rem}
-  .site-header .nav-dropdown{width:100%}
-  .site-header .dropdown-content{position:static;display:none;box-shadow:none;border-radius:0;padding:0 0 6px 14px;min-width:0}
-  .site-header .nav-dropdown:hover .dropdown-content{display:none}
-  .site-header .nav-dropdown.open .dropdown-content{display:block}
-  .site-header .dropdown-content a{padding:11px 4px}
+  .site-header .dropdown-content { position: static; box-shadow: none; border: none; padding-left: 12px; }
+  .site-header .phone-link { display: none; }
 }
-@media(max-width:560px){
-  .strip-inner{justify-content:center;text-align:center;font-size:.75rem}
-  .site-header .header-container{padding:.6rem 1rem;gap:.5rem}
-  .site-header .logo-img{height:36px}
-  .site-header .brand-name{font-size:1.25rem}
-  .site-header .brand-tagline{font-size:.5rem;letter-spacing:.2px}
-  .site-header .header-actions{gap:.5rem}
-  .site-header .btn-enquire{padding:.5rem .9rem;font-size:.85rem}
-  .site-header .nav-toggle{width:40px;height:40px;flex-basis:40px}
-  .site-header .nav-toggle span{top:18px}
-}
-@media(max-width:380px){
-  .site-header .brand-tagline{display:none}
-  .site-header .logo-img{height:30px}
-  .site-header .btn-enquire{padding:.45rem .7rem;font-size:.8rem}
-}
-/* ===== END HOME-STYLE HEADER ===== */
-"""
 
-:root{--bg:#fff;--surface:#f3f5fb;--text:#14213d;--muted:#5b6478;--brand:#1f4fd8;--accent:#f59e0b;--border:#dde2ee;--on-brand:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--surface:#161d33;--text:#eef1fa;--muted:#a3adc6;--brand:#6c8cff;--accent:#fbbf24;--border:#2a3354;--on-brand:#0e1424;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0e1424;--surface:#161d33;--text:#eef1fa;--muted:#a3adc6;--brand:#6c8cff;--accent:#fbbf24;--border:#2a3354;--on-brand:#0e1424;color-scheme:dark}
-*{box-sizing:border-box}html{scroll-padding-top:70px;scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:inherit;text-decoration:none}.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--border);z-index:10}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
-.logo{font-weight:800;font-size:22px;color:var(--brand)}.logo span{color:var(--accent)}
-nav{display:flex;gap:18px;font-size:14px;font-weight:600;overflow-x:auto;color:var(--muted)}nav a{white-space:nowrap}nav a:hover{color:var(--brand)}
-.btn{display:inline-block;background:var(--brand);color:var(--on-brand);padding:11px 22px;border-radius:8px;font-weight:700;font-size:15px;border:0;cursor:pointer}
-.btn.alt{background:transparent;color:var(--brand);border:2px solid var(--brand)}
-.banner{height:clamp(220px,38vw,420px);background:linear-gradient(135deg,var(--brand),#0e1b4d) center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;text-align:center;padding:20px}
-.banner img{width:100%;height:100%;object-fit:cover;display:block}
-.hero{background:var(--surface);padding:48px 0}
-.hero .wrap{display:grid;gap:32px;grid-template-columns:1.3fr 1fr;align-items:start}
-@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}}
-.badge{display:inline-block;background:var(--accent);color:#14213d;font-weight:700;font-size:12px;padding:4px 10px;border-radius:99px;margin-bottom:12px}
-.hero h1{font-size:clamp(28px,4.5vw,44px);line-height:1.15;margin:0 0 12px}
-.hero p{color:var(--muted);font-size:17px;margin:0 0 20px}
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}.pills span{border:1px solid var(--border);background:var(--bg);border-radius:99px;padding:5px 12px;font-size:13px;font-weight:600}
-.formbox{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:22px}
-.formbox h3{margin:0 0 12px}.formbox input,.formbox select{width:100%;padding:11px;margin-bottom:10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}
-.formbox .btn{width:100%}.ok{display:none;color:var(--brand);font-weight:700;margin-top:10px}
-section{padding:52px 0}section.alt{background:var(--surface)}
-h2{font-size:28px;margin:0 0 8px}.sub{color:var(--muted);margin:0 0 26px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px}
-.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:15px}
-.stat{text-align:center}.stat b{display:block;font-size:30px;color:var(--brand)}.stat span{color:var(--muted);font-size:14px}
-.num{width:34px;height:34px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px}
-table{width:100%;border-collapse:collapse;font-size:15px}td,th{padding:12px;border-bottom:1px solid var(--border);text-align:left}th{color:var(--muted);width:35%}
-.scroll{overflow-x:auto}
-details{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:10px}summary{font-weight:700;cursor:pointer}details p{color:var(--muted);margin:8px 0 0}
-.cta{background:var(--brand);color:var(--on-brand);text-align:center;padding:52px 20px}.cta .btn{background:var(--on-brand);color:var(--brand)}
-footer{background:var(--surface);padding:32px 0;font-size:13px;color:var(--muted)}
-.note{font-size:12px;color:var(--muted);margin-top:8px}
-.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tools input{flex:1 1 220px;padding:11px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}
-.tab{padding:9px 18px;border-radius:99px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:inherit;font-weight:700;cursor:pointer}.tab.on{background:var(--brand);color:var(--on-brand);border-color:var(--brand)}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.chip{padding:5px 12px;border-radius:99px;border:1px solid var(--border);background:var(--bg);color:var(--muted);font:inherit;font-size:13px;cursor:pointer}.chip.on{border-color:var(--brand);color:var(--brand);font-weight:700}
-.pc{display:flex;flex-direction:column;gap:6px}.pc small{color:var(--muted)}.pc .lv{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase}.pc a{color:var(--brand);font-weight:700;font-size:14px;margin-top:auto;padding-top:8px}
-.cf{font-size:11px;color:var(--muted);border:1px dashed var(--border);border-radius:99px;padding:1px 8px;align-self:flex-start}
-.logo{display:flex;align-items:center;gap:8px;color:var(--text)}.logo .mark{height:46px;width:46px}.logo .wm{font-weight:800;font-size:24px;letter-spacing:-.3px}
-.logo{display:block}.logoimg{height:54px;width:auto;display:block;background:#fff;border-radius:8px;padding:2px}
+/* ===== BANNER & HERO ===== */
+.banner {
+  height: clamp(180px, 26vw, 320px);
+  background: linear-gradient(135deg, #0b5ed7, #0e1b4d) center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+}
+.hero {
+  background: var(--surface);
+  padding: 48px 0;
+}
+.hero .wrap {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+}
+.badge {
+  display: inline-block;
+  background: #ffecd1;
+  color: #c95100;
+  border: 1px solid #ffd499;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 99px;
+  margin-bottom: 12px;
+}
+.hero h1 {
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.pills span {
+  border: 1px solid var(--border);
+  background: #ffffff;
+  border-radius: 99px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2b3940;
+}
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: #ffffff;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  border: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.btn:hover { opacity: 0.92; }
+.btn.alt {
+  background: transparent;
+  color: var(--brand);
+  border: 2px solid var(--brand);
+}
+
+/* ===== ENQUIRY FORM ===== */
+.formbox {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+.formbox h3 { margin-bottom: 14px; font-size: 1.2rem; }
+.formbox input, .formbox select {
+  width: 100%;
+  padding: 11px 14px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--text);
+  font-size: 14px;
+}
+.formbox .btn { width: 100%; }
+.ok {
+  display: none;
+  color: #16a34a;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 12px;
+  text-align: center;
+}
+.note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+/* ===== CONTENT SECTIONS ===== */
+section { padding: 56px 0; }
+section.alt { background: var(--surface); }
+h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+.sub { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+.card h3 { margin-bottom: 8px; font-size: 17px; font-weight: 700; }
+.card p { color: var(--muted); font-size: 14px; }
+.num {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+/* Programs Dynamic Filter */
+.tools {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.tools input {
+  flex: 1 1 240px;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+}
+.tab {
+  padding: 9px 20px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tab.on {
+  background: var(--brand);
+  color: #ffffff;
+  border-color: var(--brand);
+}
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.chip {
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+.chip.on {
+  border-color: var(--brand);
+  color: var(--brand);
+  font-weight: 700;
+  background: #f0f5ff;
+}
+.pc { display: flex; flex-direction: column; gap: 6px; }
+.pc small { color: var(--muted); font-size: 12px; }
+.pc .lv {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.pc a {
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+.cf {
+  font-size: 11px;
+  color: #b45309;
+  background: #fef3c7;
+  border-radius: 4px;
+  padding: 2px 6px;
+  align-self: flex-start;
+}
+
+/* FAQ Details */
+details {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+summary { font-weight: 700; cursor: pointer; }
+details p { color: var(--muted); margin-top: 10px; font-size: 14px; }
+
+/* Call To Action */
+.cta {
+  background: var(--brand);
+  color: #ffffff;
+  text-align: center;
+  padding: 56px 20px;
+}
+.cta h2 { color: #ffffff; margin-bottom: 14px; }
+.cta .btn {
+  background: #ffffff;
+  color: var(--brand);
+  font-weight: 700;
+}
+
+/* ===== MODERN CARDS FOOTER ===== */
+.footer-card-section {
+  background: linear-gradient(135deg, #091b2c 0%, #0d2b45 50%, #153b5c 100%);
+  color: #ffffff;
+  padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.footer-card-section::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,145,0,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.footer-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+.footer-col-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 1.8rem 1.6rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+.footer-col-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+.footer-col-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.footer-badge-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #ff5722;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.35);
+}
+.footer-col-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.footer-links-list li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #cfd9e5;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.footer-links-list li a::before {
+  content: "›";
+  color: #ff9800;
+  font-size: 1.15rem;
+  line-height: 1;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+.footer-links-list li a:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+.footer-bottom-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.footer-bottom-brand img {
+  height: 44px;
+  width: auto;
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+.footer-bottom-brand p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.6rem;
+  max-width: 480px;
+}
+.footer-follow-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+.footer-follow-box span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.footer-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.footer-social-icons a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  color: #0d2b45;
+  font-weight: 700;
+  font-size: 14px;
+}
+.footer-social-icons a:hover { transform: translateY(-2px); }
+.footer-legal-copy {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 1024px) {
+  .footer-cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .footer-cards-grid { grid-template-columns: 1fr; }
+  .footer-bottom-flex { flex-direction: column; align-items: flex-start; }
+  .footer-follow-box { align-items: flex-start; }
+}
 </style>
 </head>
-<body>
+<body id="home">
 
-    <div class="topbar">
-        <div class="container topbar-inner">
-            <div class="topbar-left">
-                <span>&#127891; Empowering Education Choices</span>
-                <span>&bull;</span>
-                <span>Expert Academic Guidance</span>
-            </div>
-            <div class="topbar-right">
-                <span>&#128231; info@eduplier.com</span>
-                <span>&bull;</span>
-                <span><a href="tel:+919315594429" style="color:inherit;text-decoration:none;">&#128222; +91 93155 94429</a></span>
-            </div>
-        </div>
+<!-- Top Bar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span>🎓 Empowering Education Choices</span>
+      <span>•</span>
+      <span>Expert Academic Guidance</span>
     </div>
+    <div class="topbar-right">
+      <span>✉️ info@eduplier.com</span>
+      <span>•</span>
+      <span><a href="tel:+919315594429">📞 +91 93155 94429</a></span>
+    </div>
+  </div>
+</div>
 
-    
-    <body id="home">
-
+<!-- Header -->
 <header class="site-header">
   <div class="header-container">
- 
-    <!-- Logo -->
     <a href="https://www.eduplier.com/index.html" class="logo-area">
       <img src="logo.png" alt="Eduplier Logo" class="logo-img">
       <div class="logo-text">
@@ -329,16 +676,19 @@ footer{background:var(--surface);padding:32px 0;font-size:13px;color:var(--muted
         <span class="brand-tagline">EMPOWERING EDUCATION CHOICES</span>
       </div>
     </a>
- 
-    <!-- Navigation Menu -->
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+    </button>
+
     <nav class="nav-menu" id="siteNav" aria-label="Main">
-      <a href="https://www.eduplier.com/index.html" class="nav-link active">Home</a>
+      <a href="https://www.eduplier.com/index.html" class="nav-link">Home</a>
       <a href="https://www.eduplier.com/all-universities.html" class="nav-link">Top Universities</a>
-      <a href="#courses" class="nav-link">Trending Courses</a>
+      <a href="#programs" class="nav-link">Trending Courses</a>
       <a href="https://www.eduplier.com/compare-universities.html" class="nav-link">Compare Colleges</a>
- 
+
       <div class="nav-dropdown" id="navDd">
-        <button type="button" class="dropdown-btn" aria-expanded="false" aria-haspopup="true">About &amp; More &#9662;</button>
+        <button type="button" class="dropdown-btn" aria-expanded="false">About &amp; More ▾</button>
         <div class="dropdown-content">
           <a href="https://www.eduplier.com/about-us.html">About Us</a>
           <a href="https://www.eduplier.com/index.html#why-us">Why Eduplier</a>
@@ -346,84 +696,240 @@ footer{background:var(--surface);padding:32px 0;font-size:13px;color:var(--muted
           <a href="https://www.eduplier.com/index.html#process">How It Works</a>
         </div>
       </div>
- 
+
       <a href="https://www.eduplier.com/blog.html" class="nav-link">Blog</a>
       <a href="https://www.eduplier.com/index.html#contact" class="nav-link">Contact</a>
     </nav>
- 
-    <!-- Header Actions (Call, CTA, hamburger) -->
+
     <div class="header-actions">
       <a href="tel:+919315594429" class="phone-link">
-        <span class="phone-icon">📞</span>
-        <span class="phone-number">+91 93155 94429</span>
+        <span>📞</span>
+        <span>+91 93155 94429</span>
       </a>
+      <a href="#enquire" class="btn-enquire">Free Counselling</a>
     </div>
   </div>
 </header>
-<div class="banner" id="campus-photo" role="img" aria-label="Shoolini University campus, Solan">[Shoolini University campus photo goes here]</div>
-<div class="hero"><div class="wrap">
-<div>
-<span class="badge">Admissions Open 2026</span>
-<h1>Shoolini University: All UG &amp; PG Programs</h1>
-<p>Explore undergraduate and postgraduate programs across engineering, sciences, management, law, pharmacy, media and more. EduPlier counsellors help you choose the right one.</p>
-<div class="pills"><span>NAAC A+ accredited</span><span>QS World Rank 2027: 452</span><span>THE World Rank 2027: 451–500</span><span>Solan, Himachal Pradesh</span></div>
-<a class="btn" href="#programs">Browse Programs</a> <a class="btn alt" href="#enquire">Get Free Counselling</a>
+
+<div class="banner" id="campus-photo" role="img" aria-label="Shoolini University campus">
+  Shoolini University, Solan (H.P.)
 </div>
-<div class="formbox" id="enquire">
-<h3>Talk to an EduPlier counsellor</h3>
-<input id="n" placeholder="Full name" autocomplete="name">
-<input id="p" placeholder="Mobile number" inputmode="tel" autocomplete="tel">
-<input id="e" placeholder="Email" type="email" autocomplete="email">
-<select id="s"><option>Interested level</option><option>Undergraduate (UG)</option><option>Postgraduate (PG)</option></select>
-<input id="c" placeholder="Program of interest (optional)">
-<button class="btn" id="go" type="button">Request a Call Back</button>
-<div class="ok" id="ok">Thank you! Our counsellor will contact you soon.</div>
-<div class="note">Demo form: connect it to your CRM or email service before going live.</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="badge">Admissions Open 2026</span>
+      <h1>Shoolini University: All UG &amp; PG Programs</h1>
+      <p>Explore undergraduate and postgraduate programs across engineering, sciences, management, law, pharmacy, and media. Eduplier advisors help you choose the ideal degree pathway.</p>
+      <div class="pills">
+        <span>NAAC A+ Accredited</span>
+        <span>QS World Rank 2027: 452</span>
+        <span>THE World Rank 2027: 451–500</span>
+        <span>Solan, Himachal Pradesh</span>
+      </div>
+      <a class="btn" href="#programs">Browse Programs</a>
+      <a class="btn alt" href="#enquire">Get Free Counselling</a>
+    </div>
+
+    <div class="formbox" id="enquire">
+      <h3>Talk to an Eduplier Counsellor</h3>
+      <input id="n" placeholder="Full name" autocomplete="name">
+      <input id="p" placeholder="Mobile number" inputmode="tel" autocomplete="tel">
+      <input id="e" placeholder="Email" type="email" autocomplete="email">
+      <select id="s">
+        <option value="">Interested level</option>
+        <option>Undergraduate (UG)</option>
+        <option>Postgraduate (PG)</option>
+      </select>
+      <input id="c" placeholder="Program of interest (optional)">
+      <button class="btn" id="go" type="button">Request a Call Back</button>
+      <div class="ok" id="ok">Thank you! Our academic counsellor will contact you shortly.</div>
+      <div class="note">🔒 Your details are 100% confidential and only used for admissions guidance.</div>
+    </div>
+  </div>
 </div>
-</div></div>
 
-<section id="programs"><div class="wrap">
-<h2>Programs Offered</h2><p class="sub">Search or filter by level and field. Programs marked “confirm” come from third-party listings; verify with the university.</p>
-<div class="tools"><button class="tab on" data-l="UG">Undergraduate</button><button class="tab" data-l="PG">Postgraduate</button><input id="q" type="search" placeholder="Search programs, e.g. biotech, MBA, law"></div>
-<div class="chips" id="chips"></div>
-<div class="grid" id="list"></div>
-<p class="note" id="count"></p>
-</div></section>
+<section id="programs">
+  <div class="wrap">
+    <h2>Programs Offered</h2>
+    <p class="sub">Filter programs by degree level or field. Search by keywords or specialisations.</p>
+    <div class="tools">
+      <button class="tab on" data-l="UG">Undergraduate</button>
+      <button class="tab" data-l="PG">Postgraduate</button>
+      <input id="q" type="search" placeholder="Search programs (e.g., Biotech, MBA, Law, BCA)">
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="list"></div>
+    <p class="note" id="count"></p>
+  </div>
+</section>
 
-<section class="alt" id="why"><div class="wrap">
-<h2>Why Shoolini?</h2><p class="sub">Research-led, globally connected, career-focused.</p>
-<div class="grid">
-<div class="card"><h3>Accredited &amp; ranked</h3><p>NAAC A+ (2024), QS World Rank 2027: 452, THE World Rank 2027: 451–500.</p></div>
-<div class="card"><h3>Research from year one</h3><p>Flagship Summit Research Program for undergraduates, 100+ laboratories and 11 Centres of Excellence (per the university).</p></div>
-<div class="card"><h3>Global exposure</h3><p>Semester-abroad options at partner universities and dual-degree programs.</p></div>
-<div class="card"><h3>Placement support</h3><p>[Add verified placement data and recruiters]</p></div>
-</div></div></section>
+<section class="alt" id="why">
+  <div class="wrap">
+    <h2>Why Shoolini University?</h2>
+    <p class="sub">Research-led education with global standards.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Accredited &amp; Ranked</h3>
+        <p>NAAC A+ certified, QS World University Ranking 2027 (#452), and Times Higher Education (THE) ranked 451–500 globally.</p>
+      </div>
+      <div class="card">
+        <h3>Research from Year One</h3>
+        <p>Exclusive Summit Research Program (SRP) for undergraduates, with over 100+ state-of-the-art laboratories and 11 Centres of Excellence.</p>
+      </div>
+      <div class="card">
+        <h3>Global Exchange</h3>
+        <p>International collaborations offering semester-abroad options and dual-degree programs with foreign partner universities.</p>
+      </div>
+      <div class="card">
+        <h3>Placement &amp; Corporate Mentorship</h3>
+        <p>Strong industry ties with dedicated career cells ensuring internships and placement drives with leading MNCs and corporates.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section id="process"><div class="wrap">
-<h2>Admission Process</h2><p class="sub">Simple steps from enquiry to enrolment.</p>
-<div class="grid">
-<div class="card"><div class="num">1</div><h3>Counselling</h3><p>Pick the right program with an EduPlier advisor.</p></div>
-<div class="card"><div class="num">2</div><h3>Apply</h3><p>Submit the application and documents.</p></div>
-<div class="card"><div class="num">3</div><h3>Entrance / merit</h3><p>[Confirm accepted exams: CUET, JEE, CAT, CLAT, etc.]</p></div>
-<div class="card"><div class="num">4</div><h3>Confirm seat</h3><p>Pay fees and complete enrolment.</p></div>
-</div></div></section>
+<section id="process">
+  <div class="wrap">
+    <h2>Admission Process</h2>
+    <p class="sub">Step-by-step guidance from counselling to confirmed enrolment.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="num">1</div>
+        <h3>Free Counselling</h3>
+        <p>Discuss your career goals and shortlist the right program with an Eduplier academic expert.</p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <h3>Application Submission</h3>
+        <p>Complete your online registration and upload the required educational documents.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <h3>Merit &amp; Entrance Review</h3>
+        <p>Evaluation through entrance scores (CUET, JEE, CAT, CLAT, etc.) or past qualifying exam merit.</p>
+      </div>
+      <div class="card">
+        <div class="num">4</div>
+        <h3>Seat Confirmation</h3>
+        <p>Complete document verification, fee payment, and receive your official admission letter.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section class="alt" id="faq"><div class="wrap">
-<h2>Frequently Asked Questions</h2><p class="sub"></p>
-<details><summary>What are the fees for each program?</summary><p>[Add current fee table from the university. Fees vary by program and year.]</p></details>
-<details><summary>What is the eligibility for UG and PG programs?</summary><p>Eligibility varies by program, with minimum marks and entrance requirements. [Add verified details]</p></details>
-<details><summary>Does Shoolini offer online programs?</summary><p>Yes, through Shoolini Online (online MBA, BBA, BCA, MCA and more). See our separate Online MBA page.</p></details>
-<details><summary>Are scholarships available?</summary><p>[Confirm current scholarships with the university]</p></details>
-</div></section>
+<section class="alt" id="faq">
+  <div class="wrap">
+    <h2>Frequently Asked Questions</h2>
+    <p class="sub">Common queries regarding Shoolini University admissions.</p>
+    <details>
+      <summary>What is the eligibility criteria for UG and PG programs?</summary>
+      <p>UG candidates generally require 50–55%+ marks in 10+2 from a recognised board (PCM/PCB for science and engineering). PG courses require a recognised bachelor’s degree in the relevant discipline. Specific programs also evaluate scores from national entrance tests.</p>
+    </details>
+    <details>
+      <summary>Does Shoolini University offer online degrees?</summary>
+      <p>Yes. In addition to campus programs, Shoolini offers UGC-DEB approved online degrees including Online MBA, BBA, BCA, and MCA designed for working professionals and distance learners.</p>
+    </details>
+    <details>
+      <summary>Are merit-based scholarships available?</summary>
+      <p>Yes, scholarships are provided based on academic merit, CUET/JEE/CAT percentiles, single girl child quotas, sports achievements, and defence wards.</p>
+    </details>
+  </div>
+</section>
 
-<div class="cta"><h2 style="margin:0 0 14px">Find your program with EduPlier</h2><a class="btn" href="#enquire">Enquire Now</a></div>
-<footer><div class="wrap">
-<strong>Eduplier</strong> – Empowering Education Choices · [Address] · [Phone] · [Email]<br>
-<p class="note">EduPlier is [an authorised admissions partner of / independent counselling service for] Shoolini University. [Edit to match your actual relationship.] All trademarks belong to their owners. © 2026 EduPlier.</p>
-</div></footer>
+<div class="cta">
+  <h2>Find the Right Degree Program with Eduplier</h2>
+  <a class="btn" href="#enquire">Request Free Advisory</a>
+</div>
+
+<!-- Modern Cards Footer -->
+<footer class="footer-card-section">
+  <div class="wrap">
+    <div class="footer-cards-grid">
+      <div class="footer-col-card">
+        <div class="footer-col-header">
+          <div class="footer-badge-icon">🏛️</div>
+          <h3>Top Universities</h3>
+        </div>
+        <ul class="footer-links-list">
+          <li><a href="https://www.eduplier.com/Shoolini-University.html">Shoolini University</a></li>
+          <li><a href="https://www.eduplier.com/all-universities.html">Amity University Online</a></li>
+          <li><a href="https://www.eduplier.com/all-universities.html">LPU Online</a></li>
+          <li><a href="https://www.eduplier.com/all-universities.html">GLA University Online</a></li>
+          <li><a href="https://www.eduplier.com/all-universities.html">NMIMS CDOE</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-card">
+        <div class="footer-col-header">
+          <div class="footer-badge-icon">🎓</div>
+          <h3>Trending Programs</h3>
+        </div>
+        <ul class="footer-links-list">
+          <li><a href="#programs">Online &amp; Campus MBA</a></li>
+          <li><a href="#programs">MCA (AI &amp; DevOps)</a></li>
+          <li><a href="#programs">B.Tech Biotechnology</a></li>
+          <li><a href="#programs">BCA (Bioinformatics)</a></li>
+          <li><a href="#programs">BBA &amp; B.Com (ACCA)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-card">
+        <div class="footer-col-header">
+          <div class="footer-badge-icon">🧭</div>
+          <h3>Quick Links</h3>
+        </div>
+        <ul class="footer-links-list">
+          <li><a href="https://www.eduplier.com/about-us.html">About Eduplier</a></li>
+          <li><a href="https://www.eduplier.com/compare-universities.html">Compare Universities</a></li>
+          <li><a href="https://www.eduplier.com/blog.html">Admission Blogs</a></li>
+          <li><a href="https://www.eduplier.com/team.html">Our Counsellors</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-card">
+        <div class="footer-col-header">
+          <div class="footer-badge-icon">📞</div>
+          <h3>Admissions Support</h3>
+        </div>
+        <ul class="footer-links-list">
+          <li><a href="tel:+919315594429">+91 93155 94429</a></li>
+          <li><a href="tel:+919891967284">+91 98919 67284</a></li>
+          <li><a href="mailto:info@eduplier.com">info@eduplier.com</a></li>
+          <li><a href="#enquire">Schedule a Callback</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-flex">
+      <div class="footer-bottom-brand">
+        <img src="logo.png" alt="Eduplier Logo">
+        <p>Eduplier is an independent higher education advisory providing admissions counselling, university comparisons, and degree discovery for students across India.</p>
+      </div>
+
+      <div class="footer-follow-box">
+        <span>Connect With Us</span>
+        <div class="footer-social-icons">
+          <a href="https://www.linkedin.com/company/eduplier" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://www.instagram.com/eduplier" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+          <a href="https://wa.me/919315594429" target="_blank" rel="noopener" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal-copy">
+      © 2026 <strong>Eduplier Education Services</strong>. All trademarks, logos, and college names belong to their respective universities.
+    </div>
+  </div>
+</footer>
+
 <script>
-var P=[];
-function add(l,f,arr,c){arr.forEach(function(n){P.push({l:l,f:f,n:n,c:!!c})})}
+// Program Data
+var P = [];
+function add(l, f, arr, c) {
+  arr.forEach(function(n) { P.push({ l: l, f: f, n: n, c: !!c }); });
+}
+
 add("UG","Engineering & Technology",["B Tech Biomedical Engineering","B Tech Biotechnology (with AI)","B Tech CSE (Bioinformatics)","B Tech Bioinformatics","B Tech Biotechnology","B Tech (Summit Research Program)","B Tech Civil Engineering","B Tech Artificial Intelligence","B Tech CSE","B Tech Food Technology"]);
 add("UG","Computer Applications",["BCA with Specialisations","BCA (Hons) Bioinformatics"]);
 add("UG","Sciences",["BSc (Hons) Forensic Science","BSc (Hons) Biotechnology","BSc (Hons) Microbiology","BSc (Hons) Food Technology","BSc (Hons) Nutrition and Dietetics","BSc (Hons) Agriculture","BSc (Hons)"]);
@@ -434,34 +940,104 @@ add("UG","Law",["BA LLB","LLB","BBA LLB"]);
 add("UG","Hospitality & Design",["BSc Hospitality and Hotel Administration","B Design"]);
 add("PG","Engineering & Technology",["M Tech Bioinformatics"]);
 add("PG","Sciences",["MSc Forensic Science","MSc Biotechnology (1 Year)","MSc Microbiology (1 Year)","MSc Food Technology (1 Year)"]);
-add("PG","Management",["MBA (Marketing)","MBA (Finance)","MBA (Human Resources)","MBA (Business Analytics)","MBA (Pharma & Healthcare)"],1);
-add("PG","Computer Applications",["MCA (Artificial Intelligence)","MCA (Cloud Computing)","MCA (DevOps)"],1);
-add("PG","Engineering & Technology",["M Tech Biotechnology","M Tech Civil","M Tech CSE","M Tech ECE","M Tech Food Technology","M Tech Energy Technology","M Tech Climate Science & Sustainable Development","MSc / M Tech Nanotechnology"],1);
-add("PG","Sciences",["MSc Data Science","MSc Nutrition and Dietetics","MSc Chemistry","MSc Physics","MSc Zoology","MSc Environmental Sciences","MSc Agriculture (various specialisations)"],1);
-add("PG","Liberal Arts, Yoga & Psychology",["MA English Literature","MA Journalism","MA Clinical Psychology","MA / MSc Yoga","MSc Yoga Therapy"],1);
-add("PG","Pharmacy",["M Pharmacy (Pharmaceutics)","M Pharmacy (Pharmacology)","M Pharmacy (Pharmaceutical Chemistry)","M Pharmacy (Pharmacognosy)"],1);
-add("PG","Law",["LLM"],1);
-var lv="UG",fl="All",qs="";
-function render(){
- var fs=["All"];P.forEach(function(p){if(p.l===lv&&fs.indexOf(p.f)<0)fs.push(p.f)});
- if(fs.indexOf(fl)<0)fl="All";
- var ch=document.getElementById("chips");ch.innerHTML="";
- fs.forEach(function(f){var b=document.createElement("button");b.className="chip"+(f===fl?" on":"");b.textContent=f;b.onclick=function(){fl=f;render()};ch.appendChild(b)});
- var out=P.filter(function(p){return p.l===lv&&(fl==="All"||p.f===fl)&&(p.n+" "+p.f).toLowerCase().indexOf(qs)>-1});
- var L=document.getElementById("list");L.innerHTML="";
- out.forEach(function(p){var d=document.createElement("div");d.className="card pc";
-  var a=document.createElement("span");a.className="lv";a.textContent=p.l==="UG"?"Undergraduate":"Postgraduate";
-  var h=document.createElement("h3");h.textContent=p.n;
-  var s=document.createElement("small");s.textContent=p.f;
-  d.appendChild(a);d.appendChild(h);d.appendChild(s);
-  if(p.c){var c=document.createElement("span");c.className="cf";c.textContent="confirm availability";d.appendChild(c)}
-  var l=document.createElement("a");l.href="#enquire";l.textContent="Enquire about this program →";l.onclick=function(){document.getElementById("c").value=p.n};d.appendChild(l);
-  L.appendChild(d)});
- document.getElementById("count").textContent=out.length+" program"+(out.length===1?"":"s")+" shown";
+add("PG","Management",["MBA (Marketing)","MBA (Finance)","MBA (Human Resources)","MBA (Business Analytics)","MBA (Pharma & Healthcare)"], 1);
+add("PG","Computer Applications",["MCA (Artificial Intelligence)","MCA (Cloud Computing)","MCA (DevOps)"], 1);
+add("PG","Engineering & Technology",["M Tech Biotechnology","M Tech Civil","M Tech CSE","M Tech ECE","M Tech Food Technology","M Tech Energy Technology","M Tech Climate Science & Sustainable Development","MSc / M Tech Nanotechnology"], 1);
+add("PG","Sciences",["MSc Data Science","MSc Nutrition and Dietetics","MSc Chemistry","MSc Physics","MSc Zoology","MSc Environmental Sciences","MSc Agriculture (various specialisations)"], 1);
+add("PG","Liberal Arts, Yoga & Psychology",["MA English Literature","MA Journalism","MA Clinical Psychology","MA / MSc Yoga","MSc Yoga Therapy"], 1);
+add("PG","Pharmacy",["M Pharmacy (Pharmaceutics)","M Pharmacy (Pharmacology)","M Pharmacy (Pharmaceutical Chemistry)","M Pharmacy (Pharmacognosy)"], 1);
+add("PG","Law",["LLM"], 1);
+
+var lv = "UG", fl = "All", qs = "";
+
+function render() {
+  var fs = ["All"];
+  P.forEach(function(p) {
+    if (p.l === lv && fs.indexOf(p.f) < 0) fs.push(p.f);
+  });
+  if (fs.indexOf(fl) < 0) fl = "All";
+
+  var ch = document.getElementById("chips");
+  ch.innerHTML = "";
+  fs.forEach(function(f) {
+    var b = document.createElement("button");
+    b.className = "chip" + (f === fl ? " on" : "");
+    b.textContent = f;
+    b.onclick = function() { fl = f; render(); };
+    ch.appendChild(b);
+  });
+
+  var out = P.filter(function(p) {
+    return p.l === lv && (fl === "All" || p.f === fl) && (p.n + " " + p.f).toLowerCase().indexOf(qs) > -1;
+  });
+
+  var L = document.getElementById("list");
+  L.innerHTML = "";
+  out.forEach(function(p) {
+    var d = document.createElement("div");
+    d.className = "card pc";
+    var a = document.createElement("span");
+    a.className = "lv";
+    a.textContent = p.l === "UG" ? "Undergraduate" : "Postgraduate";
+    var h = document.createElement("h3");
+    h.textContent = p.n;
+    var s = document.createElement("small");
+    s.textContent = p.f;
+    d.appendChild(a);
+    d.appendChild(h);
+    d.appendChild(s);
+    if (p.c) {
+      var c = document.createElement("span");
+      c.className = "cf";
+      c.textContent = "Confirm availability";
+      d.appendChild(c);
+    }
+    var l = document.createElement("a");
+    l.href = "#enquire";
+    l.textContent = "Enquire about this program →";
+    l.onclick = function() { document.getElementById("c").value = p.n; };
+    d.appendChild(l);
+    L.appendChild(d);
+  });
+  document.getElementById("count").textContent = out.length + " program" + (out.length === 1 ? "" : "s") + " shown";
 }
-document.querySelectorAll(".tab").forEach(function(t){t.onclick=function(){document.querySelectorAll(".tab").forEach(function(x){x.classList.remove("on")});t.classList.add("on");lv=t.dataset.l;fl="All";render()}});
-document.getElementById("q").oninput=function(e){qs=e.target.value.toLowerCase();render()};
-document.getElementById("go").onclick=function(){var n=document.getElementById("n").value.trim(),p=document.getElementById("p").value.trim();if(!n||p.length<10){alert("Please enter your name and a valid mobile number.");return}document.getElementById("ok").style.display="block"};
+
+document.querySelectorAll(".tab").forEach(function(t) {
+  t.onclick = function() {
+    document.querySelectorAll(".tab").forEach(function(x) { x.classList.remove("on"); });
+    t.classList.add("on");
+    lv = t.dataset.l;
+    fl = "All";
+    render();
+  };
+});
+
+document.getElementById("q").oninput = function(e) {
+  qs = e.target.value.toLowerCase();
+  render();
+};
+
+document.getElementById("go").onclick = function() {
+  var n = document.getElementById("n").value.trim();
+  var p = document.getElementById("p").value.trim();
+  if (!n || p.length < 10) {
+    alert("Please enter your name and a valid 10-digit mobile number.");
+    return;
+  }
+  document.getElementById("ok").style.display = "block";
+};
+
+// Mobile Nav Toggle
+var navToggle = document.getElementById("navToggle");
+var siteNav = document.getElementById("siteNav");
+if (navToggle && siteNav) {
+  navToggle.addEventListener("click", function() {
+    var expanded = this.getAttribute("aria-expanded") === "true";
+    this.setAttribute("aria-expanded", !expanded);
+    siteNav.classList.toggle("open");
+  });
+}
+
 render();
 </script>
 </body>
