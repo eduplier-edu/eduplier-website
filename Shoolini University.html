@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UG & PG Programs – Shoolini University | EduPlier</title>
+<style>
+:root{--bg:#fff;--surface:#f3f5fb;--text:#14213d;--muted:#5b6478;--brand:#1f4fd8;--accent:#f59e0b;--border:#dde2ee;--on-brand:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--surface:#161d33;--text:#eef1fa;--muted:#a3adc6;--brand:#6c8cff;--accent:#fbbf24;--border:#2a3354;--on-brand:#0e1424;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1424;--surface:#161d33;--text:#eef1fa;--muted:#a3adc6;--brand:#6c8cff;--accent:#fbbf24;--border:#2a3354;--on-brand:#0e1424;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:70px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--border);z-index:10}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.logo{font-weight:800;font-size:22px;color:var(--brand)}.logo span{color:var(--accent)}
+nav{display:flex;gap:18px;font-size:14px;font-weight:600;overflow-x:auto;color:var(--muted)}nav a{white-space:nowrap}nav a:hover{color:var(--brand)}
+.btn{display:inline-block;background:var(--brand);color:var(--on-brand);padding:11px 22px;border-radius:8px;font-weight:700;font-size:15px;border:0;cursor:pointer}
+.btn.alt{background:transparent;color:var(--brand);border:2px solid var(--brand)}
+.banner{height:clamp(220px,38vw,420px);background:linear-gradient(135deg,var(--brand),#0e1b4d) center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;text-align:center;padding:20px}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+.hero{background:var(--surface);padding:48px 0}
+.hero .wrap{display:grid;gap:32px;grid-template-columns:1.3fr 1fr;align-items:start}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}}
+.badge{display:inline-block;background:var(--accent);color:#14213d;font-weight:700;font-size:12px;padding:4px 10px;border-radius:99px;margin-bottom:12px}
+.hero h1{font-size:clamp(28px,4.5vw,44px);line-height:1.15;margin:0 0 12px}
+.hero p{color:var(--muted);font-size:17px;margin:0 0 20px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}.pills span{border:1px solid var(--border);background:var(--bg);border-radius:99px;padding:5px 12px;font-size:13px;font-weight:600}
+.formbox{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:22px}
+.formbox h3{margin:0 0 12px}.formbox input,.formbox select{width:100%;padding:11px;margin-bottom:10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}
+.formbox .btn{width:100%}.ok{display:none;color:var(--brand);font-weight:700;margin-top:10px}
+section{padding:52px 0}section.alt{background:var(--surface)}
+h2{font-size:28px;margin:0 0 8px}.sub{color:var(--muted);margin:0 0 26px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px}
+.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:15px}
+.stat{text-align:center}.stat b{display:block;font-size:30px;color:var(--brand)}.stat span{color:var(--muted);font-size:14px}
+.num{width:34px;height:34px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:15px}td,th{padding:12px;border-bottom:1px solid var(--border);text-align:left}th{color:var(--muted);width:35%}
+.scroll{overflow-x:auto}
+details{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:10px}summary{font-weight:700;cursor:pointer}details p{color:var(--muted);margin:8px 0 0}
+.cta{background:var(--brand);color:var(--on-brand);text-align:center;padding:52px 20px}.cta .btn{background:var(--on-brand);color:var(--brand)}
+footer{background:var(--surface);padding:32px 0;font-size:13px;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tools input{flex:1 1 220px;padding:11px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}
+.tab{padding:9px 18px;border-radius:99px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:inherit;font-weight:700;cursor:pointer}.tab.on{background:var(--brand);color:var(--on-brand);border-color:var(--brand)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.chip{padding:5px 12px;border-radius:99px;border:1px solid var(--border);background:var(--bg);color:var(--muted);font:inherit;font-size:13px;cursor:pointer}.chip.on{border-color:var(--brand);color:var(--brand);font-weight:700}
+.pc{display:flex;flex-direction:column;gap:6px}.pc small{color:var(--muted)}.pc .lv{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase}.pc a{color:var(--brand);font-weight:700;font-size:14px;margin-top:auto;padding-top:8px}
+.cf{font-size:11px;color:var(--muted);border:1px dashed var(--border);border-radius:99px;padding:1px 8px;align-self:flex-start}
+.logo{display:flex;align-items:center;gap:8px;color:var(--text)}.logo .mark{height:46px;width:46px}.logo .wm{font-weight:800;font-size:24px;letter-spacing:-.3px}
+.logo{display:block}.logoimg{height:54px;width:auto;display:block;background:#fff;border-radius:8px;padding:2px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#"><img class="logoimg" alt="Eduplier – Empowering Education Choices" width="275" height="183" src="data:image/jpeg;base64,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"></a>
+<nav><a href="#programs">Programs</a><a href="#why">Why Shoolini</a><a href="#process">Admission</a><a href="#faq">FAQs</a></nav>
+<a class="btn" href="#enquire">Enquire Now</a>
+</div></header>
+<div class="banner" id="campus-photo" role="img" aria-label="Shoolini University campus, Solan">[Shoolini University campus photo goes here]</div>
+<div class="hero"><div class="wrap">
+<div>
+<span class="badge">Admissions Open 2026</span>
+<h1>Shoolini University: All UG &amp; PG Programs</h1>
+<p>Explore undergraduate and postgraduate programs across engineering, sciences, management, law, pharmacy, media and more. EduPlier counsellors help you choose the right one.</p>
+<div class="pills"><span>NAAC A+ accredited</span><span>QS World Rank 2027: 452</span><span>THE World Rank 2027: 451–500</span><span>Solan, Himachal Pradesh</span></div>
+<a class="btn" href="#programs">Browse Programs</a> <a class="btn alt" href="#enquire">Get Free Counselling</a>
+</div>
+<div class="formbox" id="enquire">
+<h3>Talk to an EduPlier counsellor</h3>
+<input id="n" placeholder="Full name" autocomplete="name">
+<input id="p" placeholder="Mobile number" inputmode="tel" autocomplete="tel">
+<input id="e" placeholder="Email" type="email" autocomplete="email">
+<select id="s"><option>Interested level</option><option>Undergraduate (UG)</option><option>Postgraduate (PG)</option></select>
+<input id="c" placeholder="Program of interest (optional)">
+<button class="btn" id="go" type="button">Request a Call Back</button>
+<div class="ok" id="ok">Thank you! Our counsellor will contact you soon.</div>
+<div class="note">Demo form: connect it to your CRM or email service before going live.</div>
+</div>
+</div></div>
+
+<section id="programs"><div class="wrap">
+<h2>Programs Offered</h2><p class="sub">Search or filter by level and field. Programs marked “confirm” come from third-party listings; verify with the university.</p>
+<div class="tools"><button class="tab on" data-l="UG">Undergraduate</button><button class="tab" data-l="PG">Postgraduate</button><input id="q" type="search" placeholder="Search programs, e.g. biotech, MBA, law"></div>
+<div class="chips" id="chips"></div>
+<div class="grid" id="list"></div>
+<p class="note" id="count"></p>
+</div></section>
+
+<section class="alt" id="why"><div class="wrap">
+<h2>Why Shoolini?</h2><p class="sub">Research-led, globally connected, career-focused.</p>
+<div class="grid">
+<div class="card"><h3>Accredited &amp; ranked</h3><p>NAAC A+ (2024), QS World Rank 2027: 452, THE World Rank 2027: 451–500.</p></div>
+<div class="card"><h3>Research from year one</h3><p>Flagship Summit Research Program for undergraduates, 100+ laboratories and 11 Centres of Excellence (per the university).</p></div>
+<div class="card"><h3>Global exposure</h3><p>Semester-abroad options at partner universities and dual-degree programs.</p></div>
+<div class="card"><h3>Placement support</h3><p>[Add verified placement data and recruiters]</p></div>
+</div></div></section>
+
+<section id="process"><div class="wrap">
+<h2>Admission Process</h2><p class="sub">Simple steps from enquiry to enrolment.</p>
+<div class="grid">
+<div class="card"><div class="num">1</div><h3>Counselling</h3><p>Pick the right program with an EduPlier advisor.</p></div>
+<div class="card"><div class="num">2</div><h3>Apply</h3><p>Submit the application and documents.</p></div>
+<div class="card"><div class="num">3</div><h3>Entrance / merit</h3><p>[Confirm accepted exams: CUET, JEE, CAT, CLAT, etc.]</p></div>
+<div class="card"><div class="num">4</div><h3>Confirm seat</h3><p>Pay fees and complete enrolment.</p></div>
+</div></div></section>
+
+<section class="alt" id="faq"><div class="wrap">
+<h2>Frequently Asked Questions</h2><p class="sub"></p>
+<details><summary>What are the fees for each program?</summary><p>[Add current fee table from the university. Fees vary by program and year.]</p></details>
+<details><summary>What is the eligibility for UG and PG programs?</summary><p>Eligibility varies by program, with minimum marks and entrance requirements. [Add verified details]</p></details>
+<details><summary>Does Shoolini offer online programs?</summary><p>Yes, through Shoolini Online (online MBA, BBA, BCA, MCA and more). See our separate Online MBA page.</p></details>
+<details><summary>Are scholarships available?</summary><p>[Confirm current scholarships with the university]</p></details>
+</div></section>
+
+<div class="cta"><h2 style="margin:0 0 14px">Find your program with EduPlier</h2><a class="btn" href="#enquire">Enquire Now</a></div>
+<footer><div class="wrap">
+<strong>Eduplier</strong> – Empowering Education Choices · [Address] · [Phone] · [Email]<br>
+<p class="note">EduPlier is [an authorised admissions partner of / independent counselling service for] Shoolini University. [Edit to match your actual relationship.] All trademarks belong to their owners. © 2026 EduPlier.</p>
+</div></footer>
+<script>
+var P=[];
+function add(l,f,arr,c){arr.forEach(function(n){P.push({l:l,f:f,n:n,c:!!c})})}
+add("UG","Engineering & Technology",["B Tech Biomedical Engineering","B Tech Biotechnology (with AI)","B Tech CSE (Bioinformatics)","B Tech Bioinformatics","B Tech Biotechnology","B Tech (Summit Research Program)","B Tech Civil Engineering","B Tech Artificial Intelligence","B Tech CSE","B Tech Food Technology"]);
+add("UG","Computer Applications",["BCA with Specialisations","BCA (Hons) Bioinformatics"]);
+add("UG","Sciences",["BSc (Hons) Forensic Science","BSc (Hons) Biotechnology","BSc (Hons) Microbiology","BSc (Hons) Food Technology","BSc (Hons) Nutrition and Dietetics","BSc (Hons) Agriculture","BSc (Hons)"]);
+add("UG","Management & Commerce",["BCom (Hons)","BCom (Hons) with ACCA","BBA (General) with ACCA","BBA (Specialisations) with ACCA"]);
+add("UG","Liberal Arts & Media",["BA (Hons) English","BA (Hons) History","BA (Hons) Political Science","BA (Hons) Economics","BA (Hons) Sociology","BA (Hons) Media and Communication","BA Journalism and Mass Communication","BA/BSc (Hons) Psychology"]);
+add("UG","Pharmacy & Health",["B Pharmacy","BSc (Hons) Yoga"]);
+add("UG","Law",["BA LLB","LLB","BBA LLB"]);
+add("UG","Hospitality & Design",["BSc Hospitality and Hotel Administration","B Design"]);
+add("PG","Engineering & Technology",["M Tech Bioinformatics"]);
+add("PG","Sciences",["MSc Forensic Science","MSc Biotechnology (1 Year)","MSc Microbiology (1 Year)","MSc Food Technology (1 Year)"]);
+add("PG","Management",["MBA (Marketing)","MBA (Finance)","MBA (Human Resources)","MBA (Business Analytics)","MBA (Pharma & Healthcare)"],1);
+add("PG","Computer Applications",["MCA (Artificial Intelligence)","MCA (Cloud Computing)","MCA (DevOps)"],1);
+add("PG","Engineering & Technology",["M Tech Biotechnology","M Tech Civil","M Tech CSE","M Tech ECE","M Tech Food Technology","M Tech Energy Technology","M Tech Climate Science & Sustainable Development","MSc / M Tech Nanotechnology"],1);
+add("PG","Sciences",["MSc Data Science","MSc Nutrition and Dietetics","MSc Chemistry","MSc Physics","MSc Zoology","MSc Environmental Sciences","MSc Agriculture (various specialisations)"],1);
+add("PG","Liberal Arts, Yoga & Psychology",["MA English Literature","MA Journalism","MA Clinical Psychology","MA / MSc Yoga","MSc Yoga Therapy"],1);
+add("PG","Pharmacy",["M Pharmacy (Pharmaceutics)","M Pharmacy (Pharmacology)","M Pharmacy (Pharmaceutical Chemistry)","M Pharmacy (Pharmacognosy)"],1);
+add("PG","Law",["LLM"],1);
+var lv="UG",fl="All",qs="";
+function render(){
+ var fs=["All"];P.forEach(function(p){if(p.l===lv&&fs.indexOf(p.f)<0)fs.push(p.f)});
+ if(fs.indexOf(fl)<0)fl="All";
+ var ch=document.getElementById("chips");ch.innerHTML="";
+ fs.forEach(function(f){var b=document.createElement("button");b.className="chip"+(f===fl?" on":"");b.textContent=f;b.onclick=function(){fl=f;render()};ch.appendChild(b)});
+ var out=P.filter(function(p){return p.l===lv&&(fl==="All"||p.f===fl)&&(p.n+" "+p.f).toLowerCase().indexOf(qs)>-1});
+ var L=document.getElementById("list");L.innerHTML="";
+ out.forEach(function(p){var d=document.createElement("div");d.className="card pc";
+  var a=document.createElement("span");a.className="lv";a.textContent=p.l==="UG"?"Undergraduate":"Postgraduate";
+  var h=document.createElement("h3");h.textContent=p.n;
+  var s=document.createElement("small");s.textContent=p.f;
+  d.appendChild(a);d.appendChild(h);d.appendChild(s);
+  if(p.c){var c=document.createElement("span");c.className="cf";c.textContent="confirm availability";d.appendChild(c)}
+  var l=document.createElement("a");l.href="#enquire";l.textContent="Enquire about this program →";l.onclick=function(){document.getElementById("c").value=p.n};d.appendChild(l);
+  L.appendChild(d)});
+ document.getElementById("count").textContent=out.length+" program"+(out.length===1?"":"s")+" shown";
+}
+document.querySelectorAll(".tab").forEach(function(t){t.onclick=function(){document.querySelectorAll(".tab").forEach(function(x){x.classList.remove("on")});t.classList.add("on");lv=t.dataset.l;fl="All";render()}});
+document.getElementById("q").oninput=function(e){qs=e.target.value.toLowerCase();render()};
+document.getElementById("go").onclick=function(){var n=document.getElementById("n").value.trim(),p=document.getElementById("p").value.trim();if(!n||p.length<10){alert("Please enter your name and a valid mobile number.");return}document.getElementById("ok").style.display="block"};
+render();
+</script>
+</body>
+</html>
