@@ -11,8 +11,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
 
 <style>
-  feature { margin: 0 0 28px; }
-  .feature img { width: 100%; height: auto; border-radius: 20px; border: 1px solid var(--line); box-shadow: 0 12px 30px -15px rgba(13,43,69,0.2); }
+  /* Featured Blog Image Styles */
+.feature { 
+  margin: 0 0 28px; 
+  width: 100%;
+}
+.feature img { 
+  width: 100%; 
+  height: auto; 
+  display: block;
+  border-radius: 16px; 
+  border: 1px solid var(--border); 
+  box-shadow: 0 10px 25px -10px rgba(13,43,69,0.15); 
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
 /* ===== GLOBAL RESET & THEME VARIABLES ===== */
 :root {
   --bg: #ffffff;
@@ -645,8 +658,9 @@ li { margin-bottom: 8px; font-size: 16px; }
     </div>
 
      <!-- Featured Blog Image -->
-  <figure class="feature">Can You Pass an Online Degree by Studying Only on Weekends?" width="1600" height="1066" fetchpriority="high">
-  </figure>
+    <figure class="feature">
+      <img src="weekend-study-success-plan.jpg" alt="Can You Pass an Online Degree by Studying Only on Weekends?" width="1600" height="900" fetchpriority="high">
+    </figure>
 
 
     <p>One question comes up again and again from working professionals considering an online degree:</p>
