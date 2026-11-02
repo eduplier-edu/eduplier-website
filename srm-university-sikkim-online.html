@@ -168,14 +168,37 @@
     .stats,.steps,.cards,.enq form,footer .fcols{grid-template-columns:1fr}
     .nav-cta .btn{display:none}
     .topbar .wrap{justify-content:center;text-align:center}
-    .slide .ph,.slide img{aspect-ratio:1.6/1}
+    .slide img{aspect-ratio:auto;object-fit:contain}
     section.block{padding:38px 0}
   }
   @media (prefers-reduced-motion:reduce){.track{transition:none}}
+
+  /* ===== polish ===== */
+  .slide img{display:block}
+  .trust{background:#fff;border-bottom:1px solid var(--line)}
+  .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-top:14px;padding-bottom:14px}
+  .trust div{text-align:center;padding:4px 8px;border-right:1px solid var(--line)}
+  .trust div:last-child{border-right:0}
+  .trust b{display:block;font-family:'Montserrat',sans-serif;font-size:15px;color:var(--navy)}
+  .trust span{font-size:13px;color:var(--muted)}
+  .enq form{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:14px}
+  .head h2{position:relative;padding-bottom:14px}
+  .head h2::after{content:"";display:block;width:64px;height:4px;border-radius:4px;background:var(--orange);margin:12px auto 0}
+  .shot img,.cols img{box-shadow:0 14px 36px rgba(5,47,126,.18)}
+  .stat{position:relative;transition:transform .2s ease,box-shadow .2s ease}
+  .stat:hover,.card:hover,.step:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(5,47,126,.14)}
+  .card,.step{transition:transform .2s ease,box-shadow .2s ease}
+  .sic{font-style:normal;display:block;font-size:26px;margin-bottom:4px}
+  .pic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .card:nth-child(3) .pic,.card:nth-child(4) .pic{background:linear-gradient(135deg,var(--orange),#E56D00)}
+  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .js .reveal.in{opacity:1;transform:none}
+  @media (max-width:760px){.trust .wrap{grid-template-columns:1fr 1fr}.trust div:nth-child(2){border-right:0}}
+  @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
 </style>
-  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
+<script>document.documentElement.className+=" js";</script>
 
 <div class="topbar">
   <div class="wrap">
@@ -208,10 +231,6 @@
     </div>
   </div>
 </header>
-  <section style="text-align:center; padding:15px;">
-  <h3>Follow Eduplier on Google</h3>
-  <div google-add-preferred-source-btn></div>
-</section>
 
 <main>
   <div class="wrap crumbs">
@@ -221,15 +240,24 @@
   <!-- SECTION 1: moving slider (3 images) -->
   <section class="slider" aria-roledescription="carousel" aria-label="SRM University Sikkim highlights">
     <div class="track" id="track">
-      <!-- Replace each .ph with: <a href="#enquire"><img src="images/srm-slide-1.jpg" alt="..."></a> -->
-      <div class="slide"><div class="ph" role="img" aria-label="Slide 1 placeholder">Slide 1: campus or program banner (add approved image)</div></div>
-      <div class="slide"><div class="ph" role="img" aria-label="Slide 2 placeholder">Slide 2: students or learning platform (add approved image)</div></div>
-      <div class="slide"><div class="ph" role="img" aria-label="Slide 3 placeholder">Slide 3: accreditation or admissions banner (add approved image)</div></div>
+      <div class="slide"><a href="#enquire"><img src="srm-slide-1.jpg" alt="SRM University Sikkim Online: flexible programs in management and computer applications" width="1600" height="610" fetchpriority="high"></a></div>
+      <div class="slide"><a href="#enquire"><img src="srm-slide-2.jpg" alt="Compare SRM University Sikkim online MBA, MCA, BBA and BCA programs" width="1600" height="610" loading="lazy"></a></div>
+      <div class="slide"><a href="#enquire"><img src="srm-slide-3.jpg" alt="Verify the university, programme and session on UGC-DEB before you enrol" width="1600" height="610" loading="lazy"></a></div>
     </div>
     <button class="sbtn prev" id="prev" aria-label="Previous slide">❮</button>
     <button class="sbtn next" id="next" aria-label="Next slide">❯</button>
     <div class="dots" id="dots"></div>
   </section>
+
+
+  <div class="trust">
+    <div class="wrap">
+      <div><b>🎧 Free counselling</b><span>One-to-one guidance</span></div>
+      <div><b>✅ Verify first</b><span>Check UGC-DEB status</span></div>
+      <div><b>💻 Learn online</b><span>Flexible, at your pace</span></div>
+      <div><b>💬 Clear answers</b><span>On fees and eligibility</span></div>
+    </div>
+  </div>
 
   <!-- Enquiry band -->
   <section class="enq" id="enquire">
@@ -260,14 +288,13 @@
         <p>A private university in Gangtok, set up under the Shri Ramasamy Memorial University, Sikkim Act, 2013, and promoted by the SRM Group.</p>
       </div>
       <div class="stats">
-        <div class="stat"><b>2013</b><span>Established under a Sikkim state Act</span></div>
-        <div class="stat"><b>Gangtok</b><span>5th Mile, Tadong, East Sikkim</span></div>
-        <div class="stat"><b>SRM Group</b><span>Over three decades in education</span></div>
-        <div class="stat"><b>NAAC A+</b><span>As reported; confirm the current grade</span></div>
+        <div class="stat"><i class="sic">🏛️</i><b>2013</b><span>Established under a Sikkim state Act</span></div>
+        <div class="stat"><i class="sic">📍</i><b>Gangtok</b><span>5th Mile, Tadong, East Sikkim</span></div>
+        <div class="stat"><i class="sic">🎓</i><b>SRM Group</b><span>Over three decades in education</span></div>
+        <div class="stat"><i class="sic">⭐</i><b>NAAC A+</b><span>As reported; confirm the current grade</span></div>
       </div>
       <div class="shot" style="margin-top:28px">
-        <!-- IMAGE SLOT 2 -->
-        <div class="ph" role="img" aria-label="Image placeholder">Image slot: campus overview or key numbers (add approved image)</div>
+        <img src="srm-glance.jpg" alt="Gangtok, Sikkim: location of SRM University Sikkim in the Himalayan foothills" width="1400" height="560" loading="lazy">
       </div>
       <p class="cap">Source: <a href="https://srmus.ac.in/" rel="noopener">srmus.ac.in</a>. Details can change, so confirm on the official website.</p>
     </div>
@@ -287,8 +314,7 @@
           <li><strong>AICTE approval.</strong> Technical and management programs are subject to AICTE approval for the academic year.</li>
           <li><strong>UGC-DEB entitlement.</strong> For online degrees, confirm that the specific program is entitled for your session on the UGC-DEB website.</li>
         </ul>
-        <!-- IMAGE SLOT 3 -->
-        <div class="ph" role="img" aria-label="Image placeholder">Image slot: accreditations and rankings (add approved image)</div>
+        <img src="srm-accreditation.jpg" alt="Checklist of approvals to verify: UGC, NAAC, AICTE and UGC-DEB" width="1200" height="800" loading="lazy">
       </div>
       <div class="verify"><strong>Verify before you pay:</strong> check the university and program at <a href="https://deb.ugc.ac.in/" rel="noopener">deb.ugc.ac.in</a>, and read the university’s own UGC disclosure at <a href="https://srmus.ac.in/UGC" rel="noopener">srmus.ac.in/UGC</a>. Online-program approval is granted session by session.</div>
     </div>
@@ -302,8 +328,7 @@
         <p>What career services to ask about before you apply.</p>
       </div>
       <div class="shot">
-        <!-- IMAGE SLOT 4 -->
-        <div class="ph" role="img" aria-label="Image placeholder">Image slot: placements or recruiters (add approved image)</div>
+        <img src="srm-careers.jpg" alt="Path from enrolment to opportunity: learn, skill up, prepare and grow" width="1400" height="560" loading="lazy">
       </div>
       <p class="cap"><strong>Please note:</strong> Placement assistance does not guarantee a job or salary. Ask the university which career services apply specifically to online learners, and whether any reported placement figures include online students.</p>
     </div>
@@ -316,8 +341,7 @@
         <h2>Why Students Consider SRM University Sikkim Online</h2>
       </div>
       <div class="cols">
-        <!-- IMAGE SLOT 5 -->
-        <div class="ph" role="img" aria-label="Image placeholder">Image slot: students or online learning (add approved image)</div>
+        <img src="srm-why.jpg" alt="Student attending an online class on a laptop" width="1200" height="800" loading="lazy">
         <ul class="ticks">
           <li><strong>Flexible learning.</strong> Study online around work and family commitments.</li>
           <li><strong>Established group.</strong> Backed by the SRM Group, which has run educational institutions for over three decades.</li>
@@ -336,8 +360,7 @@
         <p>The main campus is at 5th Mile, Tadong, Gangtok. Online learners study remotely, so ask which campus services are open to them.</p>
       </div>
       <div class="shot">
-        <!-- IMAGE SLOT 6 -->
-        <div class="ph" role="img" aria-label="Image placeholder">Image slot: campus or events (add approved image)</div>
+        <img src="srm-campus.jpg" alt="Himalayan foothills around the SRM University Sikkim campus in Gangtok" width="1400" height="560" loading="lazy">
       </div>
     </div>
   </section>
@@ -350,10 +373,10 @@
         <p>Indicative list. Programs, specializations and intakes can change, so confirm availability for your session.</p>
       </div>
       <div class="cards">
-        <div class="card"><h3>Online MBA</h3><p>Postgraduate management program, typically 2 years, for graduates and working professionals.</p><a href="#enquire">Enquire about MBA →</a></div>
-        <div class="card"><h3>Online MCA</h3><p>Postgraduate computer applications program, typically 2 years, with technology-focused electives.</p><a href="#enquire">Enquire about MCA →</a></div>
-        <div class="card"><h3>Online BBA</h3><p>Undergraduate business administration program, typically 3 years, after 10+2.</p><a href="#enquire">Enquire about BBA →</a></div>
-        <div class="card"><h3>Online BCA</h3><p>Undergraduate computer applications program, typically 3 years, after 10+2.</p><a href="#enquire">Enquire about BCA →</a></div>
+        <div class="card"><div class="pic">MBA</div><h3>Online MBA</h3><p>Postgraduate management program, typically 2 years, for graduates and working professionals.</p><a href="#enquire">Enquire about MBA →</a></div>
+        <div class="card"><div class="pic">MCA</div><h3>Online MCA</h3><p>Postgraduate computer applications program, typically 2 years, with technology-focused electives.</p><a href="#enquire">Enquire about MCA →</a></div>
+        <div class="card"><div class="pic">BBA</div><h3>Online BBA</h3><p>Undergraduate business administration program, typically 3 years, after 10+2.</p><a href="#enquire">Enquire about BBA →</a></div>
+        <div class="card"><div class="pic">BCA</div><h3>Online BCA</h3><p>Undergraduate computer applications program, typically 3 years, after 10+2.</p><a href="#enquire">Enquire about BCA →</a></div>
       </div>
     </div>
   </section>
@@ -489,6 +512,15 @@
     root.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;stop();},{passive:true});
     root.addEventListener('touchend',function(e){if(sx!==null){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){go(dx<0?i+1:i-1);}}sx=null;start();});
     go(0);start();
+  })();
+</script>
+<script>
+  (function(){
+    var els=document.querySelectorAll('section.block .head, section.block .shot, section.block .cols, .stats, .cards, .steps, .tw, details');
+    els.forEach(function(e){e.classList.add('reveal');});
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12});
+    els.forEach(function(e){io.observe(e);});
   })();
 </script>
 </body>
