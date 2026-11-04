@@ -18,6 +18,24 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <style>
+  /* HEADER – never overflows; links collapse into a menu */
+header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.nav{display:flex;align-items:center;gap:16px;height:72px}
+.logo{display:flex;flex-direction:column;line-height:1.05;flex-shrink:0}
+.logo b{font-size:24px;font-weight:800;color:var(--navy)}
+.logo small{font-size:9.5px;letter-spacing:.8px;font-weight:700;color:var(--orange);text-transform:uppercase}
+.links{display:flex;flex:1 1 auto;justify-content:center;gap:15px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap;min-width:0}
+.links .x{display:none}
+.links a:hover{color:var(--blue)}
+.right{display:flex;align-items:center;gap:14px;flex-shrink:0;margin-left:auto}
+.call{font-weight:700;font-size:14.5px;white-space:nowrap}
+.btn{display:inline-block;background:var(--orange);color:#fff;padding:11px 22px;border-radius:999px;font:700 14.5px Figtree,sans-serif;border:0;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.btn.blue{background:var(--blue)}
+.btn.line{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:40px;height:40px;font-size:20px;color:var(--text);cursor:pointer}
+@media(min-width:1241px) and (max-width:1499px){.call span{display:none}}
+@media(max-width:1240px){.links .x{display:block}.links{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);flex-direction:column;gap:0;padding:8px 24px 16px;border-bottom:1px solid var(--line);margin:0}.links.open{display:flex}.links a{display:block;padding:10px 0}.burger{display:block}.nav{position:relative}}
+@media(max-width:640px){.call span{display:none}.btn{padding:10px 16px}.logo b{font-size:21px}}
   /* ---------- MODERN CARDS FOOTER (Matches Website Theme) ---------- */
   .footer-card-section {
     background: linear-gradient(135deg, #091b2c 0%, #0d2b45 50%, #153b5c 100%);
@@ -510,6 +528,20 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
   <section style="text-align:center; padding:15px;">
   <h3>Follow Eduplier on Google</h3>
   <div google-add-preferred-source-btn></div>
+</section>
+
+  <!-- ===== CAMPUS BANNER: paste this right AFTER </header> and BEFORE <div class="hero"> ===== -->
+<style>
+.campus{position:relative;width:100%;padding:0;margin:0;height:clamp(220px,36vw,440px);overflow:hidden;background:#0b2545}
+.campus img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.campus:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,27,44,0) 50%,rgba(9,27,44,.62) 100%);pointer-events:none}
+.campus-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 24px 18px}
+.campus-cap div{max-width:1200px;margin:0 auto;color:#fff;font-weight:700;font-size:clamp(14px,2.2vw,20px);text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.campus-cap span{display:inline-block;background:#f97316;border-radius:99px;padding:3px 12px;font-size:.72em;margin-left:8px;vertical-align:middle}
+</style>
+<section class="campus" aria-label="University campus">
+  <img src="nmims.jpg" alt="University campus main gate" width="1024" height="576" fetchpriority="high">
+  <div class="campus-cap"><div>🎓 Online MBA &amp; BBA<span>Admissions Open</span></div></div>
 </section>
 
 <!-- Hero Section -->
