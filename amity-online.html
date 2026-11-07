@@ -3,16 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amity University Online Degrees, Fees, Courses & Admissions | Eduplier</title>
-<meta name="description" content="Explore Amity University Online MBA, MCA, BBA, BCA and other degree programs. Check UGC-DEB entitlement, fee structures, eligibility criteria, and admission guidance with Eduplier.">
+<title>Amity University Online Degrees &amp; Fees | Eduplier</title>
+<meta name="description" content="Explore Amity University online degrees, fees, and admission. Check UGC-DEB approved MBA, MCA, BBA, and BCA courses with Eduplier guidance.">
 <link rel="canonical" href="https://www.eduplier.com/amity-online.html">
 <link rel="icon" type="image/png" href="https://www.eduplier.com/logo-icon.png">
+
+<!-- Open Graph / Social Meta -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Amity University Online Degrees, Fees &amp; Admission | Eduplier">
+<meta property="og:description" content="Explore Amity University online degrees, fees, and admission. Check UGC-DEB approved MBA, MCA, BBA, and BCA courses with Eduplier.">
+<meta property="og:url" content="https://www.eduplier.com/amity-online.html">
+<meta property="og:image" content="https://www.eduplier.com/Amity%20University%20banner.webp">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Structured Schema for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Amity University Online Degree Programs",
+  "description": "UGC-DEB entitled online degree programs offered by Amity University including MBA, MCA, BBA, and BCA.",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Amity University Online",
+    "sameAs": "https://amityonline.com"
+  }
+}
+</script>
 
 <style>
   /* ---------- Tokens & Theme Variables ---------- */
@@ -73,7 +95,7 @@
     .strip .wrap-strip { justify-content: center; }
   }
 
-  /* ---------- Header & Navigation (Fixed Logo & Layout) ---------- */
+  /* ---------- Header & Navigation ---------- */
   .site-header {
     background: var(--white);
     border-bottom: 1px solid var(--line);
@@ -91,7 +113,6 @@
     gap: 1.5rem;
   }
 
-  /* Logo Area */
   .logo-area {
     display: flex;
     align-items: center;
@@ -123,7 +144,6 @@
     color: #e06c1b;
   }
 
-  /* Nav Links */
   .nav-menu {
     display: flex;
     align-items: center;
@@ -140,7 +160,6 @@
     color: var(--ink);
   }
 
-  /* Dropdown Menu */
   .nav-dropdown {
     position: relative;
     display: inline-block;
@@ -193,7 +212,6 @@
     color: var(--ink);
   }
 
-  /* Header CTA Actions */
   .header-actions {
     display: flex;
     align-items: center;
@@ -225,7 +243,6 @@
     transform: translateY(-1px);
   }
 
-  /* Mobile Nav Toggle */
   .nav-toggle {
     display: none;
     background: none;
@@ -286,7 +303,7 @@
     .logo-img { height: 38px; }
   }
 
-  /* ---------- SECTION 1: FULL HERO BANNER (NO CUT-OFF) ---------- */
+  /* ---------- SECTION 1: HERO BANNER ---------- */
   .hero-banner-section {
     width: 100%;
     background: #ffffff;
@@ -296,7 +313,6 @@
     width: min(1180px, 100% - 2rem);
     margin-inline: auto;
   }
-  /* Crucial Fix: Displays the complete uncropped image on desktop and mobile */
   .hero-banner-img {
     width: 100%;
     height: auto;
@@ -319,8 +335,13 @@
     margin-bottom: 2rem;
     box-shadow: 0 4px 14px rgba(13,43,69,.03);
   }
+  .card-block h1 {
+    font-size: clamp(1.85rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+    color: var(--ink);
+  }
   .card-block h2 {
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-size: clamp(1.5rem, 3.2vw, 2rem);
     margin-bottom: 1rem;
   }
   .card-block p {
@@ -329,7 +350,6 @@
     margin-bottom: 1.2rem;
   }
 
-  /* Accreditations Badges */
   .badge-grid {
     display: flex;
     flex-wrap: wrap;
@@ -349,7 +369,6 @@
     gap: .4rem;
   }
 
-  /* Key Highlights Grid */
   .highlights-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -373,7 +392,6 @@
     color: var(--ink-soft);
   }
 
-  /* Table Styling */
   .table-responsive {
     overflow-x: auto;
     margin: 1.5rem 0;
@@ -406,7 +424,6 @@
     font-size: .85rem;
   }
 
-  /* Admission Steps */
   .steps-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -444,7 +461,6 @@
     margin: 0;
   }
 
-  /* Action Buttons */
   .btn-primary-action {
     display: inline-flex;
     align-items: center;
@@ -462,7 +478,7 @@
     transform: translateY(-2px);
   }
 
-  /* ---------- MODERN CARDS FOOTER ---------- */
+  /* ---------- FOOTER ---------- */
   .footer-card-section {
     background: linear-gradient(135deg, #091b2c 0%, #0d2b45 50%, #153b5c 100%);
     color: #ffffff;
@@ -559,7 +575,6 @@
     transform: translateX(2px);
   }
 
-  /* Footer Bottom Bar */
   .footer-bottom-flex {
     display: flex;
     justify-content: space-between;
@@ -638,7 +653,6 @@
     .footer-follow-box { align-items: flex-start; }
   }
 
-  /* WhatsApp Floating Button */
   .wa-float {
     position: fixed;
     right: 20px;
@@ -661,7 +675,7 @@
     transform: scale(1.08);
   }
 </style>
-  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 
 <body id="home">
@@ -722,7 +736,7 @@
   </div>
 </header>
 
-  <section style="text-align:center; padding:15px;">
+<section style="text-align:center; padding:15px;">
   <h3>Follow Eduplier on Google</h3>
   <div google-add-preferred-source-btn></div>
 </section>
@@ -730,59 +744,59 @@
 <main>
 
   <!-- =========================================================================
-       SECTION 1: HERO BANNER (Full Uncropped Image on Desktop & Mobile)
+       SECTION 1: HERO BANNER
        ========================================================================= -->
   <section class="hero-banner-section">
     <div class="banner-wrap">
-      <img src="/Amity University banner.webp" alt="Amity University Online Degree Programs" class="hero-banner-img">
+      <img src="/Amity University banner.webp" alt="Amity University Online Degree Programs - MBA, MCA, BBA, BCA" class="hero-banner-img">
     </div>
   </section>
 
   <!-- =========================================================================
-       SECTION 2: UNIVERSITY OVERVIEW & ACCREDITATIONS
+       SECTION 2: UNIVERSITY OVERVIEW (Contains H1 with exact focus keyword)
        ========================================================================= -->
   <section class="content-section">
     <div class="wrap">
       <div class="card-block">
-        <h2>Amity University Online: Degrees, Fees &amp; Admissions</h2>
-        <p>Amity University Online is one of India's premier private institutions offering UGC-DEB approved undergraduate and postgraduate degree programmes entirely online. Built for students, working professionals, and career switchers, the curriculum combines interactive live lectures, recorded courseware, and dedicated academic mentor support.</p>
+        <h1>Amity University Online: Degrees, Fees &amp; Admission</h1>
+        <p><strong>Amity University</strong> provides top-ranked online education in India through its digital learning wing. Students can earn UGC-DEB entitled bachelor's and master's degrees without visiting a physical campus. Each program features interactive live webinars, recorded lectures, and dedicated mentor guidance.</p>
         
         <div class="badge-grid">
           <span class="badge-item">🏛️ UGC-DEB Entitled</span>
-          <span class="badge-item">⭐ NAAC A+ Grade Accredited</span>
-          <span class="badge-item">🌐 AICTE Approved Courses</span>
+          <span class="badge-item">⭐ NAAC A+ Grade</span>
+          <span class="badge-item">🌐 AICTE Approved</span>
           <span class="badge-item">🌍 WES Recognized (USA &amp; Canada)</span>
-          <span class="badge-item">💳 Zero-Cost EMI Available</span>
+          <span class="badge-item">💳 Zero-Cost EMI Plans</span>
         </div>
 
         <div class="highlights-grid">
           <div class="hl-box">
-            <strong>100% Online Delivery</strong>
-            <span>Attend live masterclasses or watch recorded lectures anytime from home.</span>
+            <strong>100% Online Study</strong>
+            <span>Watch recorded lectures and join live classes from home anytime.</span>
           </div>
           <div class="hl-box">
             <strong>Equivalent Value</strong>
-            <span>Carries equal academic recognition to regular on-campus degrees under UGC norms.</span>
+            <span>Degrees hold the same academic value as regular on-campus programs.</span>
           </div>
           <div class="hl-box">
-            <strong>Career Assistance</strong>
-            <span>Virtual job fairs, resume-building workshops, and interview prep with top hiring partners.</span>
+            <strong>Career Guidance</strong>
+            <span>Access virtual placement drives, resume workshops, and interview prep.</span>
           </div>
           <div class="hl-box">
-            <strong>Flexible Payment</strong>
-            <span>Semester-wise payment plans and no-cost EMI options starting at monthly installments.</span>
+            <strong>Easy EMI Options</strong>
+            <span>Pay program fees through convenient semester or monthly installment options.</span>
           </div>
         </div>
 
-        <a href="https://www.eduplier.com/index.html#contact" class="btn-primary-action">Request Free Counselling for Amity Online</a>
+        <a href="https://www.eduplier.com/index.html#contact" class="btn-primary-action">Request Free Counselling for Amity University</a>
       </div>
 
       <!-- =========================================================================
            SECTION 3: POPULAR PROGRAMS & FEE STRUCTURE
            ========================================================================= -->
       <div class="card-block">
-        <h2>Programs Offered &amp; Estimated Fee Structure</h2>
-        <p>Amity Online offers degree courses across management, technology, commerce, and humanities. Here is an overview of popular programs, durations, and approximate fee structures:</p>
+        <h2>Amity University Online Programs &amp; Fee Structure</h2>
+        <p>Amity University delivers accredited online degrees across management, computer applications, commerce, and humanities. Review course duration, eligibility, and fees below:</p>
 
         <div class="table-responsive">
           <table class="data-table">
@@ -841,32 +855,32 @@
             </tbody>
           </table>
         </div>
-        <p style="font-size: .88rem; color: #718096; margin-top: .8rem;">*Note: Fees are subject to updates by Amity University Online and may vary depending on chosen industry specialization, LMS materials, and scholarship eligibility.</p>
+        <p style="font-size: .88rem; color: #718096; margin-top: .8rem;">*Note: Tuition fees are subject to revision by Amity University. Specializations, examination fees, and scholarships may adjust the final payable amount.</p>
       </div>
 
       <!-- =========================================================================
-           SECTION 4: HOW EDUPLIER HELPS YOU APPLY
+           SECTION 4: ADMISSION GUIDANCE
            ========================================================================= -->
       <div class="card-block">
-        <h2>Admission Guidance Process</h2>
-        <p>Our academic counsellors simplify the entire admission procedure, from shortlisting the right program to verifying documents and submitting your enrollment form.</p>
+        <h2>How Eduplier Helps You Apply to Amity University</h2>
+        <p>Our experienced academic counsellors guide you through every stage of your admission, from selecting your course to enrollment confirmation.</p>
 
         <div class="steps-list">
           <div class="step-card">
             <h3>1. Profile Evaluation</h3>
-            <p>We review your past academic records, career aspirations, and budget constraints.</p>
+            <p>We evaluate your academic background, career goals, and budget.</p>
           </div>
           <div class="step-card">
-            <h3>2. Course &amp; Specialization Match</h3>
-            <p>Compare Amity Online specializations against other top universities side-by-side.</p>
+            <h3>2. Course Comparison</h3>
+            <p>Compare Amity University programs with other leading online universities.</p>
           </div>
           <div class="step-card">
             <h3>3. Document Review</h3>
-            <p>Ensure your certificates, marksheets, and identity proofs meet university admission criteria.</p>
+            <p>Ensure your academic certificates, ID proofs, and DEB ID meet all requirements.</p>
           </div>
           <div class="step-card">
-            <h3>4. Seamless Enrollment</h3>
-            <p>Get guided step-by-step assistance through the fee submission and LMS onboarding.</p>
+            <h3>4. Direct Enrollment</h3>
+            <p>Receive step-by-step guidance on fee submission and LMS access.</p>
           </div>
         </div>
 
@@ -876,22 +890,22 @@
       </div>
 
       <!-- =========================================================================
-           SECTION 5: FREQUENTLY ASKED QUESTIONS
+           SECTION 5: FAQS
            ========================================================================= -->
       <div class="card-block">
-        <h2>Frequently Asked Questions</h2>
+        <h2>Frequently Asked Questions About Amity University</h2>
         <div style="display: grid; gap: 1.25rem; margin-top: 1.25rem;">
           <div>
-            <h3 style="font-size: 1.15rem; margin-bottom: .25rem;">Are degrees from Amity University Online valid for government jobs &amp; higher studies?</h3>
-            <p>Yes. Amity University Online is entitled by the UGC-Distance Education Bureau (DEB). According to UGC regulations, online degrees from recognized universities hold equivalent status to conventional degrees for government exams, employment, and higher education abroad.</p>
+            <h3 style="font-size: 1.15rem; margin-bottom: .25rem;">Are degrees from Amity University valid for government jobs and study abroad?</h3>
+            <p>Yes. Amity University online degrees hold entitlement from UGC-DEB. These qualifications have equal validity to regular campus degrees for government recruitment, PSU positions, and international evaluations like WES.</p>
           </div>
           <div>
-            <h3 style="font-size: 1.15rem; margin-bottom: .25rem;">How are examinations conducted?</h3>
-            <p>Examinations are held online via proctored assessment software. Students can schedule and complete their term-end examinations securely from home without visiting a physical exam centre.</p>
+            <h3 style="font-size: 1.15rem; margin-bottom: .25rem;">How does Amity University conduct semester examinations?</h3>
+            <p>Examinations take place online using remote proctoring technology. Students can complete term-end tests conveniently from home using a laptop and web camera.</p>
           </div>
           <div>
-            <h3 style="font-size: 1.15rem; margin-bottom: .25rem;">Can I pay the program fee in monthly EMI installments?</h3>
-            <p>Yes, no-cost EMI and installment options are available through partner financial institutions, allowing students to pay their fees comfortably on a month-to-month basis.</p>
+            <h3 style="font-size: 1.15rem; margin-bottom: .25rem;">Does Amity University offer monthly EMI options?</h3>
+            <p>Yes. Amity University provides flexible installment plans and zero-cost EMI options with financial partners to make tuition payments convenient.</p>
           </div>
         </div>
       </div>
@@ -933,9 +947,9 @@
         <ul class="footer-links-list">
           <li><a href="amity-online.html">Amity University Online</a></li>
           <li><a href="lpu-online.html">LPU Online</a></li>
+          <li><a href="sharda-university-online.html">Sharda University Online</a></li>
+          <li><a href="uttaranchal-university-online.html">Uttaranchal University Online</a></li>
           <li><a href="manipal-university-jaipur-online.html">Manipal University Jaipur</a></li>
-          <li><a href="chandigarh-universities.html">Chandigarh University</a></li>
-          <li><a href="nmims-cdoe.html">NMIMS CDOE</a></li>
           <li><a href="all-universities.html">All 30+ Universities</a></li>
         </ul>
       </div>
@@ -986,11 +1000,9 @@
       <div class="footer-follow-box">
         <span>Follow us</span>
         <div class="footer-social-icons">
-          <!-- Facebook -->
           <a href="https://www.facebook.com/profile.php?id=61588271393079" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24"><path fill="#1877F2" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
           </a>
-          <!-- Instagram -->
           <a href="https://www.instagram.com/eduplier" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24">
               <defs>
@@ -1000,7 +1012,6 @@
               <path fill="#fff" d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zm5.2-8.4a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/>
             </svg>
           </a>
-          <!-- LinkedIn -->
           <a href="https://www.linkedin.com/company/eduplier-education-services/" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24"><path fill="#0A66C2" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0-.02-3.28 1.64 1.64 0 0 0 .02 3.28M7.86 18.5V10.1H5.06v8.4h2.8z"/></svg>
           </a>
