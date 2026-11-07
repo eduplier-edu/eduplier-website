@@ -18,6 +18,11 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <style>
+  .campus{position:relative;overflow:hidden;background:#091b2c;padding:0}
+.campus img{width:100%;height:clamp(260px,36vw,500px);object-fit:cover;display:block}
+.campus-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(9,27,44,.92),transparent);padding:28px 24px 16px;color:#fff}
+.campus-cap div{max-width:1380px;margin:0 auto;font-size:clamp(1rem,2vw,1.35rem);font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.campus-cap span{background:#ff6a00;font-size:.8rem;padding:4px 14px;border-radius:99px;text-transform:uppercase}
   /* ---------- MODERN CARDS FOOTER (Matches Website Theme) ---------- */
   .footer-card-section {
     background: linear-gradient(135deg, #091b2c 0%, #0d2b45 50%, #153b5c 100%);
@@ -517,6 +522,9 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
   <h3>Follow Eduplier on Google</h3>
   <div google-add-preferred-source-btn></div>
 </section>
+
+  <section class="campus" aria-label="DY Patil University Campus"><img src="dy patil mumbai.jpg" alt="Dr. D. Y. Patil University Campus, Navi Mumbai" fetchpriority="high"><div class="campus-cap"><div>🎓 Dr. D. Y. Patil University · Centre for Online Learning, Navi Mumbai<span>Admissions Open 2026–2027</span></div></div></section>
+
 
 <!-- Hero Section with Full-Width University Background -->
 <section class="hero">
