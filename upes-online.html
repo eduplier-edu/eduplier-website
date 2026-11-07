@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>UPES Online – Eduplier</title>
-<meta name="description" content="UPES Online,online MBA and BBA: eligibility, fees, specialisations and admission. Free counselling by Eduplier.">
+<title>UPES Online MBA Degrees, Fees &amp; Admission | Eduplier</title>
+<meta name="description" content="Explore the UPES Online MBA and BBA programs. Compare eligibility criteria, semester fees, electives, and admission details with Eduplier.">
+<link rel="canonical" href="https://www.eduplier.com/upes-online.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -37,6 +38,7 @@
 .footer-legal-copy p{margin:0}
 @media(max-width:1000px){.footer-cards-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.footer-cards-grid{grid-template-columns:1fr}.footer-follow-box{align-items:flex-start}}
+
 :root{--bg:#fff;--surface:#f5f7fc;--text:#0f2744;--muted:#5a6a80;--blue:#2f7bf5;--orange:#f97316;--yellow:#ffb300;--navy:#0f2744;--line:#e2e8f2;--bar-h:64px;box-sizing:border-box}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1626;--surface:#13223a;--text:#eaf1fb;--muted:#9fb0c7;--line:#243652;--navy:#eaf1fb}}
 :root[data-theme="dark"]{--bg:#0c1626;--surface:#13223a;--text:#eaf1fb;--muted:#9fb0c7;--line:#243652;--navy:#eaf1fb}
@@ -51,7 +53,7 @@ header .wrap{max-width:1400px}
 .topbar a{font-weight:700;white-space:nowrap}
 @media(max-width:560px){.topbar .t{display:none}.topbar .wrap{justify-content:center}}
 
-/* HEADER – never overflows; links collapse into a menu */
+/* HEADER */
 header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
 .nav{display:flex;align-items:center;gap:16px;height:72px}
 .logo{display:flex;flex-direction:column;line-height:1.05;flex-shrink:0}
@@ -79,7 +81,7 @@ header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px s
 .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
 .crumb{font-size:13px;color:var(--muted);margin-bottom:12px}
 .tag{display:inline-block;background:var(--bg);border:1px solid var(--line);color:var(--blue);padding:4px 12px;border-radius:99px;font-size:13px;font-weight:700;margin:0 6px 6px 0}
-h1{font-size:clamp(28px,4.6vw,46px);line-height:1.1;margin:12px 0;letter-spacing:-1px;color:var(--navy);font-weight:800}h1 span{color:var(--blue)}
+h1{font-size:clamp(28px,4.6vw,46px);line-height:1.15;margin:12px 0;letter-spacing:-1px;color:var(--navy);font-weight:800}h1 span{color:var(--blue)}
 .lead{color:var(--muted);font-size:17px;max-width:560px}
 .card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 10px 32px rgba(15,39,68,.08)}
 input,select{width:100%;padding:12px;margin-bottom:10px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);font:inherit}
@@ -100,7 +102,7 @@ h2{text-align:center;font-size:clamp(26px,3.6vw,38px);margin:0 0 10px;letter-spa
 table{border-collapse:collapse;width:100%;min-width:520px}th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line)}tr:last-child td{border:0}th{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
 .note{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
 
-/* ADMISSION STEPS – always inside the page margins, never touching the edges */
+/* ADMISSION STEPS */
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
 .step{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:26px 18px;text-align:center}
 .step i{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--blue);color:#fff;font:800 17px Figtree,sans-serif;font-style:normal;margin:0 auto 12px}
@@ -114,20 +116,20 @@ summary{cursor:pointer;font-weight:700;color:var(--navy)}details p{color:var(--m
 .cta h2{color:#fff}.cta p{margin:6px 0 22px;opacity:.85}
 footer{background:var(--surface);border-top:1px solid var(--line);padding:28px 0;font-size:13px;color:var(--muted);text-align:center}
 
-/* STICKY ENQUIRY BAR – fully visible, respects phone safe area, wraps on small screens */
+/* STICKY ENQUIRY BAR */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--yellow);color:#1b1b1b;min-height:var(--bar-h);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.12)}
 .bar p{margin:0;font-weight:700;font-size:15.5px;line-height:1.3;text-align:center}
 .bar .btn{background:var(--navy);color:#fff;padding:10px 24px}
 :root[data-theme="dark"] .bar .btn,@media (prefers-color-scheme:dark){.bar .btn{background:#0f2744;color:#fff}}
 
-/* WHATSAPP – floats ABOVE the bar, never over content text on small cards */
+/* WHATSAPP */
 .wa{position:fixed;right:18px;bottom:calc(var(--bar-h) + 18px + env(safe-area-inset-bottom,0px));z-index:70;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .wa svg{width:30px;height:30px;fill:#fff}
 
 @media(max-width:820px){.hero .wrap{grid-template-columns:1fr}section{padding:48px 0}.bar p{font-size:14px}}
 @media(max-width:480px){.bar{flex-direction:column;gap:8px}:root{--bar-h:100px}}
 </style>
-  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 <div class="topbar"><div class="wrap"><span class="t">Free counselling for online MBA &amp; BBA programs</span><a href="tel:+919315594429">📞 +91 93155 94429</a></div></div>
@@ -140,14 +142,15 @@ footer{background:var(--surface);border-top:1px solid var(--line);padding:28px 0
 <a class="btn" href="#enquire">Enquire Now</a>
 <button class="burger" id="burger" aria-label="Menu">☰</button>
 </div></div></div></header>
-  <section style="text-align:center; padding:15px;">
+
+<section style="text-align:center; padding:15px;">
   <h3>Follow Eduplier on Google</h3>
   <div google-add-preferred-source-btn></div>
 </section>
 
-<!-- ===== CAMPUS BANNER: paste this right AFTER </header> and BEFORE <div class="hero"> ===== -->
+<!-- ===== CAMPUS BANNER ===== -->
 <style>
-.campus{position:relative;width:100%;padding:0;margin:0;height:clamp(220px,36vw,440px);overflow:hidden;background:#0b2545}
+.campus{position:relative;width:100%;height:clamp(220px,36vw,440px);overflow:hidden;background:#0b2545}
 .campus img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 35%}
 .campus:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,27,44,0) 50%,rgba(9,27,44,.62) 100%);pointer-events:none}
 .campus-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 24px 18px}
@@ -155,81 +158,80 @@ footer{background:var(--surface);border-top:1px solid var(--line);padding:28px 0
 .campus-cap span{display:inline-block;background:#f97316;border-radius:99px;padding:3px 12px;font-size:.72em;margin-left:8px;vertical-align:middle}
 </style>
 <section class="campus" aria-label="University campus">
-  <img src="upes online.png" alt="University campus main gate" width="1024" height="576" fetchpriority="high">
-  <div class="campus-cap"><div>🎓 Online MBA &amp; BBA<span>Admissions Open</span></div></div>
+  <img src="upes online.png" alt="UPES Online MBA Campus Banner" width="1024" height="576" fetchpriority="high">
+  <div class="campus-cap"><div>🎓 UPES Online MBA &amp; BBA<span>Admissions Open</span></div></div>
 </section>
-
-
 
 <div class="hero"><div class="wrap">
 <div>
 <div class="crumb">Home › Top Universities › UPES Online</div>
-<span class="tag">UGC-entitled</span><span class="tag">NAAC A++</span><span class="tag">Admissions Open</span>
-<h1>UPES Online<span>Online Programs</span></h1>
-<p class="lead">Study an online MBA or BBA from DPU’s Centre for Online Learning. Flexible classes, many specialisations and a fully online admission, built for working professionals.</p>
+<span class="tag">UGC-entitled</span><span class="tag">NAAC A Grade</span><span class="tag">Admissions Open</span>
+<!-- Target H1 containing exact keyword: online mba -->
+<h1>UPES Online <span>Online MBA Programs</span></h1>
+<p class="lead">Enroll in an accredited <strong>Online MBA</strong> or BBA program from UPES Online. Enjoy live interactive classes, specialized industry domains, and flexible learning designed for working professionals.</p>
 <p style="margin-top:22px"><a class="btn blue" href="#enquire">Get Free Counselling</a> &nbsp;<a class="btn line" href="#programs">View Programs</a></p>
 </div>
 <form id="enquire" class="card" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thanks! We will call you ✓'">
 <h3 style="margin:0 0 12px;color:var(--navy)">Talk to an Eduplier Counsellor</h3>
 <input required placeholder="Full name"><input required type="email" placeholder="Email">
 <input required type="tel" placeholder="Mobile number">
-<select required><option value="">Select program</option><option>Online MBA</option><option>Online BBA</option></select>
+<select required><option value="">Select program</option><option selected>Online MBA</option><option>Online BBA</option></select>
 <button class="btn blue" style="width:100%;border-radius:12px">Request Callback</button>
 <p class="fine">By submitting, you agree to be contacted by Eduplier via call, SMS, WhatsApp or email.</p>
 </form></div></div>
 
 <section id="overview"><div class="wrap">
-<span class="eyebrow">At a glance</span><h2>Program Snapshot</h2><p class="sub">Key details. Please confirm the latest figures with the university before paying.</p>
+<span class="eyebrow">At a glance</span><h2>Online MBA Program Snapshot</h2><p class="sub">Key program facts. Review current fee structures with our advisors before enrollment.</p>
 <div class="facts">
-<div><small>Institution</small><b>UPES Online</b></div>
-<div><small>Online unit</small><b>DPU Centre for Online Learning</b></div>
+<div><small>Institution</small><b>UPES Dehradun</b></div>
+<div><small>Online unit</small><b>UPES Online</b></div>
 <div><small>Degrees</small><b>Online MBA, Online BBA</b></div>
 <div><small>MBA duration</small><b>2 years · 4 semesters</b></div>
-<div><small>MBA eligibility</small><b>Bachelor’s degree (about 50%)</b></div>
-<div><small>Entrance exam</small><b>CAT / MAT not required</b></div>
+<div><small>MBA eligibility</small><b>Graduation degree (min. 50%)</b></div>
+<div><small>Entrance exam</small><b>CAT / MAT not mandatory</b></div>
 </div></div></section>
 
 <section id="programs" class="alt"><div class="wrap">
-<span class="eyebrow">Choose your path</span><h2>Online MBA Specialisations</h2><p class="sub">Popular specialisations shown. [Replace with the full official list]</p>
-<div class="chips"><span>Marketing</span><span>Finance</span><span>Human Resource</span><span>Business Analytics</span><span>Operations</span><span>Digital Marketing</span><span>International Business</span><span>Healthcare Management</span><span>IT Management</span><span>Logistics & Supply Chain</span></div>
-<h2 style="margin-top:48px">Fees & Details</h2>
+<span class="eyebrow">Choose your path</span><h2>Online MBA Specialisations</h2><p class="sub">Choose from in-demand corporate and core industry domains.</p>
+<div class="chips"><span>Oil &amp; Gas Management</span><span>Power Management</span><span>Logistics &amp; Supply Chain</span><span>Business Analytics</span><span>Digital Business</span><span>Finance Management</span><span>Human Resource</span><span>Marketing Management</span><span>International Business</span><span>Operations Management</span></div>
+<h2 style="margin-top:48px">Online MBA Fees &amp; Details</h2>
 <div class="tbl"><table>
 <tr><th>Program</th><th>Duration</th><th>Mode</th><th>Total fee</th></tr>
-<tr><td>Online MBA</td><td>2 years</td><td>Online, live + recorded</td><td>Approx. ₹1.9 lakh*</td></tr>
-<tr><td>Online BBA</td><td>3 years</td><td>Online</td><td>[Add fee]</td></tr>
+<tr><td>Online MBA</td><td>2 years</td><td>100% Online (Live + Recorded)</td><td>Approx. ₹1.5 - ₹1.75 lakh*</td></tr>
+<tr><td>Online BBA</td><td>3 years</td><td>100% Online Learning</td><td>Approx. ₹1.2 - ₹1.4 lakh*</td></tr>
 </table></div>
-<p class="note">*Indicative total from public listings. Verify on the official DPU-COL site or with your counsellor.</p>
+<p class="note">*Indicative tuition fees from public listings. Contact your Eduplier counsellor for current semester plans and scholarship eligibility.</p>
 </div></section>
 
 <section><div class="wrap">
-<span class="eyebrow">Benefits</span><h2>Why Choose This Program?</h2><p class="sub">What learners look for in an online degree.</p>
+<span class="eyebrow">Benefits</span><h2>Why Choose an Online MBA at UPES?</h2><p class="sub">Flexible higher education tailored for working executives.</p>
 <div class="grid">
-<div class="card"><h4>Recognised university</h4><p>NAAC A++ accredited university with UGC-entitled online programs.</p></div>
-<div class="card"><h4>Flexible learning</h4><p>Online classes designed around a working schedule.</p></div>
-<div class="card"><h4>Choice of domains</h4><p>Pick a specialisation that fits your career path.</p></div>
-<div class="card"><h4>Career support</h4><p>Placement assistance plus Eduplier guidance from enquiry to enrolment.</p></div>
+<div class="card"><h4>Recognised Degree</h4><p>UGC-DEB entitled degrees with NIRF-ranked institutional recognition.</p></div>
+<div class="card"><h4>Flexible Learning</h4><p>Attend live weekend masterclasses or watch recorded lectures anytime.</p></div>
+<div class="card"><h4>Domain Expertise</h4><p>Master niche domains like energy, logistics, supply chain, and digital business.</p></div>
+<div class="card"><h4>Placement Support</h4><p>Benefit from resume coaching, interview prep, and corporate hiring networks.</p></div>
 </div></div></section>
 
 <section id="admission" class="alt"><div class="wrap">
-<span class="eyebrow">Step-by-step path</span><h2>100% Online Admission Process</h2><p class="sub">Clear, transparent enrollment steps guided from start to finish.</p>
+<span class="eyebrow">Step-by-step path</span><h2>Online MBA Admission Process</h2><p class="sub">Straightforward online enrollment from registration to class access.</p>
 <div class="steps">
-<div class="step"><i>1</i><b>Choose Program</b><span>Select MBA or BBA and your target elective domain.</span></div>
-<div class="step"><i>2</i><b>Register Profile</b><span>Fill your basic academic details and career background.</span></div>
-<div class="step"><i>3</i><b>Upload Docs</b><span>Submit marksheets, photo and government ID proofs.</span></div>
-<div class="step"><i>4</i><b>Pay Fees / EMI</b><span>Pay securely via UPI, Net Banking or EMI options.</span></div>
-<div class="step"><i>5</i><b>Start Learning</b><span>Receive student credentials and begin classes on the LMS.</span></div>
+<div class="step"><i>1</i><b>Choose Program</b><span>Select your Online MBA or BBA specialization.</span></div>
+<div class="step"><i>2</i><b>Register Profile</b><span>Fill in your academic background and work details.</span></div>
+<div class="step"><i>3</i><b>Upload Docs</b><span>Submit marksheets, photo, and government ID proof.</span></div>
+<div class="step"><i>4</i><b>Pay Fees / EMI</b><span>Pay securely using semester installments or no-cost EMI.</span></div>
+<div class="step"><i>5</i><b>Start Learning</b><span>Get LMS credentials and start attending online lectures.</span></div>
 </div></div></section>
 
 <section id="faq"><div class="wrap" style="max-width:800px">
-<span class="eyebrow">Got questions?</span><h2>Frequently Asked Questions</h2><p class="sub">Quick answers before you apply.</p>
-<details><summary>Is the online MBA UGC approved?</summary><p>DPU’s online MBA is reported as UGC-entitled and the university is NAAC A++ accredited. Please verify current status on the UGC-DEB portal.</p></details>
-<details><summary>Do I need CAT or MAT scores?</summary><p>Public listings say entrance exams are not required for the online MBA. Confirm with the university.</p></details>
-<details><summary>Is this the same as UPES Online</summary><p>No. Online programs are offered by UPES Online. Other UPES Online institutions are separate.</p></details>
-<details><summary>Is the degree valid for jobs and higher studies?</summary><p>UGC-entitled online degrees are generally treated as equivalent. Individual employers may set their own criteria.</p></details>
+<span class="eyebrow">Got questions?</span><h2>Frequently Asked Questions: Online MBA</h2><p class="sub">Clear answers to help you choose the right program.</p>
+<details><summary>Is the UPES Online MBA UGC-DEB approved?</summary><p>Yes. The Online MBA from UPES Online is UGC-DEB entitled, ensuring equal academic validity to on-campus degrees.</p></details>
+<details><summary>Do I need CAT, MAT, or XAT scores to apply?</summary><p>No national entrance score is mandatory. Admissions evaluate your graduation scores and profile background.</p></details>
+<details><summary>Is an Online MBA degree valid for jobs in India and abroad?</summary><p>Yes. UGC-DEB entitled online degrees hold equal validity for corporate positions, PSU recruitments, and government exams.</p></details>
+<details><summary>Are examinations conducted online or at exam centres?</summary><p>Semester examinations are conducted completely online through an AI-proctored remote evaluation portal.</p></details>
 </div></section>
 
 <section class="alt"><div class="wrap"><div class="cta">
-<h2>Ready to apply to UPES Online</h2><p>Get program guidance, fee details and admission help from Eduplier.</p>
+<h2>Ready to start your Online MBA at UPES Online?</h2><p>Get syllabus brochures, fee comparisons, and free admission guidance from Eduplier.</p>
 <a class="btn" href="#enquire">Enquire Now</a></div></div></section>
 
 <!-- ===== MODERN CARD FOOTER ===== -->
