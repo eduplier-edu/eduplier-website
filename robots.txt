@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Keep CSS, JS and images crawlable. Do not block them.
+# Add Disallow lines only for private pages, e.g. thank-you or admin pages:
+# Disallow: /thank-you.html
+
 Sitemap: https://www.eduplier.com/sitemap.xml
