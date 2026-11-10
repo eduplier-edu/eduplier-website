@@ -25,6 +25,111 @@
 </script>
 <meta name="google-site-verification" content="ZA_Crzt7XmtUybDGrtiK-gjwgs2acs9EPWk1nclybtk" />
 <style>
+  /*! Eduplier GA4 custom events: form_start, generate_lead, click_call, click_whatsapp
+ *  Load AFTER the GA4 gtag snippet (see ga4-head-snippet.html). Works on every page, no per-page edits.
+ *  Sends no personal data (no name, phone, email). */
+(function () {
+  'use strict';
+  // >>> STEP 1: put your GA4 Measurement ID here (the only edit you need to make in this file) <<<
+  var GA_ID = 'G-WBM64996MT';
+
+  window.dataLayer = window.dataLayer || [];
+  if (typeof window.gtag !== 'function') { window.gtag = function () { window.dataLayer.push(arguments); }; }
+  // Loads Google Analytics itself, so pages only need ONE line: <script src="/eduplier-ga4.js" defer></script>
+  if (!window.__eduplierGA && /^G-[A-Z0-9]+$/.test(GA_ID) && GA_ID !== 'G-WBM64996MT') {
+    window.__eduplierGA = true;
+    var g = document.createElement('script');
+    g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(g);
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+  } else if (GA_ID === 'G-WBM64996MT' && window.console) {
+    console.warn('[Eduplier GA4] Replace G-WBM64996MT with your real Measurement ID in eduplier-ga4.js');
+  }
+
+  var DEBUG = !!window.EDUPLIER_GA4_DEBUG;
+  var LEAD_VALUE = 0; // set a rupee value per lead (e.g. 500) to send value + currency; 0 = don't send
+
+  function send(name, params) {
+    params = params || {};
+    params.transport_type = 'beacon';
+    if (DEBUG && window.console) { console.log('[GA4]', name, params); }
+    window.gtag('event', name, params);
+  }
+
+  function clean(t, n) { return (t || '').replace(/\s+/g, ' ').trim().slice(0, n || 100); }
+
+  function place(el) {
+    var map = [
+      ['.sticky, .float', 'sticky_bar'], ['.wa, .wa-float', 'floating_button'],
+      ['#enquireModal', 'modal'], ['.topbar', 'topbar'], ['header', 'header'],
+      ['.formbox, .formcard, form', 'form'], ['.hero, .hero2, .hero-gradient', 'hero'],
+      ['.cta, .cta-band', 'cta_banner'], ['footer', 'footer']
+    ];
+    for (var i = 0; i < map.length; i++) { if (el.closest && el.closest(map[i][0])) { return map[i][1]; } }
+    return 'page_body';
+  }
+
+  // ---- click_call + click_whatsapp (event delegation) ----
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) { return; }
+    var href = a.getAttribute('href') || '';
+    var base = { link_url: href.slice(0, 150), link_text: clean(a.textContent, 60) || clean(a.getAttribute('aria-label'), 60), link_location: place(a) };
+    if (/^tel:/i.test(href)) {
+      send('click_call', base);
+    } else if (/(^|\/\/)(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)|whatsapp\.com\/send/i.test(href)) {
+      send('click_whatsapp', base);
+    }
+  }, true);
+
+  // ---- form_start (first interaction per form per page view) ----
+  var started = [];
+  function containerOf(el) { return el.closest ? el.closest('form, .formbox') : null; }
+  function formInfo(c) {
+    var h = c.querySelector('h1,h2,h3');
+    var prog = c.querySelector('select[name=program], select#program, select#s, select#p');
+    var info = { form_id: c.id || 'unnamed_form', form_name: clean(h && h.textContent, 80) || 'enquiry_form', form_location: place(c) };
+    if (prog && prog.value) { info.program = clean(prog.value, 60); }
+    return info;
+  }
+  document.addEventListener('focusin', function (e) {
+    var t = e.target;
+    if (!t.matches || !t.matches('input, select, textarea')) { return; }
+    if (t.type === 'hidden' || t.type === 'submit' || t.type === 'button') { return; }
+    var c = containerOf(t);
+    if (!c || started.indexOf(c) > -1) { return; }
+    started.push(c);
+    send('form_start', formInfo(c));
+  }, true);
+
+  // ---- generate_lead (once per successful submission) ----
+  var sent = [];
+  function lead(c) {
+    var now = Date.now();
+    for (var i = 0; i < sent.length; i++) { if (sent[i].c === c && now - sent[i].t < 4000) { return; } }
+    sent.push({ c: c, t: now });
+    var p = formInfo(c);
+    if (LEAD_VALUE > 0) { p.value = LEAD_VALUE; p.currency = 'INR'; }
+    send('generate_lead', p);
+  }
+  // 1) real <form> submits (runs before the page's own handler; invalid forms never fire submit)
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    if (f && f.tagName === 'FORM' && (!f.checkValidity || f.checkValidity())) { lead(f); }
+  }, true);
+  // 2) div-based forms that reveal a thank-you message (#ok / #thanks)
+  function watch(el) {
+    new MutationObserver(function () {
+      if (window.getComputedStyle(el).display !== 'none') {
+        var c = el.closest('form, .formbox');
+        if (c) { lead(c); }
+      }
+    }).observe(el, { attributes: true, attributeFilter: ['style', 'class'] });
+  }
+  function init() { var n = document.querySelectorAll('#ok, #thanks, .ok, .thanks'); for (var i = 0; i < n.length; i++) { watch(n[i]); } }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
+})();
   /* Add to your global reset */
 *, *::before, *::after {
   box-sizing: border-box;
