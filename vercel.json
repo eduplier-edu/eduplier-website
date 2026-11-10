@@ -1,9 +1,26 @@
+
 {
   "redirects": [
-    { "source": "/home", "destination": "/", "permanent": true },
-    { "source": "/naLogImpressions", "destination": "/", "permanent": true }
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/naLogImpressions",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/why-eduplier", "destination": "/why-eduplier.html" }
+    {
+      "source": "/why-eduplier",
+      "destination": "/why-eduplier.html"
+    }
   ]
 }
