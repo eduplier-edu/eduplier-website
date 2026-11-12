@@ -11,6 +11,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
 <style>
+ /* ---------- FULL HERO BANNER ---------- */
+  .hero-banner-section {
+    width: 100%;
+    background: #ffffff;
+    padding: 1.25rem 0 2rem;
+  }
+  .banner-wrap {
+    width: min(1180px, 100% - 2rem);
+    margin-inline: auto;
+  }
+  .hero-banner-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(13, 43, 69, 0.08);
+    display: block;
+  }
+
 :root{--bg:#fff;--surface:#f4f7fb;--text:#14213d;--muted:#5b6478;--brand:#0b5ed7;--accent:#ff6a00;--border:#dde2ee;color-scheme:light}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-padding-top:80px;scroll-behavior:smooth}
@@ -128,8 +148,12 @@ details p{color:var(--muted);margin-top:10px;font-size:14px}
 <div class="header-actions"><a href="tel:+919315594429" class="phone-link">📞 +91 93155 94429</a><a href="#enquire" class="btn-enquire">Free Counselling</a></div>
 </div></header>
 <section style="text-align:center;padding:15px"><h3>Follow Eduplier on Google</h3><div google-add-preferred-source-btn></div></section>
-<section class="pbanner" aria-label="Parul University"><div class="c"><div>🎓 Parul University · Vadodara, Gujarat</div><span>Online Programmes · Admissions 2026–27</span></div></section>
-
+<!-- University Banner -->
+  <section class="hero-banner-section">
+    <div class="banner-wrap">
+      <img src="parul university.jpg" alt="Parul University Online Degree Programs" class="hero-banner-img">
+    </div>
+  </section>
 <div class="tabs" id="programs"><div class="wrap" role="tablist" aria-label="Choose a programme"><b>Choose your programme:</b>
 <button class="tab" role="tab" data-k="mba">Online MBA</button><button class="tab" role="tab" data-k="mca">Online MCA</button><button class="tab" role="tab" data-k="bba">Online BBA</button><button class="tab" role="tab" data-k="bca">Online BCA</button><button class="tab" role="tab" data-k="ba">Online BA</button><button class="tab" role="tab" data-k="ma">Online MA</button><button class="tab" role="tab" data-k="mcom">Online M.Com</button></div></div>
 
