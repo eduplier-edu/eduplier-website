@@ -751,6 +751,72 @@ fbq('track', 'PageView');
   <div style="text-align:center;margin-top:18px"><a class="btn ghost" href="/blog.html">View All Articles</a></div>
 </section>
 
+  <!-- ===== EDUPLIER LIVE GOOGLE REVIEWS: paste just above <section class="c sec" id="contact"> in index.html ===== -->
+<style>
+.gr{--grb:var(--blue,#0757b8);--gro:var(--orange,#ff7a18);--grn:var(--navy,#0b2447);--grl:var(--line,#dfe7f3);--grm:var(--mute,#5d6b86)}
+.gr-top{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--grl);border-radius:18px;padding:18px 22px;margin-bottom:18px}
+.gr-score{display:flex;align-items:center;gap:14px}
+.gr-score b{font-size:2.4rem;line-height:1;color:var(--grn)}
+.gr-stars{color:#f5a623;letter-spacing:2px;font-size:1.15rem}
+.gr-stars i{font-style:normal;color:#d5dbe6}
+.gr-score small{display:block;color:var(--grm);font-size:.85rem}
+.gr-btns{display:flex;gap:10px;flex-wrap:wrap}
+.gr-btns a{display:inline-block;padding:10px 18px;border-radius:10px;font-weight:700;font-size:.9rem;text-decoration:none}
+.gr-btns .p{background:var(--gro);color:#fff}.gr-btns .s{border:2px solid var(--grb);color:var(--grb)}
+.gr-list{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px}
+.gr-card{flex:0 0 min(340px,86%);scroll-snap-align:start;background:#fff;border:1px solid var(--grl);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.gr-who{display:flex;align-items:center;gap:10px}
+.gr-who img,.gr-av{width:42px;height:42px;border-radius:50%;object-fit:cover;background:var(--grb);color:#fff;display:grid;place-items:center;font-weight:800}
+.gr-who a{font-weight:700;color:var(--grn);text-decoration:none}
+.gr-who small{display:block;color:var(--grm);font-size:.78rem}
+.gr-card p{margin:0;color:#334766;font-size:.92rem;line-height:1.55}
+.gr-more{background:none;border:0;color:var(--grb);font-weight:700;cursor:pointer;padding:0;align-self:flex-start}
+.gr-note{font-size:.78rem;color:var(--grm);margin-top:6px}
+.gr-skel{color:var(--grm);text-align:center;padding:20px}
+</style>
+<section class="c sec gr" id="reviews" hidden>
+  <div class="sh"><span>What students say</span><h2>Reviews From Google</h2><p>Real reviews from people who contacted Eduplier. New reviews appear here automatically.</p></div>
+  <div class="gr-top">
+    <div class="gr-score"><b id="grScore">–</b><div><div class="gr-stars" id="grStars" aria-hidden="true"></div><small id="grCount"></small></div></div>
+    <div class="gr-btns"><a class="p" id="grWrite" href="#" target="_blank" rel="noopener">Write a Google review</a><a class="s" id="grAll" href="#" target="_blank" rel="noopener">See all on Google</a></div>
+  </div>
+  <div class="gr-list" id="grList"><div class="gr-skel">Loading reviews…</div></div>
+  <p class="gr-note">Reviews are shown as provided by Google, powered by Google Maps.</p>
+</section>
+<script>
+(function(){
+  var ENDPOINT='PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+  var box=document.getElementById('reviews'); if(!box||ENDPOINT.indexOf('PASTE_')===0)return;
+  function stars(n){var s='';for(var i=1;i<=5;i++)s+=i<=Math.round(n)?'★':'<i>★</i>';return s}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e}
+  function render(d){
+    if(!d||d.error||!d.reviews||!d.reviews.length)return;
+    document.getElementById('grScore').textContent=Number(d.rating).toFixed(1);
+    document.getElementById('grStars').innerHTML=stars(d.rating);
+    document.getElementById('grCount').textContent='Based on '+d.count+' Google review'+(d.count===1?'':'s');
+    document.getElementById('grWrite').href=d.writeReview||'#';
+    var all=document.getElementById('grAll'); if(d.mapsUri)all.href=d.mapsUri; else all.style.display='none';
+    var list=document.getElementById('grList'); list.textContent='';
+    d.reviews.forEach(function(r){
+      var c=el('div','gr-card'), who=el('div','gr-who'), nm=el('div');
+      if(r.photo){var im=el('img');im.src=r.photo;im.alt='';im.referrerPolicy='no-referrer';im.loading='lazy';who.appendChild(im)}
+      else who.appendChild(el('div','gr-av',(r.author||'G').charAt(0).toUpperCase()));
+      var a=r.authorUri?el('a','',r.author):el('b','',r.author); if(r.authorUri){a.href=r.authorUri;a.target='_blank';a.rel='noopener'}
+      nm.appendChild(a); nm.appendChild(el('small','',r.when||'')); who.appendChild(nm);
+      var st=el('div','gr-stars'); st.innerHTML=stars(r.rating); st.setAttribute('aria-label',r.rating+' out of 5 stars');
+      var t=r.text||'', p=el('p','',t.length>230?t.slice(0,230)+'…':t);
+      c.appendChild(who); c.appendChild(st); if(t)c.appendChild(p);
+      if(t.length>230){var b=el('button','gr-more','Read more');b.type='button';b.onclick=function(){p.textContent=t;b.remove()};c.appendChild(b)}
+      list.appendChild(c);
+    });
+    box.hidden=false;
+  }
+  var K='eduGR',now=Date.now();
+  try{var c=JSON.parse(sessionStorage.getItem(K)||'null');if(c&&now-c.t<3600000){render(c.d);return}}catch(e){}
+  fetch(ENDPOINT).then(function(r){return r.json()}).then(function(d){render(d);try{if(d&&!d.error)sessionStorage.setItem(K,JSON.stringify({t:now,d:d}))}catch(e){}}).catch(function(){});
+})();
+</script>
+
 <section class="c sec" id="contact">
   <div class="contact">
     <div>
